@@ -1,0 +1,20 @@
+ISim log file
+Running: P:\CEC 330 FPGA\Rivera_VendingMachine\pwm\Arm_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm_isim_beh.wdb 
+ISim P.28xd (signature 0xa0883be4)
+This is a Full version of ISim.
+WARNING: File "//dbfsvs02/HomeDB2/RIVERAB/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.v" Line 29.  For instance Arm/claw/, width 27 of formal port COUNT is not equal to width 28 of actual variable COUNT. 
+WARNING: File "//dbfsvs02/HomeDB2/RIVERAB/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.v" Line 29.  For instance Arm/jointhigh/, width 27 of formal port COUNT is not equal to width 28 of actual variable COUNT. 
+WARNING: File "//dbfsvs02/HomeDB2/RIVERAB/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.v" Line 29.  For instance Arm/jointlow/, width 27 of formal port COUNT is not equal to width 28 of actual variable COUNT. 
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# restart
+# isim force add /Arm/CLK 1 -radix bin -value 0 -radix bin -time 5 ns -repeat 10 ns
+# isim force add /Arm/SW 000 -radix bin
+# run all
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+Stopped at time : 772375510 ns : File "//dbfsvs02/HomeDB2/RIVERAB/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.v" Line 62

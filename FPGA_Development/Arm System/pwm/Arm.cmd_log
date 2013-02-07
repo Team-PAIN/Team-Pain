@@ -1,0 +1,101 @@
+xst -intstyle ise -ifn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.xst" -ofn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.syr" 
+xst -intstyle ise -ifn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.xst" -ofn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.syr" 
+xst -intstyle ise -ifn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.xst" -ofn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.syr" 
+xst -intstyle ise -ifn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.xst" -ofn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.syr" 
+xst -intstyle ise -ifn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.xst" -ofn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.syr" 
+xst -intstyle ise -ifn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.xst" -ofn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.syr" 
+xst -intstyle ise -ifn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.xst" -ofn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.syr" 
+xst -intstyle ise -ifn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.xst" -ofn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Servo_UCF.ucf -p xc6slx16-csg324-3 "Arm.ngc" Arm.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Servo_UCF.ucf -p xc6slx16-csg324-3 "Arm.ngc" Arm.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Arm_map.ncd Arm.ngd Arm.pcf 
+par -w -intstyle ise -ol high -mt off Arm_map.ncd Arm.ncd Arm.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Arm.twx Arm.ncd -o Arm.twr Arm.pcf -ucf Servo_UCF.ucf 
+bitgen -intstyle ise -f Arm.ut Arm.ncd 
+xst -intstyle ise -ifn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.xst" -ofn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Servo_UCF.ucf -p xc6slx16-csg324-3 "Arm.ngc" Arm.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Arm_map.ncd Arm.ngd Arm.pcf 
+par -w -intstyle ise -ol high -mt off Arm_map.ncd Arm.ncd Arm.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Arm.twx Arm.ncd -o Arm.twr Arm.pcf -ucf Servo_UCF.ucf 
+bitgen -intstyle ise -f Arm.ut Arm.ncd 
+xst -intstyle ise -ifn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.xst" -ofn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Servo_UCF.ucf -p xc6slx16-csg324-3 "Arm.ngc" Arm.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Arm_map.ncd Arm.ngd Arm.pcf 
+par -w -intstyle ise -ol high -mt off Arm_map.ncd Arm.ncd Arm.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Arm.twx Arm.ncd -o Arm.twr Arm.pcf -ucf Servo_UCF.ucf 
+bitgen -intstyle ise -f Arm.ut Arm.ncd 
+xst -intstyle ise -ifn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.xst" -ofn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Servo_UCF.ucf -p xc6slx16-csg324-3 "Arm.ngc" Arm.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Arm_map.ncd Arm.ngd Arm.pcf 
+par -w -intstyle ise -ol high -mt off Arm_map.ncd Arm.ncd Arm.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Arm.twx Arm.ncd -o Arm.twr Arm.pcf -ucf Servo_UCF.ucf 
+bitgen -intstyle ise -f Arm.ut Arm.ncd 
+xst -intstyle ise -ifn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.xst" -ofn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Servo_UCF.ucf -p xc6slx16-csg324-3 "Arm.ngc" Arm.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Arm_map.ncd Arm.ngd Arm.pcf 
+par -w -intstyle ise -ol high -mt off Arm_map.ncd Arm.ncd Arm.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Arm.twx Arm.ncd -o Arm.twr Arm.pcf -ucf Servo_UCF.ucf 
+bitgen -intstyle ise -f Arm.ut Arm.ncd 
+xst -intstyle ise -ifn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.xst" -ofn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Servo_UCF.ucf -p xc6slx16-csg324-3 "Arm.ngc" Arm.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Arm_map.ncd Arm.ngd Arm.pcf 
+par -w -intstyle ise -ol high -mt off Arm_map.ncd Arm.ncd Arm.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Arm.twx Arm.ncd -o Arm.twr Arm.pcf -ucf Servo_UCF.ucf 
+bitgen -intstyle ise -f Arm.ut Arm.ncd 
+xst -intstyle ise -ifn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.xst" -ofn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Servo_UCF.ucf -p xc6slx16-csg324-3 "Arm.ngc" Arm.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Servo_UCF.ucf -p xc6slx16-csg324-3 "Arm.ngc" Arm.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Arm_map.ncd Arm.ngd Arm.pcf 
+par -w -intstyle ise -ol high -mt off Arm_map.ncd Arm.ncd Arm.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Arm.twx Arm.ncd -o Arm.twr Arm.pcf -ucf Servo_UCF.ucf 
+bitgen -intstyle ise -f Arm.ut Arm.ncd 
+xst -intstyle ise -ifn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.xst" -ofn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Servo_UCF.ucf -p xc6slx16-csg324-3 "Arm.ngc" Arm.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Arm_map.ncd Arm.ngd Arm.pcf 
+par -w -intstyle ise -ol high -mt off Arm_map.ncd Arm.ncd Arm.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Arm.twx Arm.ncd -o Arm.twr Arm.pcf -ucf Servo_UCF.ucf 
+bitgen -intstyle ise -f Arm.ut Arm.ncd 
+xst -intstyle ise -ifn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.xst" -ofn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.syr" 
+xst -intstyle ise -ifn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.xst" -ofn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Servo_UCF.ucf -p xc6slx16-csg324-3 "Arm.ngc" Arm.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Arm_map.ncd Arm.ngd Arm.pcf 
+par -w -intstyle ise -ol high -mt off Arm_map.ncd Arm.ncd Arm.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Arm.twx Arm.ncd -o Arm.twr Arm.pcf -ucf Servo_UCF.ucf 
+bitgen -intstyle ise -f Arm.ut Arm.ncd 
+xst -intstyle ise -ifn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.xst" -ofn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Arm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Servo_UCF.ucf -p xc6slx16-csg324-3 "Arm.ngc" Arm.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Arm_map.ncd Arm.ngd Arm.pcf 
+par -w -intstyle ise -ol high -mt off Arm_map.ncd Arm.ncd Arm.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Arm.twx Arm.ncd -o Arm.twr Arm.pcf -ucf Servo_UCF.ucf 
+bitgen -intstyle ise -f Arm.ut Arm.ncd 
+bitgen -intstyle ise -f Arm.ut Arm.ncd 
+xst -intstyle ise -ifn "C:/fa12sp13/team2/branches/FPGA_Development/Arm System/pwm/Arm.xst" -ofn "C:/fa12sp13/team2/branches/FPGA_Development/Arm System/pwm/Arm.syr" 
+xst -intstyle ise -ifn "C:/fa12sp13/team2/branches/FPGA_Development/Arm System/pwm/Arm.xst" -ofn "C:/fa12sp13/team2/branches/FPGA_Development/Arm System/pwm/Arm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Servo_UCF.ucf -p xc6slx16-csg324-3 "Arm.ngc" Arm.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Arm_map.ncd Arm.ngd Arm.pcf 
+par -w -intstyle ise -ol high -mt off Arm_map.ncd Arm.ncd Arm.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Arm.twx Arm.ncd -o Arm.twr Arm.pcf -ucf Servo_UCF.ucf 
+bitgen -intstyle ise -f Arm.ut Arm.ncd 
+xst -intstyle ise -ifn "C:/fa12sp13/team2/branches/FPGA_Development/Arm System/pwm/Arm.xst" -ofn "C:/fa12sp13/team2/branches/FPGA_Development/Arm System/pwm/Arm.syr" 
+xst -intstyle ise -ifn "C:/fa12sp13/team2/branches/FPGA_Development/Arm System/pwm/Arm.xst" -ofn "C:/fa12sp13/team2/branches/FPGA_Development/Arm System/pwm/Arm.syr" 
+xst -intstyle ise -ifn "C:/fa12sp13/team2/branches/FPGA_Development/Arm System/pwm/Arm.xst" -ofn "C:/fa12sp13/team2/branches/FPGA_Development/Arm System/pwm/Arm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Servo_UCF.ucf -p xc6slx16-csg324-3 "Arm.ngc" Arm.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Arm_map.ncd Arm.ngd Arm.pcf 
+par -w -intstyle ise -ol high -mt off Arm_map.ncd Arm.ncd Arm.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Arm.twx Arm.ncd -o Arm.twr Arm.pcf -ucf Servo_UCF.ucf 
+bitgen -intstyle ise -f Arm.ut Arm.ncd 
+xst -intstyle ise -ifn "C:/fa12sp13/team2/branches/FPGA_Development/Arm System/pwm/Arm.xst" -ofn "C:/fa12sp13/team2/branches/FPGA_Development/Arm System/pwm/Arm.syr" 
+xst -intstyle ise -ifn "C:/fa12sp13/team2/branches/FPGA_Development/Arm System/pwm/Arm.xst" -ofn "C:/fa12sp13/team2/branches/FPGA_Development/Arm System/pwm/Arm.syr" 
+xst -intstyle ise -ifn "C:/fa12sp13/team2/branches/FPGA_Development/Arm System/pwm/Arm.xst" -ofn "C:/fa12sp13/team2/branches/FPGA_Development/Arm System/pwm/Arm.syr" 
+xst -intstyle ise -ifn "C:/fa12sp13/team2/branches/FPGA_Development/Arm System/pwm/Arm.xst" -ofn "C:/fa12sp13/team2/branches/FPGA_Development/Arm System/pwm/Arm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Servo_UCF.ucf -p xc6slx16-csg324-3 "Arm.ngc" Arm.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Arm_map.ncd Arm.ngd Arm.pcf 
+par -w -intstyle ise -ol high -mt off Arm_map.ncd Arm.ncd Arm.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Arm.twx Arm.ncd -o Arm.twr Arm.pcf -ucf Servo_UCF.ucf 
+bitgen -intstyle ise -f Arm.ut Arm.ncd 
+xst -intstyle ise -ifn "C:/fa12sp13/team2/branches/FPGA_Development/Arm System/pwm/Arm.xst" -ofn "C:/fa12sp13/team2/branches/FPGA_Development/Arm System/pwm/Arm.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Servo_UCF.ucf -p xc6slx16-csg324-3 "Arm.ngc" Arm.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Arm_map.ncd Arm.ngd Arm.pcf 
+par -w -intstyle ise -ol high -mt off Arm_map.ncd Arm.ncd Arm.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Arm.twx Arm.ncd -o Arm.twr Arm.pcf -ucf Servo_UCF.ucf 
+bitgen -intstyle ise -f Arm.ut Arm.ncd 

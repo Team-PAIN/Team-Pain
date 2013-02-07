@@ -1,0 +1,9 @@
+xst -intstyle ise -ifn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Servo.xst" -ofn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Servo.syr" 
+xst -intstyle ise -ifn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Servo.xst" -ofn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Servo.syr" 
+xst -intstyle ise -ifn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Servo.xst" -ofn "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Servo.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc Servo_UCF.ucf -p xc6slx16-csg324-3 "Servo.ngc" Servo.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Servo_map.ncd Servo.ngd Servo.pcf 
+par -w -intstyle ise -ol high -mt off Servo_map.ncd Servo.ncd Servo.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Servo.twx Servo.ncd -o Servo.twr Servo.pcf -ucf Servo_UCF.ucf 
+bitgen -intstyle ise -f Servo.ut Servo.ncd 
+vhdtdtfi -lang verilog -prj pwm -o "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Servo.tfi" -lib work "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm//Servo.v" -module Servo -template C:/Xilinx/14.2/ISE_DS/ISE//data/tfi.tft -deleteonerror 

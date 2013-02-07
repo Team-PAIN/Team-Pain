@@ -1,0 +1,35 @@
+
+Release 14.2 SmartXplorer
+Copyright(c) 1995-2010 Xilinx, Inc. All rights reserved.
+"C:\Xilinx\14.2\ISE_DS\ISE\bin\nt64\smartxplorer.exe" -p xc6slx16-csg324-3 -b -wd smartxplorer_results Navigation.ngd -to "-v 3 -s 3 -n 3 -fastpaths -xml Navigation.twx -ucf System_Connection.ucf" -host_list hostlistfile.txt -max_runs 7
+
+SmartXplorer Settings: 
+
+designName=C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version1.1-Working\Navigation.ngd 
+write_dir=C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version1.1-Working\smartxplorer_results 
+host_list=C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version1.1-Working\hostlistfile.txt 
+part=xc6slx16-csg324-3 
+strategy_file=None 
+notify=None 
+source_dir=C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version1.1-Working 
+batch_mode=True 
+run_all_strategies=False 
+list_all_strategies=False 
+remote_command=rsh
+area_report="lut;slice_reg"
+power_options=off
+trce_options="-v 3 -s 3 -n 3 -fastpaths -xml Navigation.twx -ucf System_Connection.ucf"
+max_runs=7
+
+Starting SmartXplorer...
+See file 'smartxplorer.html' for real-time report.
+
+
+Running SmartXplorer strategies...
+
+
+WARNING: No timing constraints found for the design. So, timing scores appear as None in the reports.
+
+INFO: No best strategy!
+
+SmartXplorer Done. See file 'smartxplorer.txt' for detailed report.

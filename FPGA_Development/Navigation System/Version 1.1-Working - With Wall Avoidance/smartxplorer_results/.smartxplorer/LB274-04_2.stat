@@ -1,0 +1,15 @@
+START:Strategy:3:MapGlobOptIOReg
+REMOTE_PID:76964
+RUNNING:76964:74892:MapGlobOptIOReg:map:Navigation.ngd: -ol high -global_opt speed -pr b -w  -p xc6slx16-csg324-3 -o Navigation_map.ncd  C:cl:bslfa12sp13_SourceCode:bslteam2:bslbranches:bslFPGA_Development:bslNavigation:spSystem:bslVersion1.1:dsWorking:bslsmartxplorer_results:bslrun3:bslNavigation.pcf
+STATUS:MapGlobOptIOReg:map:Score:None:lut:None:slice_reg:187 (1%):slice:None:bram:None:dsp48:None:mult18x18:None:Power:None:wnsInfo:None:Time:90.24 secs 
+STATUS:MapGlobOptIOReg:map:Score:None:lut:386 (4%):slice_reg:187 (1%):slice:None:bram:None:dsp48:None:mult18x18:None:Power:None:wnsInfo:None:Time:90.24 secs 
+STATUS:MapGlobOptIOReg:map:Score:None:lut:386 (4%):slice_reg:187 (1%):slice:134 (5%):bram:None:dsp48:None:mult18x18:None:Power:None:wnsInfo:None:Time:90.24 secs 
+STATUS:MapGlobOptIOReg:map:Score:None:lut:386 (4%):slice_reg:187 (1%):slice:134 (5%):bram:0:dsp48:None:mult18x18:None:Power:None:wnsInfo:None:Time:90.24 secs 
+STATUS:MapGlobOptIOReg:map:Score:None:lut:386 (4%):slice_reg:187 (1%):slice:134 (5%):bram:0:dsp48:None:mult18x18:None:Power:None:wnsInfo:None:Time:90.24 secs 
+STATUS:MapGlobOptIOReg:map:Score:None:lut:386 (4%):slice_reg:187 (1%):slice:134 (5%):bram:0:dsp48:0 (0%):mult18x18:None:Power:None:wnsInfo:None:Time:90.24 secs 
+DONE:map:0
+RUNNING:76964:77760:MapGlobOptIOReg:par:Navigation_map.ncd: -ol high -xe n  -w Navigation.ncd  C:cl:bslfa12sp13_SourceCode:bslteam2:bslbranches:bslFPGA_Development:bslNavigation:spSystem:bslVersion1.1:dsWorking:bslsmartxplorer_results:bslrun3:bslNavigation.pcf
+STATUS:MapGlobOptIOReg:par:Score:None:lut:None:slice_reg:None:slice:None:bram:None:dsp48:None:mult18x18:None:Power:None:wnsInfo:N/A:Time:100.37 secs 
+DONE:par:0
+RUNNING:76964:46880:MapGlobOptIOReg:trce:C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version1.1-Working\smartxplorer_results\run3\Navigation.ncd:C:cl:bslfa12sp13_SourceCode:bslteam2:bslbranches:bslFPGA_Development:bslNavigation:spSystem:bslVersion1.1:dsWorking:bslsmartxplorer_results:bslrun3:bslNavigation.pcf -xml C:cl:bslfa12sp13_SourceCode:bslteam2:bslbranches:bslFPGA_Development:bslNavigation:spSystem:bslVersion1.1:dsWorking:bslsmartxplorer_results:bslrun3:bslNavigation.twx -v 3 -s 3 -n 3 -fastpaths   -ucf System_Connection.ucf -o C:cl:bslfa12sp13_SourceCode:bslteam2:bslbranches:bslFPGA_Development:bslNavigation:spSystem:bslVersion1.1:dsWorking:bslsmartxplorer_results:bslrun3:bslNavigation.twr
+DONE:trce:0

@@ -1,0 +1,15 @@
+
+
+
+// Instantiate the module
+Arm instance_name (
+    .CLK(CLK), 
+    .SW(SW), 
+    .LED0(LED0), 
+    .LED(LED), 
+    .CLAW(CLAW), 
+    .JOINTHIGH(JOINTHIGH), 
+    .JOINTLOW(JOINTLOW)
+    );
+
+

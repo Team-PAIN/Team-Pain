@@ -1,0 +1,52 @@
+Running: C:\Xilinx\14.2\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems_isim_beh.exe -prj C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems_beh.prj work.Systems work.glbl 
+ISim P.28xd (signature 0xa0883be4)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/PulseModulation2.v" into library work
+Analyzing Verilog file "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/MC_Pulse_Modulation.v" into library work
+Analyzing Verilog file "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/US_Sensor.v" into library work
+Analyzing Verilog file "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/orientation.v" into library work
+WARNING:HDLCompiler:568 - "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/orientation.v" Line 42: Constant value is truncated to fit in <2> bits.
+WARNING:HDLCompiler:568 - "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/orientation.v" Line 118: Constant value is truncated to fit in <2> bits.
+Analyzing Verilog file "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/MC_Pulse_Out.v" into library work
+Analyzing Verilog file "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/MC_Acceleration_Modulation.v" into library work
+Analyzing Verilog file "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/debounce.v" into library work
+Analyzing Verilog file "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/US_Sensors.v" into library work
+Analyzing Verilog file "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Servo.v" into library work
+Analyzing Verilog file "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Sensor_Data_Display.v" into library work
+Analyzing Verilog file "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Navigation_Directional_Button_Control.v" into library work
+Analyzing Verilog file "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/MC_Controller.v" into library work
+Analyzing Verilog file "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Navigation.v" into library work
+Analyzing Verilog file "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Arm.v" into library work
+Analyzing Verilog file "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/System.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.2/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:189 - "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/MC_Pulse_Out.v" Line 49: Size mismatch in connection of port <Pulse>. Formal port size is 21-bit while actual signal size is 22-bit.
+WARNING:HDLCompiler:189 - "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/MC_Pulse_Out.v" Line 57: Size mismatch in connection of port <Pulse>. Formal port size is 21-bit while actual signal size is 22-bit.
+WARNING:HDLCompiler:189 - "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Arm.v" Line 197: Size mismatch in connection of port <COUNT>. Formal port size is 27-bit while actual signal size is 28-bit.
+WARNING:HDLCompiler:189 - "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Arm.v" Line 206: Size mismatch in connection of port <COUNT>. Formal port size is 27-bit while actual signal size is 28-bit.
+WARNING:HDLCompiler:189 - "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Arm.v" Line 188: Size mismatch in connection of port <COUNT>. Formal port size is 27-bit while actual signal size is 28-bit.
+Completed static elaboration
+Compiling module SevenDisplay
+Compiling module direction_control
+Compiling module PulseModulation1
+Compiling module PulseModulation2
+Compiling module pulseout
+Compiling module acceleration_modulation
+Compiling module mc
+Compiling module ping_default
+Compiling module debounce
+Compiling module orientation
+Compiling module US_Sensors
+Compiling module Navigation
+Compiling module Servo
+Compiling module Arm
+Compiling module Systems
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 9 sub-compilation(s) to finish...
+Compiled 16 Verilog Units
+Built simulation executable C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems_isim_beh.exe
+Fuse Memory Usage: 28148 KB
+Fuse CPU Usage: 702 ms

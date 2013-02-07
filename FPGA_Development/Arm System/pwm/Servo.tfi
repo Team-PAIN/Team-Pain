@@ -1,0 +1,12 @@
+
+
+
+// Instantiate the module
+Servo instance_name (
+    .SLK(SLK), 
+    .DESIRED(DESIRED), 
+    .PWM(PWM), 
+    .FLAG(FLAG)
+    );
+
+

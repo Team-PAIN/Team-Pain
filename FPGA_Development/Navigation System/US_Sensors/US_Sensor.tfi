@@ -1,0 +1,11 @@
+
+
+
+// Instantiate the module
+US_Sensor instance_name (
+    .CLK(CLK), 
+    .SIG(SIG), 
+    .DISTANCE(DISTANCE)
+    );
+
+

@@ -1,0 +1,203 @@
+
+<smartXplorerReport>
+    <command>"C:\Xilinx\14.2\ISE_DS\ISE\bin\nt64\smartxplorer.exe" -p xc6slx16-csg324-3 -b -wd smartxplorer_results Navigation.ngd -to "-v 3 -s 3 -n 3 -fastpaths -xml Navigation.twx -ucf System_Connection.ucf" -host_list hostlistfile.txt -max_runs 7
+    </command>
+    <programStatus>Done
+    </programStatus>
+    <programPID>76820
+    </programPID>
+    
+    <strategy name="MapRunTime">
+        <strategyData>map  -ol high -w ; par  -ol high 
+        </strategyData>
+        <xdsFile>mapruntime.xds
+        </xdsFile>
+        <host name="LB274-04">
+            <hostData>Windows_NT, Intel64 Family 6 Model 26 Stepping 5, GenuineIntel, 4-processor, 8,185 MB
+            </hostData>
+        </host>
+        <runIndex>run1
+        </runIndex>
+        <status>Done
+        </status>
+        <logFile>Navigation_sx.log
+        </logFile>
+        <timingScore>None
+        </timingScore>
+        <WorstCaseSlack>N/A
+        </WorstCaseSlack>
+        <Luts>435 (4%)
+	</Luts>
+	<SliceRegisters>211 (1%)
+	</SliceRegisters>
+	<runTime>0h 1m 10s
+        </runTime>
+    </strategy>
+    <strategy name="MapLogicOpt">
+        <strategyData>map  -ol high -xe n -logic_opt on -t 2 -w ; par  -ol high -xe n 
+        </strategyData>
+        <xdsFile>maplogicopt.xds
+        </xdsFile>
+        <host name="LB274-04">
+            <hostData>Windows_NT, Intel64 Family 6 Model 26 Stepping 5, GenuineIntel, 4-processor, 8,185 MB
+            </hostData>
+        </host>
+        <runIndex>run2
+        </runIndex>
+        <status>Done
+        </status>
+        <logFile>Navigation_sx.log
+        </logFile>
+        <timingScore>None
+        </timingScore>
+        <WorstCaseSlack>N/A
+        </WorstCaseSlack>
+        <Luts>440 (4%)
+	</Luts>
+	<SliceRegisters>211 (1%)
+	</SliceRegisters>
+	<runTime>0h 1m 21s
+        </runTime>
+    </strategy>
+    <strategy name="MapGlobOptIOReg">
+        <strategyData>map  -ol high -global_opt speed -pr b -w ; par  -ol high -xe n 
+        </strategyData>
+        <xdsFile>mapgloboptioreg.xds
+        </xdsFile>
+        <host name="LB274-04">
+            <hostData>Windows_NT, Intel64 Family 6 Model 26 Stepping 5, GenuineIntel, 4-processor, 8,185 MB
+            </hostData>
+        </host>
+        <runIndex>run3
+        </runIndex>
+        <status>Done
+        </status>
+        <logFile>Navigation_sx.log
+        </logFile>
+        <timingScore>None
+        </timingScore>
+        <WorstCaseSlack>N/A
+        </WorstCaseSlack>
+        <Luts>386 (4%)
+	</Luts>
+	<SliceRegisters>187 (1%)
+	</SliceRegisters>
+	<runTime>0h 1m 47s
+        </runTime>
+    </strategy>
+    <strategy name="MapRegDup">
+        <strategyData>map  -ol high -xe n -register_duplication on -w ; par  -ol high -xe n 
+        </strategyData>
+        <xdsFile>mapregdup.xds
+        </xdsFile>
+        <host name="LB274-04">
+            <hostData>Windows_NT, Intel64 Family 6 Model 26 Stepping 5, GenuineIntel, 4-processor, 8,185 MB
+            </hostData>
+        </host>
+        <runIndex>run4
+        </runIndex>
+        <status>Done
+        </status>
+        <logFile>Navigation_sx.log
+        </logFile>
+        <timingScore>None
+        </timingScore>
+        <WorstCaseSlack>N/A
+        </WorstCaseSlack>
+        <Luts>438 (4%)
+	</Luts>
+	<SliceRegisters>212 (1%)
+	</SliceRegisters>
+	<runTime>0h 0m 59s
+        </runTime>
+    </strategy>
+    <strategy name="MapExtraEffortIOReg">
+        <strategyData>map  -ol high -xe n -pr b -t 7 -w ; par  -ol high -xe n 
+        </strategyData>
+        <xdsFile>mapextraeffortioreg.xds
+        </xdsFile>
+        <host name="LB274-04">
+            <hostData>Windows_NT, Intel64 Family 6 Model 26 Stepping 5, GenuineIntel, 4-processor, 8,185 MB
+            </hostData>
+        </host>
+        <runIndex>run5
+        </runIndex>
+        <status>Done
+        </status>
+        <logFile>Navigation_sx.log
+        </logFile>
+        <timingScore>None
+        </timingScore>
+        <WorstCaseSlack>N/A
+        </WorstCaseSlack>
+        <Luts>436 (4%)
+	</Luts>
+	<SliceRegisters>193 (1%)
+	</SliceRegisters>
+	<runTime>0h 0m 31s
+        </runTime>
+    </strategy>
+    <strategy name="MapLogOptRegDup">
+        <strategyData>map  -ol high -xe n -logic_opt on -register_duplication on -t 2 -w ; par  -ol high -xe n 
+        </strategyData>
+        <xdsFile>maplogoptregdup.xds
+        </xdsFile>
+        <host name="LB274-04">
+            <hostData>Windows_NT, Intel64 Family 6 Model 26 Stepping 5, GenuineIntel, 4-processor, 8,185 MB
+            </hostData>
+        </host>
+        <runIndex>run6
+        </runIndex>
+        <status>Done
+        </status>
+        <logFile>Navigation_sx.log
+        </logFile>
+        <timingScore>None
+        </timingScore>
+        <WorstCaseSlack>N/A
+        </WorstCaseSlack>
+        <Luts>441 (4%)
+	</Luts>
+	<SliceRegisters>211 (1%)
+	</SliceRegisters>
+	<runTime>0h 0m 42s
+        </runTime>
+    </strategy>
+    <strategy name="MapExtraEffort2">
+        <strategyData>map  -ol high -xe n -t 3 -w ; par  -ol high 
+        </strategyData>
+        <xdsFile>mapextraeffort2.xds
+        </xdsFile>
+        <host name="LB274-04">
+            <hostData>Windows_NT, Intel64 Family 6 Model 26 Stepping 5, GenuineIntel, 4-processor, 8,185 MB
+            </hostData>
+        </host>
+        <runIndex>run7
+        </runIndex>
+        <status>Done
+        </status>
+        <logFile>Navigation_sx.log
+        </logFile>
+        <timingScore>None
+        </timingScore>
+        <WorstCaseSlack>N/A
+        </WorstCaseSlack>
+        <Luts>434 (4%)
+	</Luts>
+	<SliceRegisters>211 (1%)
+	</SliceRegisters>
+	<runTime>0h 0m 31s
+        </runTime>
+    </strategy>
+    <bestStrategy>None
+    </bestStrategy>
+    <envVariables>
+        <env name="XILINX_DSP"  value="C:\Xilinx\14.2\ISE_DS\ISE"/>
+        <env name="XILINX"  value="C:\Xilinx\14.2\ISE_DS\ISE\"/>
+        <env name="LM_LICENSE_FILE"  value="7788@dbmgt04.erau.edu;1701@dbmgt02.erau.edu;27000@dbmgt02.erau.edu;27012@dbmgt02.erau.edu;7787@dbmgt02.erau.edu;27020@dbmgt02.erau.edu;27003@dbmgt02.erau.edu"/>
+        <env name="XILINX_PLANAHEAD"  value="C:\Xilinx\14.2\ISE_DS\PlanAhead"/>
+        <env name="XILINX_EDK"  value="C:\Xilinx\14.2\ISE_DS\EDK"/>
+        <env name="PATH"  value="C:\Xilinx\14.2\ISE_DS\ISE\\lib\nt64;C:\Xilinx\14.2\ISE_DS\ISE\\bin\nt64;C:\Xilinx\14.2\ISE_DS\ISE\bin\nt64;C:\Xilinx\14.2\ISE_DS\ISE\lib\nt64;C:\Xilinx\14.2\ISE_DS\PlanAhead\bin;C:\Xilinx\14.2\ISE_DS\EDK\bin\nt64;C:\Xilinx\14.2\ISE_DS\EDK\lib\nt64;C:\Xilinx\14.2\ISE_DS\EDK\gnu\microblaze\nt64\bin;C:\Xilinx\14.2\ISE_DS\EDK\gnu\powerpc-eabi\nt64\bin;C:\Xilinx\14.2\ISE_DS\EDK\gnuwin\bin;C:\Xilinx\14.2\ISE_DS\EDK\gnu\arm\nt64\bin;C:\Xilinx\14.2\ISE_DS\common\bin\nt64;C:\Xilinx\14.2\ISE_DS\common\lib\nt64;C:\Program Files\Tecplot\Tec360 2012R1\Bin;C:\HEEDS\MDO\Ver5.4.1\libs;C:\HEEDS\MDO\Ver5.4.1;c:\Program Files (x86)\Rockwell Software\RSCommon;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\QuickTime\QTSystem\;C:\Program Files (x86)\MiKTeX 2.9\miktex\bin\;C:\FPC\2.6.0\bin\i386-Win32;C:\Program Files\TortoiseSVN\bin;C:\Program Files (x86)\IBM\License Use Management\BIN;c:\Program Files (x86)\Microsoft SQL Server\100\Tools\Binn\;c:\Program Files\Microsoft SQL Server\100\Tools\Binn\;c:\Program Files\Microsoft SQL Server\100\DTS\Binn\;C:\Program Files\MATLAB\R2012a\runtime\win64;C:\Program Files\MATLAB\R2012a\bin;C:\IFOR\WIN\BIN;C:\IFOR\WIN\BIN\EN_US;C:\Program Files\proeWildfire 5.0\bin;C:\Program Files\proeWildfire 5.0\mech\bin;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin\;C:\Program Files\IVI Foundation\VISA\Win64\Bin\;C:\Program Files (x86)\IVI Foundation\VISA\WinNT\Bin"/>
+        
+    </envVariables>
+</smartXplorerReport>

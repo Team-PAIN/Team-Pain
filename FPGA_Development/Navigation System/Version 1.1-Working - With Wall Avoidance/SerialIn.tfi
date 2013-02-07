@@ -1,0 +1,13 @@
+
+
+
+// Instantiate the module
+SerialIn instance_name (
+    .CLK(CLK), 
+    .RCLK(RCLK), 
+    .RDATA(RDATA), 
+    .RESET(RESET), 
+    .DATA(DATA)
+    );
+
+

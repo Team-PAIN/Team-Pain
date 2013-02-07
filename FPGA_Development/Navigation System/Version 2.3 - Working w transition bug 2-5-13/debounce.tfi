@@ -1,0 +1,11 @@
+
+
+
+// Instantiate the module
+debounce instance_name (
+    .SCLK(SCLK), 
+    .IN(IN), 
+    .OUT(OUT)
+    );
+
+

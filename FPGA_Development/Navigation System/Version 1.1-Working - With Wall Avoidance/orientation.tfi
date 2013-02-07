@@ -1,0 +1,13 @@
+
+
+
+// Instantiate the module
+orientation instance_name (
+    .CLK(CLK), 
+    .DIST1(DIST1), 
+    .DIST2(DIST2), 
+    .ANGLE(ANGLE), 
+    .DIRECTION(DIRECTION)
+    );
+
+

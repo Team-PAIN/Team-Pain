@@ -1,0 +1,17 @@
+
+
+
+// Instantiate the module
+Navigation instance_name (
+    .CLK(CLK), 
+    .SIG1(SIG1), 
+    .SIG2(SIG2), 
+    .SW(SW), 
+    .BTN(BTN), 
+    .PWM(PWM), 
+    .LED(LED), 
+    .SSEG_CA(SSEG_CA), 
+    .SSEG_AN(SSEG_AN)
+    );
+
+

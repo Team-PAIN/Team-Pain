@@ -1,0 +1,57 @@
+xst -intstyle ise -ifn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version1.1-Working/Systems.xst" -ofn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version1.1-Working/Systems.syr" 
+xst -intstyle ise -ifn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version1.1-Working/Systems.xst" -ofn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version1.1-Working/Systems.syr" 
+xst -intstyle ise -ifn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version1.1-Working/Systems.xst" -ofn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version1.1-Working/Systems.syr" 
+xst -intstyle ise -ifn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version1.1-Working/Systems.xst" -ofn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version1.1-Working/Systems.syr" 
+ngdbuild -intstyle ise -dd _ngo -sd ipcore_dir -nt timestamp -i -p xc6slx16-csg324-3 "Systems.ngc" Systems.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Systems_map.ncd Systems.ngd Systems.pcf 
+par -w -intstyle ise -ol high -mt off Systems_map.ncd Systems.ncd Systems.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Systems.twx Systems.ncd -o Systems.twr Systems.pcf 
+bitgen -intstyle ise -f Systems.ut Systems.ncd 
+xst -intstyle ise -ifn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems.xst" -ofn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems.syr" 
+xst -intstyle ise -ifn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems.xst" -ofn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems.syr" 
+xst -intstyle ise -ifn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems.xst" -ofn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems.syr" 
+xst -intstyle ise -ifn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems.xst" -ofn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems.syr" 
+xst -intstyle ise -ifn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems.xst" -ofn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems.syr" 
+xst -intstyle ise -ifn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems.xst" -ofn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems.syr" 
+xst -intstyle ise -ifn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems.xst" -ofn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "Systems.ngc" Systems.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Systems_map.ncd Systems.ngd Systems.pcf 
+par -w -intstyle ise -ol high -mt off Systems_map.ncd Systems.ncd Systems.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Systems.twx Systems.ncd -o Systems.twr Systems.pcf 
+bitgen -intstyle ise -f Systems.ut Systems.ncd 
+xst -intstyle ise -ifn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems.xst" -ofn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "Systems.ngc" Systems.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Systems_map.ncd Systems.ngd Systems.pcf 
+par -w -intstyle ise -ol high -mt off Systems_map.ncd Systems.ncd Systems.pcf 
+bitgen -intstyle ise -f Systems.ut Systems.ncd 
+xst -intstyle ise -ifn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems.xst" -ofn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "Systems.ngc" Systems.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Systems_map.ncd Systems.ngd Systems.pcf 
+par -w -intstyle ise -ol high -mt off Systems_map.ncd Systems.ncd Systems.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Systems.twx Systems.ncd -o Systems.twr Systems.pcf 
+bitgen -intstyle ise -f Systems.ut Systems.ncd 
+xst -intstyle ise -ifn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems.xst" -ofn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "Systems.ngc" Systems.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Systems_map.ncd Systems.ngd Systems.pcf 
+par -w -intstyle ise -ol high -mt off Systems_map.ncd Systems.ncd Systems.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Systems.twx Systems.ncd -o Systems.twr Systems.pcf 
+bitgen -intstyle ise -f Systems.ut Systems.ncd 
+xst -intstyle ise -ifn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems.xst" -ofn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems.syr" 
+xst -intstyle ise -ifn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems.xst" -ofn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "Systems.ngc" Systems.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Systems_map.ncd Systems.ngd Systems.pcf 
+par -w -intstyle ise -ol high -mt off Systems_map.ncd Systems.ncd Systems.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Systems.twx Systems.ncd -o Systems.twr Systems.pcf 
+bitgen -intstyle ise -f Systems.ut Systems.ncd 
+xst -intstyle ise -ifn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems.xst" -ofn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "Systems.ngc" Systems.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Systems_map.ncd Systems.ngd Systems.pcf 
+par -w -intstyle ise -ol high -mt off Systems_map.ncd Systems.ncd Systems.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Systems.twx Systems.ncd -o Systems.twr Systems.pcf 
+bitgen -intstyle ise -f Systems.ut Systems.ncd 
+xst -intstyle ise -ifn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems.xst" -ofn "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version 2.0 - Working - Arm and Navigation Systems/Systems.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -i -p xc6slx16-csg324-3 "Systems.ngc" Systems.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o Systems_map.ncd Systems.ngd Systems.pcf 
+par -w -intstyle ise -ol high -mt off Systems_map.ncd Systems.ncd Systems.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml Systems.twx Systems.ncd -o Systems.twr Systems.pcf 
+bitgen -intstyle ise -f Systems.ut Systems.ncd 
