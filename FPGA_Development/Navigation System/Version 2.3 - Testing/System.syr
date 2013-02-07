@@ -129,6 +129,7 @@ Analyzing Verilog file "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\N
 Parsing module <SevenDisplay>.
 Analyzing Verilog file "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\Navigation_Directional_Button_Control.v" into library work
 Parsing module <direction_control>.
+WARNING:HDLCompiler:751 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\Navigation_Directional_Button_Control.v" Line 43: Redeclaration of ansi port NEXT_FLAG is not allowed
 Analyzing Verilog file "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\MC_Controller.v" into library work
 Parsing module <mc>.
 Analyzing Verilog file "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\Navigation.v" into library work
@@ -149,7 +150,8 @@ Elaborating module <Navigation>.
 Elaborating module <SevenDisplay>.
 
 Elaborating module <direction_control>.
-WARNING:HDLCompiler:1127 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\Navigation_Directional_Button_Control.v" Line 83: Assignment to ALIGN_COMP ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\Navigation_Directional_Button_Control.v" Line 87: Assignment to ALIGN_COMP ignored, since the identifier is never used
+WARNING:HDLCompiler:189 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\Navigation.v" Line 75: Size mismatch in connection of port <DISTANCE_BACK>. Formal port size is 8-bit while actual signal size is 1-bit.
 
 Elaborating module <mc>.
 
@@ -188,8 +190,10 @@ WARNING:HDLCompiler:1127 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Developme
 
 Elaborating module <orientation>.
 WARNING:HDLCompiler:634 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\US_Sensors.v" Line 37: Net <reset> does not have a driver.
-WARNING:HDLCompiler:413 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\Navigation.v" Line 118: Result of 20-bit expression is truncated to fit in 19-bit target.
-WARNING:HDLCompiler:189 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\System.v" Line 74: Size mismatch in connection of port <RUN_FLAG>. Formal port size is 2-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:189 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\Navigation.v" Line 112: Size mismatch in connection of port <DISTANCE4_DEBOUNCED>. Formal port size is 8-bit while actual signal size is 1-bit.
+WARNING:HDLCompiler:413 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\Navigation.v" Line 122: Result of 20-bit expression is truncated to fit in 19-bit target.
+WARNING:HDLCompiler:1127 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\System.v" Line 80: Assignment to DISTANCE_SIDE_BACK ignored, since the identifier is never used
+WARNING:HDLCompiler:1127 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\System.v" Line 81: Assignment to DISTANCE_FRONT ignored, since the identifier is never used
 
 Elaborating module <Arm>.
 WARNING:HDLCompiler:413 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\Arm.v" Line 60: Result of 29-bit expression is truncated to fit in 28-bit target.
@@ -211,15 +215,7 @@ WARNING:HDLCompiler:189 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Developmen
 WARNING:HDLCompiler:189 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\Arm.v" Line 197: Size mismatch in connection of port <COUNT>. Formal port size is 27-bit while actual signal size is 28-bit.
 WARNING:HDLCompiler:189 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\Arm.v" Line 205: Size mismatch in connection of port <IN>. Formal port size is 8-bit while actual signal size is 1-bit.
 WARNING:HDLCompiler:189 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\Arm.v" Line 206: Size mismatch in connection of port <OUT>. Formal port size is 8-bit while actual signal size is 1-bit.
-WARNING:HDLCompiler:295 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\System.v" Line 97: case condition never applies
-WARNING:HDLCompiler:295 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\System.v" Line 100: case condition never applies
-WARNING:HDLCompiler:295 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\System.v" Line 114: case condition never applies
-WARNING:HDLCompiler:295 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\System.v" Line 117: case condition never applies
-WARNING:HDLCompiler:295 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\System.v" Line 131: case condition never applies
-WARNING:HDLCompiler:295 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\System.v" Line 134: case condition never applies
-WARNING:HDLCompiler:295 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\System.v" Line 148: case condition never applies
-WARNING:HDLCompiler:295 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\System.v" Line 151: case condition never applies
-WARNING:HDLCompiler:634 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\System.v" Line 38: Net <state[7]> does not have a driver.
+WARNING:HDLCompiler:413 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\System.v" Line 147: Result of 32-bit expression is truncated to fit in 8-bit target.
 
 =========================================================================
 *                           HDL Synthesis                               *
@@ -234,20 +230,48 @@ Synthesizing Unit <System>.
         TURN_RIGHT = 5'b01111
         TURN_LEFT = 5'b01110
         STRAIGHT = 5'b01100
-WARNING:Xst:2935 - Signal 'state', unconnected in block 'System', is tied to its initial value (00000000).
+INFO:Xst:3210 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\System.v" line 62: Output port <DISTANCE_SIDE_BACK> of the instance <NAV> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\System.v" line 62: Output port <DISTANCE_FRONT> of the instance <NAV> is unconnected or connected to loadless signal.
+    Found 2-bit register for signal <RUN_FLAG>.
+    Found 8-bit register for signal <COMMAND>.
     Found 8-bit register for signal <COMPARE_DISTANCE>.
     Found 8-bit register for signal <PATH>.
-    Found 8-bit register for signal <COMMAND>.
+    Found 8-bit register for signal <state>.
+    Found finite state machine <FSM_0> for signal <RUN_FLAG>.
+    -----------------------------------------------------------------------
+    | States             | 3                                              |
+    | Transitions        | 21                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 2                                              |
+    | Clock              | CLK (rising_edge)                              |
+    | Power Up State     | 00                                             |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 5                                              |
+    | Transitions        | 19                                             |
+    | Inputs             | 4                                              |
+    | Outputs            | 9                                              |
+    | Clock              | CLK (rising_edge)                              |
+    | Power Up State     | 00000000                                       |
+    | Encoding           | auto                                           |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 8-bit subtractor for signal <GND_1_o_GND_1_o_sub_15_OUT<7:0>> created at line 147.
     Summary:
+	inferred   1 Adder/Subtractor(s).
 	inferred  24 D-type flip-flop(s).
-	inferred   2 Multiplexer(s).
+	inferred   3 Multiplexer(s).
+	inferred   2 Finite State Machine(s).
 Unit <System> synthesized.
 
 Synthesizing Unit <Navigation>.
     Related source file is "C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version 2.3 - Testing\Navigation.v".
     Found 19-bit register for signal <count>.
-    Found 19-bit adder for signal <count[18]_GND_2_o_add_2_OUT> created at line 118.
-    Found 19-bit comparator greater for signal <n0002> created at line 115
+    Found 19-bit adder for signal <count[18]_GND_2_o_add_2_OUT> created at line 122.
+    Found 19-bit comparator greater for signal <n0002> created at line 119
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  19 D-type flip-flop(s).
@@ -296,7 +320,7 @@ Synthesizing Unit <direction_control>.
         RUN_COM = 2'b10
         RUN_ERR = 2'b11
 WARNING:Xst:647 - Input <DISTANCE_BACK> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
-WARNING:Xst:647 - Input <ANGLE_DIRECTION> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
+WARNING:Xst:647 - Input <ANGLE> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
 WARNING:Xst:647 - Input <PATH> is never used. This port will be preserved and left unconnected if it belongs to a top-level block or it belongs to a sub-block and the hierarchy of this sub-block is preserved.
     Found 1-bit register for signal <MC1<3>>.
     Found 1-bit register for signal <MC1<2>>.
@@ -308,34 +332,21 @@ WARNING:Xst:647 - Input <PATH> is never used. This port will be preserved and le
     Found 1-bit register for signal <MC2<1>>.
     Found 1-bit register for signal <MC2<0>>.
     Found 5-bit register for signal <DIR_STATE>.
-    Found 2-bit register for signal <RUN_FLAG>.
-    Found 8-bit register for signal <DISTANCE_CHECK>.
+    Found 1-bit register for signal <NEXT_FLAG>.
     Found 5-bit register for signal <PWM_STATE>.
     Found 1-bit register for signal <MC1<4>>.
-    Found finite state machine <FSM_0> for signal <RUN_FLAG>.
-    -----------------------------------------------------------------------
-    | States             | 3                                              |
-    | Transitions        | 19                                             |
-    | Inputs             | 7                                              |
-    | Outputs            | 2                                              |
-    | Clock              | CLK (rising_edge)                              |
-    | Power Up State     | 00                                             |
-    | Encoding           | auto                                           |
-    | Implementation     | LUT                                            |
-    -----------------------------------------------------------------------
-    Found 8-bit subtractor for signal <COMPARE_DISTANCE[7]_DISTANCE_SIDE_FRONT[7]_sub_34_OUT> created at line 157.
-    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_60_OUT> created at line 195.
-    Found 3-bit adder for signal <PWM_STATE[4]_GND_4_o_add_40_OUT> created at line 173.
-    Found 8-bit comparator greater for signal <n0028> created at line 159
-    Found 8-bit comparator equal for signal <DISTANCE_SIDE_FRONT[7]_DISTANCE_SIDE_BACK[7]_equal_38_o> created at line 165
-    Found 8-bit comparator greater for signal <DISTANCE_SIDE_FRONT[7]_DISTANCE_SIDE_BACK[7]_LessThan_39_o> created at line 168
-    Found 32-bit comparator greater for signal <GND_4_o_GND_4_o_LessThan_59_o> created at line 193
+    Found 9-bit subtractor for signal <GND_4_o_GND_4_o_sub_44_OUT> created at line 192.
+    Found 3-bit adder for signal <PWM_STATE[4]_GND_4_o_add_37_OUT> created at line 173.
+    Found 8-bit comparator lessequal for signal <n0025> created at line 159
+    Found 8-bit comparator equal for signal <DISTANCE_SIDE_FRONT[7]_DISTANCE_SIDE_BACK[7]_equal_35_o> created at line 165
+    Found 8-bit comparator greater for signal <DISTANCE_SIDE_FRONT[7]_DISTANCE_SIDE_BACK[7]_LessThan_36_o> created at line 168
+    Found 32-bit comparator greater for signal <GND_4_o_GND_4_o_LessThan_43_o> created at line 190
+    Found 8-bit comparator lessequal for signal <n0080> created at line 210
     Summary:
-	inferred   3 Adder/Subtractor(s).
-	inferred  28 D-type flip-flop(s).
-	inferred   4 Comparator(s).
-	inferred  39 Multiplexer(s).
-	inferred   1 Finite State Machine(s).
+	inferred   2 Adder/Subtractor(s).
+	inferred  21 D-type flip-flop(s).
+	inferred   5 Comparator(s).
+	inferred  41 Multiplexer(s).
 Unit <direction_control> synthesized.
 
 Synthesizing Unit <mc>.
@@ -445,7 +456,7 @@ Synthesizing Unit <ping>.
 	inferred   3 Adder/Subtractor(s).
 	inferred  61 D-type flip-flop(s).
 	inferred   6 Comparator(s).
-	inferred   7 Multiplexer(s).
+	inferred  18 Multiplexer(s).
 	inferred   1 Tristate(s).
 Unit <ping> synthesized.
 
@@ -553,7 +564,7 @@ Macro Statistics
  8-bit subtractor                                      : 2
  9-bit subtractor                                      : 1
 # Registers                                            : 96
- 1-bit register                                        : 30
+ 1-bit register                                        : 31
  16-bit register                                       : 4
  19-bit register                                       : 1
  2-bit register                                        : 11
@@ -565,8 +576,8 @@ Macro Statistics
  3-bit register                                        : 2
  4-bit register                                        : 1
  5-bit register                                        : 6
- 8-bit register                                        : 25
-# Comparators                                          : 63
+ 8-bit register                                        : 24
+# Comparators                                          : 64
  16-bit comparator lessequal                           : 4
  19-bit comparator greater                             : 1
  2-bit comparator equal                                : 2
@@ -582,23 +593,24 @@ Macro Statistics
  3-bit comparator greater                              : 5
  32-bit comparator greater                             : 1
  8-bit comparator equal                                : 7
- 8-bit comparator greater                              : 4
-# Multiplexers                                         : 133
- 1-bit 2-to-1 multiplexer                              : 38
- 16-bit 2-to-1 multiplexer                             : 8
+ 8-bit comparator greater                              : 3
+ 8-bit comparator lessequal                            : 2
+# Multiplexers                                         : 180
+ 1-bit 2-to-1 multiplexer                              : 45
+ 16-bit 2-to-1 multiplexer                             : 12
  2-bit 2-to-1 multiplexer                              : 10
  20-bit 2-to-1 multiplexer                             : 4
  21-bit 2-to-1 multiplexer                             : 15
  21-bit 7-to-1 multiplexer                             : 1
  21-bit 8-to-1 multiplexer                             : 1
- 26-bit 2-to-1 multiplexer                             : 4
+ 26-bit 2-to-1 multiplexer                             : 36
  3-bit 2-to-1 multiplexer                              : 2
  4-bit 4-to-1 multiplexer                              : 1
- 5-bit 2-to-1 multiplexer                              : 17
- 8-bit 2-to-1 multiplexer                              : 32
+ 5-bit 2-to-1 multiplexer                              : 18
+ 8-bit 2-to-1 multiplexer                              : 35
 # Tristates                                            : 4
  1-bit tristate buffer                                 : 4
-# FSMs                                                 : 1
+# FSMs                                                 : 2
 
 =========================================================================
 INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
@@ -616,6 +628,10 @@ WARNING:Xst:1710 - FF/Latch <OLD_IN_4> (without init value) has a constant value
 WARNING:Xst:1710 - FF/Latch <OLD_IN_5> (without init value) has a constant value of 0 in block <sw_debounce>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <OLD_IN_6> (without init value) has a constant value of 0 in block <sw_debounce>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <OLD_IN_7> (without init value) has a constant value of 0 in block <sw_debounce>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <COMMAND_4> (without init value) has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <COMMAND_5> (without init value) has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <COMMAND_6> (without init value) has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <COMMAND_7> (without init value) has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:2677 - Node <OUT_1> of sequential type is unconnected in block <sw_debounce>.
 WARNING:Xst:2677 - Node <OUT_2> of sequential type is unconnected in block <sw_debounce>.
 WARNING:Xst:2677 - Node <OUT_3> of sequential type is unconnected in block <sw_debounce>.
@@ -623,6 +639,7 @@ WARNING:Xst:2677 - Node <OUT_4> of sequential type is unconnected in block <sw_d
 WARNING:Xst:2677 - Node <OUT_5> of sequential type is unconnected in block <sw_debounce>.
 WARNING:Xst:2677 - Node <OUT_6> of sequential type is unconnected in block <sw_debounce>.
 WARNING:Xst:2677 - Node <OUT_7> of sequential type is unconnected in block <sw_debounce>.
+WARNING:Xst:2404 -  FFs/Latches <COMMAND<7:4>> (without init value) have a constant value of 0 in block <System>.
 
 Synthesizing (advanced) Unit <Arm>.
 The following registers are absorbed into counter <COUNT>: 1 register on signal <COUNT>.
@@ -685,11 +702,6 @@ INFO:Xst:3226 - The RAM <Mram__n0244> will be implemented as a BLOCK RAM, absorb
     -----------------------------------------------------------------------
 Unit <orientation> synthesized (advanced).
 
-Synthesizing (advanced) Unit <ping>.
-The following registers are absorbed into counter <count>: 1 register on signal <count>.
-The following registers are absorbed into counter <distCount>: 1 register on signal <distCount>.
-Unit <ping> synthesized (advanced).
-
 Synthesizing (advanced) Unit <pulseout>.
 The following registers are absorbed into counter <count>: 1 register on signal <count>.
 The following registers are absorbed into counter <MC1State>: 1 register on signal <MC1State>.
@@ -711,26 +723,26 @@ Macro Statistics
  128x8-bit single-port block Read Only RAM             : 1
  16x8-bit single-port distributed Read Only RAM        : 1
  4x4-bit single-port distributed Read Only RAM         : 1
-# Adders/Subtractors                                   : 14
+# Adders/Subtractors                                   : 22
  16-bit adder                                          : 4
  21-bit adder                                          : 2
+ 26-bit adder                                          : 4
  3-bit adder                                           : 3
  3-bit subtractor                                      : 2
+ 8-bit adder                                           : 4
  8-bit subtractor                                      : 2
  9-bit subtractor                                      : 1
-# Counters                                             : 20
+# Counters                                             : 12
  19-bit up counter                                     : 1
  20-bit updown counter                                 : 3
  21-bit up counter                                     : 1
  25-bit up counter                                     : 2
- 26-bit up counter                                     : 4
  28-bit up counter                                     : 1
  3-bit up counter                                      : 2
  5-bit up counter                                      : 2
- 8-bit up counter                                      : 4
-# Registers                                            : 403
- Flip-Flops                                            : 403
-# Comparators                                          : 63
+# Registers                                            : 528
+ Flip-Flops                                            : 528
+# Comparators                                          : 64
  16-bit comparator lessequal                           : 4
  19-bit comparator greater                             : 1
  2-bit comparator equal                                : 2
@@ -746,19 +758,21 @@ Macro Statistics
  3-bit comparator greater                              : 5
  32-bit comparator greater                             : 1
  8-bit comparator equal                                : 7
- 8-bit comparator greater                              : 4
-# Multiplexers                                         : 131
- 1-bit 2-to-1 multiplexer                              : 48
- 16-bit 2-to-1 multiplexer                             : 8
+ 8-bit comparator greater                              : 3
+ 8-bit comparator lessequal                            : 2
+# Multiplexers                                         : 186
+ 1-bit 2-to-1 multiplexer                              : 55
+ 16-bit 2-to-1 multiplexer                             : 12
  2-bit 2-to-1 multiplexer                              : 10
  20-bit 2-to-1 multiplexer                             : 4
  21-bit 2-to-1 multiplexer                             : 15
  21-bit 7-to-1 multiplexer                             : 1
  21-bit 8-to-1 multiplexer                             : 1
+ 26-bit 2-to-1 multiplexer                             : 36
  4-bit 4-to-1 multiplexer                              : 1
- 5-bit 2-to-1 multiplexer                              : 15
- 8-bit 2-to-1 multiplexer                              : 28
-# FSMs                                                 : 1
+ 5-bit 2-to-1 multiplexer                              : 16
+ 8-bit 2-to-1 multiplexer                              : 35
+# FSMs                                                 : 2
 
 =========================================================================
 
@@ -767,26 +781,33 @@ Macro Statistics
 =========================================================================
 WARNING:Xst:1293 - FF/Latch <PATH_0> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PATH_1> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PATH_2> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PATH_3> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PATH_4> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PATH_5> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PATH_6> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <PATH_7> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:2677 - Node <sensor4/ENABLE> of sequential type is unconnected in block <US_Sensors>.
-WARNING:Xst:2677 - Node <sensor2/ENABLE> of sequential type is unconnected in block <US_Sensors>.
-WARNING:Xst:2677 - Node <sensor3/ENABLE> of sequential type is unconnected in block <US_Sensors>.
-WARNING:Xst:2677 - Node <sensor1/ENABLE> of sequential type is unconnected in block <US_Sensors>.
 Analyzing FSM <MFsm> for best encoding.
-Optimizing FSM <NAV/CONTROL/FSM_0> on signal <RUN_FLAG[1:2]> with gray encoding.
+Optimizing FSM <FSM_1> on signal <state[1:3]> with sequential encoding.
+----------------------
+ State    | Encoding
+----------------------
+ 00000000 | 000
+ 00000001 | 001
+ 00000010 | 010
+ 00000011 | 011
+ 00000100 | 100
+----------------------
+Analyzing FSM <MFsm> for best encoding.
+Optimizing FSM <FSM_0> on signal <RUN_FLAG[1:2]> with user encoding.
 -------------------
  State | Encoding
 -------------------
  00    | 00
  01    | 01
- 10    | 11
+ 10    | 10
 -------------------
 WARNING:Xst:1710 - FF/Latch <SSEG_CA_7> (without init value) has a constant value of 1 in block <SevenDisplay>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <COMMAND_2> (without init value) has a constant value of 1 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <COMMAND_3> (without init value) has a constant value of 1 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <DIR_STATE_2> (without init value) has a constant value of 0 in block <direction_control>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <Pulse_0> (without init value) has a constant value of 0 in block <PulseModulation1>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <Pulse_1> (without init value) has a constant value of 0 in block <PulseModulation1>. This FF/Latch will be trimmed during the optimization process.
@@ -849,22 +870,6 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <JOINTHIGH_DESIRED_1
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <JOINTHIGH_DESIRED_9> has a constant value of 1 in block <Arm>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <JOINTHIGH_DESIRED_2> has a constant value of 0 in block <Arm>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <JOINTHIGH_DESIRED_0> has a constant value of 0 in block <Arm>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <COMPARE_DISTANCE_0> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <COMPARE_DISTANCE_1> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <COMPARE_DISTANCE_2> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <COMPARE_DISTANCE_3> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <COMPARE_DISTANCE_4> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <COMPARE_DISTANCE_5> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <COMPARE_DISTANCE_6> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <COMPARE_DISTANCE_7> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <COMMAND_0> (without init value) has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <COMMAND_1> (without init value) has a constant value of 1 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <COMMAND_2> (without init value) has a constant value of 1 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <COMMAND_3> (without init value) has a constant value of 1 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <COMMAND_4> (without init value) has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <COMMAND_5> (without init value) has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <COMMAND_6> (without init value) has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <COMMAND_7> (without init value) has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <PWM_STATE_0> in Unit <direction_control> is equivalent to the following FF/Latch, which will be removed : <PWM_STATE_1> 
 INFO:Xst:2261 - The FF/Latch <Pulse_9> in Unit <PulseModulation1> is equivalent to the following FF/Latch, which will be removed : <Pulse_15> 
 INFO:Xst:2261 - The FF/Latch <Pulse_10> in Unit <PulseModulation1> is equivalent to the following FF/Latch, which will be removed : <Pulse_16> 
@@ -882,6 +887,10 @@ INFO:Xst:2261 - The FF/Latch <JOINTHIGH_DESIRED_1> in Unit <Arm> is equivalent t
 INFO:Xst:2261 - The FF/Latch <CLAW_DESIRED_1> in Unit <Arm> is equivalent to the following 6 FFs/Latches, which will be removed : <CLAW_DESIRED_4> <CLAW_DESIRED_5> <CLAW_DESIRED_9> <CLAW_DESIRED_11> <CLAW_DESIRED_16> <CLAW_DESIRED_17> 
 INFO:Xst:2261 - The FF/Latch <JOINTHIGH_DESIRED_3> in Unit <Arm> is equivalent to the following 4 FFs/Latches, which will be removed : <JOINTHIGH_DESIRED_6> <JOINTHIGH_DESIRED_16> <JOINTLOW_DESIRED_7> <JOINTLOW_DESIRED_8> 
 INFO:Xst:2261 - The FF/Latch <JOINTHIGH_DESIRED_14> in Unit <Arm> is equivalent to the following 2 FFs/Latches, which will be removed : <JOINTLOW_DESIRED_3> <JOINTLOW_DESIRED_6> 
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/ENABLE> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor2/ENABLE> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor3/ENABLE> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor1/ENABLE> of sequential type is unconnected in block <System>.
 
 Optimizing unit <System> ...
 
@@ -912,40 +921,49 @@ WARNING:Xst:1710 - FF/Latch <ARM/sw_debounce/OLD_IN_4> (without init value) has 
 WARNING:Xst:1710 - FF/Latch <ARM/sw_debounce/OLD_IN_5> (without init value) has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <ARM/sw_debounce/OLD_IN_6> (without init value) has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1710 - FF/Latch <ARM/sw_debounce/OLD_IN_7> (without init value) has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <PATH_2> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <PATH_4> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/inRead_7> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/inRead_6> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/inRead_5> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/inRead_4> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/inRead_3> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/inRead_2> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/inRead_1> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/inRead_0> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_15> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_14> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_13> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_12> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_11> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_10> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_9> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_8> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_7> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_6> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_5> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_4> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_3> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_2> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_1> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_0> of sequential type is unconnected in block <System>.
 WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/distCount_7> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/distCount_6> of sequential type is unconnected in block <System>.
 WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/distCount_5> of sequential type is unconnected in block <System>.
 WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/distCount_4> of sequential type is unconnected in block <System>.
-WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/distCount_6> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/distCount_3> of sequential type is unconnected in block <System>.
 WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/distCount_2> of sequential type is unconnected in block <System>.
 WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/distCount_1> of sequential type is unconnected in block <System>.
-WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/distCount_3> of sequential type is unconnected in block <System>.
 WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/distCount_0> of sequential type is unconnected in block <System>.
-WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_0> of sequential type is unconnected in block <System>.
-WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_1> of sequential type is unconnected in block <System>.
-WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_2> of sequential type is unconnected in block <System>.
-WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_3> of sequential type is unconnected in block <System>.
-WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_4> of sequential type is unconnected in block <System>.
-WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_5> of sequential type is unconnected in block <System>.
-WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_6> of sequential type is unconnected in block <System>.
-WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_7> of sequential type is unconnected in block <System>.
-WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_8> of sequential type is unconnected in block <System>.
-WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_9> of sequential type is unconnected in block <System>.
-WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_10> of sequential type is unconnected in block <System>.
-WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_11> of sequential type is unconnected in block <System>.
-WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_12> of sequential type is unconnected in block <System>.
-WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_13> of sequential type is unconnected in block <System>.
-WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_14> of sequential type is unconnected in block <System>.
-WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/i_15> of sequential type is unconnected in block <System>.
-WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/inRead_0> of sequential type is unconnected in block <System>.
-WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/inRead_1> of sequential type is unconnected in block <System>.
-WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/inRead_2> of sequential type is unconnected in block <System>.
-WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/inRead_3> of sequential type is unconnected in block <System>.
-WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/inRead_4> of sequential type is unconnected in block <System>.
-WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/inRead_5> of sequential type is unconnected in block <System>.
-WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/inRead_6> of sequential type is unconnected in block <System>.
-WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4/inRead_7> of sequential type is unconnected in block <System>.
-WARNING:Xst:2677 - Node <NAV/US_DATA/angle_calculator/DIRECTION_1> of sequential type is unconnected in block <System>.
-WARNING:Xst:2677 - Node <NAV/US_DATA/angle_calculator/DIRECTION_0> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/angle_calculator/ANGLE_7> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/angle_calculator/ANGLE_6> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/angle_calculator/ANGLE_5> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/angle_calculator/ANGLE_4> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/angle_calculator/ANGLE_3> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/angle_calculator/ANGLE_2> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/angle_calculator/ANGLE_1> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/angle_calculator/ANGLE_0> of sequential type is unconnected in block <System>.
+WARNING:Xst:2677 - Node <NAV/US_DATA/angle_calculator/X_7> of sequential type is unconnected in block <System>.
 WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4_debounce/OUT_7> of sequential type is unconnected in block <System>.
 WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4_debounce/OUT_6> of sequential type is unconnected in block <System>.
 WARNING:Xst:2677 - Node <NAV/US_DATA/sensor4_debounce/OUT_5> of sequential type is unconnected in block <System>.
@@ -973,97 +991,103 @@ WARNING:Xst:2677 - Node <ARM/sw_debounce/OUT_4> of sequential type is unconnecte
 WARNING:Xst:2677 - Node <ARM/sw_debounce/OUT_5> of sequential type is unconnected in block <System>.
 WARNING:Xst:2677 - Node <ARM/sw_debounce/OUT_6> of sequential type is unconnected in block <System>.
 WARNING:Xst:2677 - Node <ARM/sw_debounce/OUT_7> of sequential type is unconnected in block <System>.
-WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor2/i_15> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor2/i_14> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor2/i_13> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor2/i_12> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor2/count_22> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor2/count_21> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor3/i_15> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor3/i_14> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor3/i_13> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor3/i_12> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor3/count_25> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor3/count_24> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor3/count_23> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor3/count_22> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor3/count_21> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor1/i_15> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor1/i_14> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor1/i_13> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor1/i_12> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor4/count_23> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor4/count_21> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor4/count_22> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor4/count_24> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor1/count_25> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor1/count_24> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor1/count_22> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor1/count_21> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor1/count_22> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor1/count_23> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor3/count_25> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor3/count_24> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor3/count_22> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor3/count_21> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor3/count_23> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor4/count_25> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor4/count_24> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor4/count_23> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor4/count_22> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor4/count_21> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor2/i_15> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor2/i_14> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor2/i_13> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor2/i_12> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor2/count_25> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor2/count_24> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor2/count_22> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor2/count_21> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor2/count_23> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor4/count_25> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ARM/COUNT_24> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ARM/COUNT_26> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ARM/COUNT_27> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ARM/COUNT_25> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ARM/COUNT_24> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ARM/COUNT_23> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ARM/COUNT_22> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ARM/COUNT_21> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ARM/COUNT_26> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ARM/COUNT_27> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <NAV/MC/AC_MOD2/count_24> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <NAV/MC/AC_MOD1/count_24> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <NAV/MC/AC_MOD2/count_24> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <NAV/count_18> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <RUN_FLAG_FSM_FFd1> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_FSM_FFd1> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <state_FSM_FFd2> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <COMMAND_0> (without init value) has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <COMMAND_1> (without init value) has a constant value of 1 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <NAV/CONTROL/NEXT_FLAG> of sequential type is unconnected in block <System>.
+INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor4/count_10> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor2/count_10> <NAV/US_DATA/sensor3/count_10> <NAV/US_DATA/sensor1/count_10> 
+INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor4/count_11> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor2/count_11> <NAV/US_DATA/sensor3/count_11> <NAV/US_DATA/sensor1/count_11> 
+INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor4/count_12> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor2/count_12> <NAV/US_DATA/sensor3/count_12> <NAV/US_DATA/sensor1/count_12> 
+INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor4/count_13> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor2/count_13> <NAV/US_DATA/sensor3/count_13> <NAV/US_DATA/sensor1/count_13> 
+INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor4/WriteData> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor2/WriteData> <NAV/US_DATA/sensor3/WriteData> <NAV/US_DATA/sensor1/WriteData> 
+INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor4/count_14> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor2/count_14> <NAV/US_DATA/sensor3/count_14> <NAV/US_DATA/sensor1/count_14> 
+INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor4/count_20> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor2/count_20> <NAV/US_DATA/sensor3/count_20> <NAV/US_DATA/sensor1/count_20> 
+INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor4/count_15> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor2/count_15> <NAV/US_DATA/sensor3/count_15> <NAV/US_DATA/sensor1/count_15> 
+INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor4/count_16> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor2/count_16> <NAV/US_DATA/sensor3/count_16> <NAV/US_DATA/sensor1/count_16> 
+INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor4/count_17> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor2/count_17> <NAV/US_DATA/sensor3/count_17> <NAV/US_DATA/sensor1/count_17> 
+INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor4/count_18> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor2/count_18> <NAV/US_DATA/sensor3/count_18> <NAV/US_DATA/sensor1/count_18> 
+INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor4/count_19> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor2/count_19> <NAV/US_DATA/sensor3/count_19> <NAV/US_DATA/sensor1/count_19> 
 INFO:Xst:2261 - The FF/Latch <NAV/CONTROL/MC2_2> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/CONTROL/MC1_2> 
 INFO:Xst:2261 - The FF/Latch <NAV/CONTROL/MC2_3> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/CONTROL/MC1_3> 
-INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD1/count_0> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD2/count_0> 
-INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD1/count_1> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD2/count_1> 
-INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD1/count_2> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD2/count_2> 
-INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD1/count_3> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD2/count_3> 
-INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD1/count_4> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD2/count_4> 
-INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD1/count_5> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD2/count_5> 
-INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD1/count_6> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD2/count_6> 
-INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor1/count_0> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor3/count_0> <NAV/US_DATA/sensor2/count_0> <NAV/US_DATA/sensor4/count_0> 
-INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD1/count_7> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD2/count_7> 
-INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor1/count_1> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor3/count_1> <NAV/US_DATA/sensor2/count_1> <NAV/US_DATA/sensor4/count_1> 
-INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD1/count_8> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD2/count_8> 
-INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor1/count_2> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor3/count_2> <NAV/US_DATA/sensor2/count_2> <NAV/US_DATA/sensor4/count_2> 
-INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD1/count_9> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD2/count_9> 
-INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor1/count_3> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor3/count_3> <NAV/US_DATA/sensor2/count_3> <NAV/US_DATA/sensor4/count_3> 
-INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor1/count_4> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor3/count_4> <NAV/US_DATA/sensor2/count_4> <NAV/US_DATA/sensor4/count_4> 
-INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor1/count_5> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor3/count_5> <NAV/US_DATA/sensor2/count_5> <NAV/US_DATA/sensor4/count_5> 
-INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor1/count_6> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor3/count_6> <NAV/US_DATA/sensor2/count_6> <NAV/US_DATA/sensor4/count_6> 
-INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor1/count_7> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor3/count_7> <NAV/US_DATA/sensor2/count_7> <NAV/US_DATA/sensor4/count_7> 
-INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor1/count_8> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor3/count_8> <NAV/US_DATA/sensor2/count_8> <NAV/US_DATA/sensor4/count_8> 
-INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor1/count_9> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor3/count_9> <NAV/US_DATA/sensor2/count_9> <NAV/US_DATA/sensor4/count_9> 
-INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor1/RW> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor3/RW> <NAV/US_DATA/sensor2/RW> <NAV/US_DATA/sensor4/RW> 
-INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor1/count_10> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor3/count_10> <NAV/US_DATA/sensor2/count_10> <NAV/US_DATA/sensor4/count_10> 
-INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor1/count_11> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor3/count_11> <NAV/US_DATA/sensor2/count_11> <NAV/US_DATA/sensor4/count_11> 
-INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor1/count_12> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor3/count_12> <NAV/US_DATA/sensor2/count_12> <NAV/US_DATA/sensor4/count_12> 
-INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor1/count_13> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor3/count_13> <NAV/US_DATA/sensor2/count_13> <NAV/US_DATA/sensor4/count_13> 
-INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor1/count_14> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor3/count_14> <NAV/US_DATA/sensor2/count_14> <NAV/US_DATA/sensor4/count_14> 
-INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor1/count_20> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor3/count_20> <NAV/US_DATA/sensor2/count_20> <NAV/US_DATA/sensor4/count_20> 
-INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor1/count_15> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor3/count_15> <NAV/US_DATA/sensor2/count_15> <NAV/US_DATA/sensor4/count_15> 
-INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor1/count_16> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor3/count_16> <NAV/US_DATA/sensor2/count_16> <NAV/US_DATA/sensor4/count_16> 
-INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor1/count_17> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor3/count_17> <NAV/US_DATA/sensor2/count_17> <NAV/US_DATA/sensor4/count_17> 
-INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor1/count_18> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor3/count_18> <NAV/US_DATA/sensor2/count_18> <NAV/US_DATA/sensor4/count_18> 
-INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor1/count_19> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor3/count_19> <NAV/US_DATA/sensor2/count_19> <NAV/US_DATA/sensor4/count_19> 
-INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD1/count_10> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD2/count_10> 
-INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD1/count_11> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD2/count_11> 
-INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD1/count_12> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD2/count_12> 
-INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD1/count_13> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD2/count_13> 
-INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD1/count_14> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD2/count_14> 
-INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD1/count_20> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD2/count_20> 
-INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD1/count_15> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD2/count_15> 
-INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD1/count_21> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD2/count_21> 
-INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD1/count_16> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD2/count_16> 
-INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD1/count_22> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD2/count_22> 
-INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD1/count_17> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD2/count_17> 
-INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD1/count_23> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD2/count_23> 
-INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD1/count_18> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD2/count_18> 
-INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD1/count_19> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD2/count_19> 
-INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor1/WriteData> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor3/WriteData> <NAV/US_DATA/sensor2/WriteData> <NAV/US_DATA/sensor4/WriteData> 
+INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor4/count_0> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor2/count_0> <NAV/US_DATA/sensor3/count_0> <NAV/US_DATA/sensor1/count_0> 
+INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor4/count_1> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor2/count_1> <NAV/US_DATA/sensor3/count_1> <NAV/US_DATA/sensor1/count_1> 
+INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor4/count_2> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor2/count_2> <NAV/US_DATA/sensor3/count_2> <NAV/US_DATA/sensor1/count_2> 
+INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor4/count_3> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor2/count_3> <NAV/US_DATA/sensor3/count_3> <NAV/US_DATA/sensor1/count_3> 
+INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor4/count_4> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor2/count_4> <NAV/US_DATA/sensor3/count_4> <NAV/US_DATA/sensor1/count_4> 
+INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor4/count_5> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor2/count_5> <NAV/US_DATA/sensor3/count_5> <NAV/US_DATA/sensor1/count_5> 
+INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor4/count_6> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor2/count_6> <NAV/US_DATA/sensor3/count_6> <NAV/US_DATA/sensor1/count_6> 
+INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor4/count_7> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor2/count_7> <NAV/US_DATA/sensor3/count_7> <NAV/US_DATA/sensor1/count_7> 
+INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD2/count_0> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD1/count_0> 
+INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor4/count_8> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor2/count_8> <NAV/US_DATA/sensor3/count_8> <NAV/US_DATA/sensor1/count_8> 
+INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD2/count_1> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD1/count_1> 
+INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor4/count_9> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor2/count_9> <NAV/US_DATA/sensor3/count_9> <NAV/US_DATA/sensor1/count_9> 
+INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD2/count_2> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD1/count_2> 
+INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD2/count_3> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD1/count_3> 
+INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD2/count_4> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD1/count_4> 
+INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD2/count_5> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD1/count_5> 
+INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD2/count_6> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD1/count_6> 
+INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD2/count_7> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD1/count_7> 
+INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD2/count_8> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD1/count_8> 
+INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD2/count_9> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD1/count_9> 
+INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor4/RW> in Unit <System> is equivalent to the following 3 FFs/Latches, which will be removed : <NAV/US_DATA/sensor2/RW> <NAV/US_DATA/sensor3/RW> <NAV/US_DATA/sensor1/RW> 
+INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD2/count_10> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD1/count_10> 
+INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD2/count_11> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD1/count_11> 
+INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD2/count_12> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD1/count_12> 
+INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD2/count_13> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD1/count_13> 
+INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD2/count_14> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD1/count_14> 
+INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD2/count_20> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD1/count_20> 
+INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD2/count_15> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD1/count_15> 
+INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD2/count_21> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD1/count_21> 
+INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD2/count_16> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD1/count_16> 
+INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD2/count_22> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD1/count_22> 
+INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD2/count_17> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD1/count_17> 
+INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD2/count_23> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD1/count_23> 
+INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD2/count_18> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD1/count_18> 
+INFO:Xst:2261 - The FF/Latch <NAV/MC/AC_MOD2/count_19> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/AC_MOD1/count_19> 
 INFO:Xst:2261 - The FF/Latch <NAV/MC/MCSignal/MC2State_0> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/MCSignal/MC1State_0> 
 INFO:Xst:2261 - The FF/Latch <NAV/MC/MCSignal/MC2State_1> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/MCSignal/MC1State_1> 
 INFO:Xst:2261 - The FF/Latch <NAV/MC/MCSignal/MC2State_2> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/MCSignal/MC1State_2> 
@@ -1078,24 +1102,25 @@ INFO:Xst:3203 - The FF/Latch <ARM/JOINTHIGH_DESIRED_14> in Unit <System> is the 
 Mapping all equations...
 Building and optimizing final netlist ...
 Found area constraint ratio of 100 (+ 5) on block System, actual ratio is 13.
-FlipFlop NAV/US_DATA/sensor1/count_10 has been replicated 2 time(s)
-FlipFlop NAV/US_DATA/sensor1/count_11 has been replicated 2 time(s)
-FlipFlop NAV/US_DATA/sensor1/count_12 has been replicated 2 time(s)
-FlipFlop NAV/US_DATA/sensor1/count_13 has been replicated 2 time(s)
-FlipFlop NAV/US_DATA/sensor1/count_14 has been replicated 1 time(s)
-FlipFlop NAV/US_DATA/sensor1/count_15 has been replicated 2 time(s)
-FlipFlop NAV/US_DATA/sensor1/count_16 has been replicated 3 time(s)
-FlipFlop NAV/US_DATA/sensor1/count_17 has been replicated 2 time(s)
-FlipFlop NAV/US_DATA/sensor1/count_18 has been replicated 1 time(s)
-FlipFlop NAV/US_DATA/sensor1/count_19 has been replicated 2 time(s)
-FlipFlop NAV/US_DATA/sensor1/count_2 has been replicated 1 time(s)
-FlipFlop NAV/US_DATA/sensor1/count_20 has been replicated 2 time(s)
-FlipFlop NAV/US_DATA/sensor1/count_3 has been replicated 1 time(s)
-FlipFlop NAV/US_DATA/sensor1/count_4 has been replicated 1 time(s)
-FlipFlop NAV/US_DATA/sensor1/count_5 has been replicated 1 time(s)
-FlipFlop NAV/US_DATA/sensor1/count_7 has been replicated 2 time(s)
-FlipFlop NAV/US_DATA/sensor1/count_8 has been replicated 1 time(s)
-FlipFlop NAV/US_DATA/sensor1/count_9 has been replicated 1 time(s)
+FlipFlop NAV/US_DATA/sensor4/count_10 has been replicated 2 time(s)
+FlipFlop NAV/US_DATA/sensor4/count_11 has been replicated 1 time(s)
+FlipFlop NAV/US_DATA/sensor4/count_12 has been replicated 1 time(s)
+FlipFlop NAV/US_DATA/sensor4/count_13 has been replicated 1 time(s)
+FlipFlop NAV/US_DATA/sensor4/count_14 has been replicated 1 time(s)
+FlipFlop NAV/US_DATA/sensor4/count_15 has been replicated 1 time(s)
+FlipFlop NAV/US_DATA/sensor4/count_16 has been replicated 1 time(s)
+FlipFlop NAV/US_DATA/sensor4/count_17 has been replicated 1 time(s)
+FlipFlop NAV/US_DATA/sensor4/count_18 has been replicated 2 time(s)
+FlipFlop NAV/US_DATA/sensor4/count_19 has been replicated 1 time(s)
+FlipFlop NAV/US_DATA/sensor4/count_2 has been replicated 2 time(s)
+FlipFlop NAV/US_DATA/sensor4/count_20 has been replicated 2 time(s)
+FlipFlop NAV/US_DATA/sensor4/count_3 has been replicated 1 time(s)
+FlipFlop NAV/US_DATA/sensor4/count_4 has been replicated 1 time(s)
+FlipFlop NAV/US_DATA/sensor4/count_5 has been replicated 1 time(s)
+FlipFlop NAV/US_DATA/sensor4/count_6 has been replicated 1 time(s)
+FlipFlop NAV/US_DATA/sensor4/count_7 has been replicated 1 time(s)
+FlipFlop NAV/US_DATA/sensor4/count_8 has been replicated 1 time(s)
+FlipFlop NAV/US_DATA/sensor4/count_9 has been replicated 2 time(s)
 
 Final Macro Processing ...
 
@@ -1103,8 +1128,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 433
- Flip-Flops                                            : 433
+# Registers                                            : 421
+ Flip-Flops                                            : 421
 
 =========================================================================
 
@@ -1127,26 +1152,24 @@ Top Level Output File Name         : System.ngc
 
 Primitive and Black Box Usage:
 ------------------------------
-# BELS                             : 1721
+# BELS                             : 1753
 #      GND                         : 1
-#      INV                         : 31
-#      LUT1                        : 122
-#      LUT2                        : 155
-#      LUT3                        : 116
-#      LUT4                        : 247
-#      LUT5                        : 165
-#      LUT6                        : 125
-#      MUXCY                       : 485
+#      INV                         : 27
+#      LUT1                        : 143
+#      LUT2                        : 165
+#      LUT3                        : 87
+#      LUT4                        : 246
+#      LUT5                        : 193
+#      LUT6                        : 172
+#      MUXCY                       : 477
 #      MUXF7                       : 1
 #      VCC                         : 1
-#      XORCY                       : 272
-# FlipFlops/Latches                : 433
-#      FD                          : 78
+#      XORCY                       : 240
+# FlipFlops/Latches                : 421
+#      FD                          : 70
 #      FDE                         : 153
-#      FDR                         : 149
-#      FDRE                        : 53
-# RAMS                             : 1
-#      RAMB8BWER                   : 1
+#      FDR                         : 173
+#      FDRE                        : 25
 # Clock Buffers                    : 4
 #      BUFG                        : 3
 #      BUFGP                       : 1
@@ -1163,24 +1186,22 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             433  out of  18224     2%  
- Number of Slice LUTs:                  961  out of   9112    10%  
-    Number used as Logic:               961  out of   9112    10%  
+ Number of Slice Registers:             421  out of  18224     2%  
+ Number of Slice LUTs:                 1033  out of   9112    11%  
+    Number used as Logic:              1033  out of   9112    11%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1056
-   Number with an unused Flip Flop:     623  out of   1056    58%  
-   Number with an unused LUT:            95  out of   1056     8%  
-   Number of fully used LUT-FF pairs:   338  out of   1056    32%  
-   Number of unique control sets:        36
+ Number of LUT Flip Flop pairs used:   1106
+   Number with an unused Flip Flop:     685  out of   1106    61%  
+   Number with an unused LUT:            73  out of   1106     6%  
+   Number of fully used LUT-FF pairs:   348  out of   1106    31%  
+   Number of unique control sets:        31
 
 IO Utilization: 
  Number of IOs:                          42
  Number of bonded IOBs:                  42  out of    232    18%  
 
 Specific Feature Utilization:
- Number of Block RAM/FIFO:                1  out of     32     3%  
-    Number using Block RAM only:          1
  Number of BUFG/BUFGCTRLs:                4  out of     16    25%  
 
 ---------------------------
@@ -1204,8 +1225,8 @@ Clock Information:
 -----------------------------------+-------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)         | Load  |
 -----------------------------------+-------------------------------+-------+
-CLK                                | BUFGP                         | 172   |
-NAV/count_0                        | BUFG                          | 136   |
+CLK                                | BUFGP                         | 164   |
+NAV/count_0                        | BUFG                          | 131   |
 NAV/count_16                       | BUFG                          | 60    |
 ARM/COUNT_10                       | NONE(ARM/sw_debounce/OLD_IN_0)| 6     |
 ARM/COUNT_8                        | BUFG                          | 60    |
@@ -1220,9 +1241,9 @@ Timing Summary:
 ---------------
 Speed Grade: -3
 
-   Minimum period: 11.779ns (Maximum Frequency: 84.899MHz)
-   Minimum input arrival time before clock: 4.509ns
-   Maximum output required time after clock: 4.649ns
+   Minimum period: 11.786ns (Maximum Frequency: 84.848MHz)
+   Minimum input arrival time before clock: 4.198ns
+   Maximum output required time after clock: 3.701ns
    Maximum combinational path delay: No path found
 
 Timing Details:
@@ -1232,7 +1253,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK'
   Clock period: 6.205ns (frequency: 161.163MHz)
-  Total number of paths / destination ports: 6173 / 285
+  Total number of paths / destination ports: 6128 / 274
 -------------------------------------------------------------------------
 Delay:               6.205ns (Levels of Logic = 4)
   Source:            NAV/MC/MCSignal/count_9 (FF)
@@ -1256,29 +1277,32 @@ Delay:               6.205ns (Levels of Logic = 4)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'NAV/count_0'
-  Clock period: 11.779ns (frequency: 84.899MHz)
-  Total number of paths / destination ports: 61223 / 319
+  Clock period: 11.786ns (frequency: 84.848MHz)
+  Total number of paths / destination ports: 28287 / 175
 -------------------------------------------------------------------------
-Delay:               5.889ns (Levels of Logic = 5)
-  Source:            NAV/US_DATA/sensor1/count_6 (FF)
-  Destination:       NAV/US_DATA/sensor2/distCount_7 (FF)
-  Source Clock:      NAV/count_0 rising
-  Destination Clock: NAV/count_0 falling
+Delay:               5.893ns (Levels of Logic = 8)
+  Source:            NAV/US_DATA/sensor4/count_6 (FF)
+  Destination:       NAV/US_DATA/sensor1/distCount_4 (FF)
+  Source Clock:      NAV/count_0 falling
+  Destination Clock: NAV/count_0 rising
 
-  Data Path: NAV/US_DATA/sensor1/count_6 to NAV/US_DATA/sensor2/distCount_7
+  Data Path: NAV/US_DATA/sensor4/count_6 to NAV/US_DATA/sensor1/distCount_4
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q             21   0.447   1.114  NAV/US_DATA/sensor1/count_6 (NAV/US_DATA/sensor1/count_6)
-     LUT6:I5->O            1   0.205   0.580  NAV/US_DATA/sensor1/GND_11_o_GND_11_o_equal_11_o<25>1_SW1 (N73)
-     LUT6:I5->O            4   0.205   0.684  NAV/US_DATA/sensor1/GND_11_o_GND_11_o_equal_11_o<25>2 (NAV/US_DATA/sensor1/GND_11_o_GND_11_o_equal_11_o<25>2)
-     LUT6:I5->O           13   0.205   0.933  NAV/US_DATA/sensor2/_n0255_inv1_SW0 (N26)
-     LUT5:I4->O           16   0.205   1.005  NAV/US_DATA/sensor2/_n0255_inv1_rstpot (NAV/US_DATA/sensor2/_n0255_inv1_rstpot)
-     LUT6:I5->O            1   0.205   0.000  NAV/US_DATA/sensor2/inRead_0_dpot1 (NAV/US_DATA/sensor2/inRead_0_dpot1)
-     FDE:D                     0.102          NAV/US_DATA/sensor2/inRead_0
+     FDR:C->Q             22   0.447   1.478  NAV/US_DATA/sensor4/count_6 (NAV/US_DATA/sensor4/count_6)
+     LUT5:I0->O            1   0.203   0.000  NAV/US_DATA/sensor1/Mcompar_count[25]_GND_11_o_LessThan_15_o_lut<1> (NAV/US_DATA/sensor1/Mcompar_count[25]_GND_11_o_LessThan_15_o_lut<1>)
+     MUXCY:S->O            1   0.172   0.000  NAV/US_DATA/sensor1/Mcompar_count[25]_GND_11_o_LessThan_15_o_cy<1> (NAV/US_DATA/sensor1/Mcompar_count[25]_GND_11_o_LessThan_15_o_cy<1>)
+     MUXCY:CI->O           1   0.019   0.000  NAV/US_DATA/sensor1/Mcompar_count[25]_GND_11_o_LessThan_15_o_cy<2> (NAV/US_DATA/sensor1/Mcompar_count[25]_GND_11_o_LessThan_15_o_cy<2>)
+     MUXCY:CI->O           1   0.019   0.000  NAV/US_DATA/sensor1/Mcompar_count[25]_GND_11_o_LessThan_15_o_cy<3> (NAV/US_DATA/sensor1/Mcompar_count[25]_GND_11_o_LessThan_15_o_cy<3>)
+     MUXCY:CI->O          48   0.019   1.520  NAV/US_DATA/sensor1/Mcompar_count[25]_GND_11_o_LessThan_15_o_cy<4> (NAV/US_DATA/sensor1/Mcompar_count[25]_GND_11_o_LessThan_15_o_cy<4>)
+     LUT3:I2->O           20   0.205   1.093  NAV/US_DATA/sensor1/_n0252_inv211_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy_cy (NAV/US_DATA/sensor1/_n0252_inv21)
+     LUT5:I4->O            1   0.205   0.000  NAV/US_DATA/sensor1/distCount_4_rstpot_lut1 (NAV/US_DATA/sensor1/distCount_4_rstpot_lut1)
+     MUXCY:S->O            1   0.411   0.000  NAV/US_DATA/sensor1/distCount_4_rstpot_cy1 (NAV/US_DATA/sensor1/distCount_4_rstpot)
+     FDR:D                     0.102          NAV/US_DATA/sensor1/distCount_4
     ----------------------------------------
-    Total                      5.889ns (1.574ns logic, 4.315ns route)
-                                       (26.7% logic, 73.3% route)
+    Total                      5.893ns (1.802ns logic, 4.091ns route)
+                                       (30.6% logic, 69.4% route)
 
 =========================================================================
 Timing constraint: Default period analysis for Clock 'NAV/count_16'
@@ -1360,47 +1384,48 @@ Delay:               4.881ns (Levels of Logic = 12)
                                        (31.1% logic, 68.9% route)
 
 =========================================================================
-Timing constraint: Default OFFSET IN BEFORE for Clock 'NAV/count_0'
-  Total number of paths / destination ports: 60 / 60
--------------------------------------------------------------------------
-Offset:              4.509ns (Levels of Logic = 4)
-  Source:            US_SIDE_FRONT (PAD)
-  Destination:       NAV/US_DATA/sensor2/i_0 (FF)
-  Destination Clock: NAV/count_0 falling
-
-  Data Path: US_SIDE_FRONT to NAV/US_DATA/sensor2/i_0
-                                Gate     Net
-    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
-    ----------------------------------------  ------------
-     IOBUF:IO->O           2   1.222   0.617  US_SIDE_FRONT_IOBUF (N61)
-     LUT6:I5->O            1   0.205   0.944  NAV/US_DATA/sensor2/_n0281_inv1_SW0 (N38)
-     LUT6:I0->O           12   0.203   1.013  NAV/US_DATA/sensor2/_n0255_inv1_SW1 (N71)
-     LUT6:I4->O            1   0.203   0.000  NAV/US_DATA/sensor2/i_0_rstpot (NAV/US_DATA/sensor2/i_0_rstpot)
-     FDR:D                     0.102          NAV/US_DATA/sensor2/i_0
-    ----------------------------------------
-    Total                      4.509ns (1.935ns logic, 2.574ns route)
-                                       (42.9% logic, 57.1% route)
-
-=========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK'
-  Total number of paths / destination ports: 77 / 24
+  Total number of paths / destination ports: 68 / 11
 -------------------------------------------------------------------------
-Offset:              3.856ns (Levels of Logic = 3)
-  Source:            SW<7> (PAD)
-  Destination:       NAV/CONTROL/PWM_STATE_2 (FF)
+Offset:              4.096ns (Levels of Logic = 4)
+  Source:            BTN<0> (PAD)
+  Destination:       NAV/CONTROL/DIR_STATE_4 (FF)
   Destination Clock: CLK rising
 
-  Data Path: SW<7> to NAV/CONTROL/PWM_STATE_2
+  Data Path: BTN<0> to NAV/CONTROL/DIR_STATE_4
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IBUF:I->O            11   1.222   1.227  SW_7_IBUF (NAV/CONTROL/RUN_FLAG_FSM_FFd1-In2)
-     LUT5:I0->O            3   0.203   0.898  NAV/CONTROL/Mmux_GND_4_o_GND_4_o_mux_119_OUT321 (NAV/CONTROL/Mmux_GND_4_o_GND_4_o_mux_119_OUT32)
-     LUT4:I0->O            1   0.203   0.000  NAV/CONTROL/Mmux_GND_4_o_GND_4_o_mux_119_OUT31 (NAV/CONTROL/GND_4_o_GND_4_o_mux_119_OUT<2>)
-     FD:D                      0.102          NAV/CONTROL/PWM_STATE_2
+     IBUF:I->O             5   1.222   0.962  BTN_0_IBUF (BTN_0_IBUF)
+     LUT4:I0->O            1   0.203   0.580  NAV/CONTROL/Mmux_COMMAND[7]_BTN[4]_mux_68_OUT4_SW0 (N54)
+     LUT6:I5->O            2   0.205   0.617  NAV/CONTROL/Mmux_COMMAND[7]_BTN[4]_mux_68_OUT4 (NAV/CONTROL/COMMAND[7]_BTN[4]_mux_68_OUT<3>)
+     LUT6:I5->O            1   0.205   0.000  NAV/CONTROL/Mmux_COMMAND[7]_BTN[4]_mux_68_OUT5 (NAV/CONTROL/COMMAND[7]_BTN[4]_mux_68_OUT<4>)
+     FDE:D                     0.102          NAV/CONTROL/DIR_STATE_4
     ----------------------------------------
-    Total                      3.856ns (1.730ns logic, 2.126ns route)
-                                       (44.9% logic, 55.1% route)
+    Total                      4.096ns (1.937ns logic, 2.159ns route)
+                                       (47.3% logic, 52.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'NAV/count_0'
+  Total number of paths / destination ports: 62 / 60
+-------------------------------------------------------------------------
+Offset:              4.198ns (Levels of Logic = 4)
+  Source:            US_FRONT (PAD)
+  Destination:       NAV/US_DATA/sensor3/distCount_4 (FF)
+  Destination Clock: NAV/count_0 rising
+
+  Data Path: US_FRONT to NAV/US_DATA/sensor3/distCount_4
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IOBUF:IO->O          19   1.222   1.176  US_FRONT_IOBUF (N74)
+     LUT3:I1->O            3   0.203   0.879  NAV/US_DATA/sensor3/_n0224_inv1_SW1 (N117)
+     LUT5:I2->O            1   0.205   0.000  NAV/US_DATA/sensor3/distCount_4_rstpot_lut1 (NAV/US_DATA/sensor3/distCount_4_rstpot_lut1)
+     MUXCY:S->O            1   0.411   0.000  NAV/US_DATA/sensor3/distCount_4_rstpot_cy1 (NAV/US_DATA/sensor3/distCount_4_rstpot)
+     FDR:D                     0.102          NAV/US_DATA/sensor3/distCount_4
+    ----------------------------------------
+    Total                      4.198ns (2.143ns logic, 2.055ns route)
+                                       (51.0% logic, 49.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET IN BEFORE for Clock 'ARM/COUNT_10'
@@ -1424,38 +1449,37 @@ Offset:              2.458ns (Levels of Logic = 2)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK'
-  Total number of paths / destination ports: 18 / 17
+  Total number of paths / destination ports: 23 / 23
 -------------------------------------------------------------------------
-Offset:              4.649ns (Levels of Logic = 2)
-  Source:            NAV/CONTROL/RUN_FLAG_FSM_FFd2 (FF)
-  Destination:       LED<4> (PAD)
+Offset:              3.634ns (Levels of Logic = 1)
+  Source:            COMPARE_DISTANCE_7 (FF)
+  Destination:       LED<7> (PAD)
   Source Clock:      CLK rising
 
-  Data Path: NAV/CONTROL/RUN_FLAG_FSM_FFd2 to LED<4>
+  Data Path: COMPARE_DISTANCE_7 to LED<7>
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FD:C->Q               6   0.447   0.849  NAV/CONTROL/RUN_FLAG_FSM_FFd2 (NAV/CONTROL/RUN_FLAG_FSM_FFd2)
-     LUT2:I0->O            1   0.203   0.579  NAV/CONTROL/RUN_FLAG_RUN_FLAG[0]1 (LED_4_OBUF)
-     OBUF:I->O                 2.571          LED_4_OBUF (LED<4>)
+     FDE:C->Q              2   0.447   0.616  COMPARE_DISTANCE_7 (COMPARE_DISTANCE_7)
+     OBUF:I->O                 2.571          LED_7_OBUF (LED<7>)
     ----------------------------------------
-    Total                      4.649ns (3.221ns logic, 1.428ns route)
-                                       (69.3% logic, 30.7% route)
+    Total                      3.634ns (3.018ns logic, 0.616ns route)
+                                       (83.0% logic, 17.0% route)
 
 =========================================================================
 Timing constraint: Default OFFSET OUT AFTER for Clock 'NAV/count_0'
   Total number of paths / destination ports: 8 / 4
 -------------------------------------------------------------------------
 Offset:              3.701ns (Levels of Logic = 1)
-  Source:            NAV/US_DATA/sensor1/WriteData (FF)
+  Source:            NAV/US_DATA/sensor4/WriteData (FF)
   Destination:       US_FRONT (PAD)
-  Source Clock:      NAV/count_0 rising
+  Source Clock:      NAV/count_0 falling
 
-  Data Path: NAV/US_DATA/sensor1/WriteData to US_FRONT
+  Data Path: NAV/US_DATA/sensor4/WriteData to US_FRONT
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     FDR:C->Q              4   0.447   0.683  NAV/US_DATA/sensor1/WriteData (NAV/US_DATA/sensor1/WriteData)
+     FDR:C->Q              4   0.447   0.683  NAV/US_DATA/sensor4/WriteData (NAV/US_DATA/sensor4/WriteData)
      OBUFT:I->O                2.571          US_BACK_OBUFT (US_BACK)
     ----------------------------------------
     Total                      3.701ns (3.018ns logic, 0.683ns route)
@@ -1491,7 +1515,7 @@ Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ARM/COUNT_10   |    2.344|         |         |         |
 ARM/COUNT_8    |    2.425|         |         |         |
 CLK            |    6.205|         |         |         |
-NAV/count_16   |    8.448|         |         |         |
+NAV/count_16   |    6.604|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock NAV/count_0
@@ -1499,7 +1523,7 @@ Clock to Setup on destination clock NAV/count_0
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-NAV/count_0    |    7.736|         |    5.889|         |
+NAV/count_0    |    6.056|    5.893|    7.589|         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock NAV/count_16
@@ -1507,21 +1531,21 @@ Clock to Setup on destination clock NAV/count_16
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-NAV/count_0    |    4.204|    4.236|         |         |
+NAV/count_0    |    4.236|    4.204|         |         |
 NAV/count_16   |    4.150|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
-Total REAL time to Xst completion: 14.00 secs
-Total CPU time to Xst completion: 14.22 secs
+Total REAL time to Xst completion: 16.00 secs
+Total CPU time to Xst completion: 16.32 secs
  
 --> 
 
-Total memory usage is 263056 kilobytes
+Total memory usage is 263696 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  276 (   0 filtered)
-Number of infos    :   85 (   0 filtered)
+Number of warnings :  275 (   0 filtered)
+Number of infos    :   87 (   0 filtered)
 
