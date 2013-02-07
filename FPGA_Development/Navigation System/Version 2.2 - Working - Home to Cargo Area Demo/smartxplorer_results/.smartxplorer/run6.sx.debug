@@ -1,0 +1,50 @@
+strategySpecString = ':oc:sqmap:sq:cl:sp:sq:sp:dsol:sphigh:sp:dsxe:spn:sp:dslogic_opt:spon:sp:dsregister_duplication:spon:sp:dst:sp2:sp:dsw:sp:sq:cm:sp:sqpower:sq:cl:sp:sqoff:sq:cm:sp:sqbitgen:sq:cl:sp:sqon:sq:cm:sp:sqsynplify:sq:cl:sp:sq:sq:cm:sp:sqngdbuild:sq:cl:sp:sq:dssd:spC:clcl:clbslfa12sp13_SourceCode:clbslteam2:clbslbranches:clbslFPGA_Development:clbslNavigation:clspSystem:clbslVersion1.1:cldsWorking:sp:dsp:spxc6slx16:dscsg324:ds3:sq:cm:sp:sqtrce:sq:cl:sp:sq:dsv:sp3:sp:dss:sp3:sp:dsn:sp3:sp:dsfastpaths:sp:dsxml:spNavigation.twx:sp:dsucf:spSystem_Connection.ucf:sq:cm:sp:sqmax_score:sq:cl:spNone:cm:sp:sqindex:sq:cl:sp6:cm:sp:sqpar:sq:cl:sp:sq:sp:dsol:sphigh:sp:dsxe:spn:sp:sq:cm:sp:sqname:sq:cl:sp:sqMapLogOptRegDup:sq:cm:sp:sqxst:sq:cl:sp:sq:sq:cm:sp:sqarea:sq:cl:sp:os:sqlut:sq:cm:sp:sqslice_reg:sq:cs:cm:sp:sqversion:sq:cl:sp:sq14.2:sq:cm:sp:sqenv:sq:cl:sp:sq:oc:cc:sq:cm:sp:sqsxLaunchDir:sq:cl:sp:sqC:cl:bsl:bslfa12sp13_SourceCode:bsl:bslteam2:bsl:bslbranches:bsl:bslFPGA_Development:bsl:bslNavigation:spSystem:bsl:bslVersion1.1:dsWorking:sq:cc'
+Xilinx Environment Variables:
+
+{'XILINX_PLANAHEAD': 'C:\\Xilinx\\14.2\\ISE_DS\\PlanAhead'
+'XILINX_DSP': 'C:\\Xilinx\\14.2\\ISE_DS\\ISE'
+'XILINX_EDK': 'C:\\Xilinx\\14.2\\ISE_DS\\EDK'
+'LM_LICENSE_FILE': '7788@dbmgt04.erau.edu;1701@dbmgt02.erau.edu;27000@dbmgt02.erau.edu;27012@dbmgt02.erau.edu;7787@dbmgt02.erau.edu;27020@dbmgt02.erau.edu;27003@dbmgt02.erau.edu'
+'XILINX': 'C:\\Xilinx\\14.2\\ISE_DS\\ISE\\'
+'PATH': 'C:\\Xilinx\\14.2\\ISE_DS\\ISE\\\\lib\\nt64;C:\\Xilinx\\14.2\\ISE_DS\\ISE\\\\bin\\nt64;C:\\Xilinx\\14.2\\ISE_DS\\ISE\\bin\\nt64;C:\\Xilinx\\14.2\\ISE_DS\\ISE\\lib\\nt64;C:\\Xilinx\\14.2\\ISE_DS\\PlanAhead\\bin;C:\\Xilinx\\14.2\\ISE_DS\\EDK\\bin\\nt64;C:\\Xilinx\\14.2\\ISE_DS\\EDK\\lib\\nt64;C:\\Xilinx\\14.2\\ISE_DS\\EDK\\gnu\\microblaze\\nt64\\bin;C:\\Xilinx\\14.2\\ISE_DS\\EDK\\gnu\\powerpc-eabi\\nt64\\bin;C:\\Xilinx\\14.2\\ISE_DS\\EDK\\gnuwin\\bin;C:\\Xilinx\\14.2\\ISE_DS\\EDK\\gnu\\arm\\nt64\\bin;C:\\Xilinx\\14.2\\ISE_DS\\common\\bin\\nt64;C:\\Xilinx\\14.2\\ISE_DS\\common\\lib\\nt64;C:\\Program Files\\Tecplot\\Tec360 2012R1\\Bin;C:\\HEEDS\\MDO\\Ver5.4.1\\libs;C:\\HEEDS\\MDO\\Ver5.4.1;c:\\Program Files (x86)\\Rockwell Software\\RSCommon;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files (x86)\\QuickTime\\QTSystem\\;C:\\Program Files (x86)\\MiKTeX 2.9\\miktex\\bin\\;C:\\FPC\\2.6.0\\bin\\i386-Win32;C:\\Program Files\\TortoiseSVN\\bin;C:\\Program Files (x86)\\IBM\\License Use Management\\BIN;c:\\Program Files (x86)\\Microsoft SQL Server\\100\\Tools\\Binn\\;c:\\Program Files\\Microsoft SQL Server\\100\\Tools\\Binn\\;c:\\Program Files\\Microsoft SQL Server\\100\\DTS\\Binn\\;C:\\Program Files\\MATLAB\\R2012a\\runtime\\win64;C:\\Program Files\\MATLAB\\R2012a\\bin;C:\\IFOR\\WIN\\BIN;C:\\IFOR\\WIN\\BIN\\EN_US;C:\\Program Files\\proeWildfire 5.0\\bin;C:\\Program Files\\proeWildfire 5.0\\mech\\bin;C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin\\;C:\\Program Files\\IVI Foundation\\VISA\\Win64\\Bin\\;C:\\Program Files (x86)\\IVI Foundation\\VISA\\WinNT\\Bin'}
+envDict = {}
+LB274-04_1.stat:C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version1.1-Working\smartxplorer_results\.smartxplorer\.sx.keepAlive.LB274-04_1
+INFO: total number of threads running this host None
+...searching for file: maplogoptregdup.xds
+Creating XDS file ... maplogoptregdup.xds
+###################################
+
+      <property name = "Map:Placer Effort Level"
+               value = "High" />
+      <property name = "Map:Placer Extra Effort"
+               value = "Normal" />
+      <property name = "Map:Combinatorial Logic Optimization"
+               value = "true" />
+      <property name = "Map:Register Duplication"
+               value = "On" />
+      <property name = "Map:Starting Placer Cost Table (1-100)"
+               value = "2" />
+      <property name = "Place &amp; Route:Place &amp; Route Effort Level (Overall)"
+               value = "High" />
+      <property name = "Place &amp; Route:Extra Effort (Highest PAR level only)"
+               value = "Normal" />
+      <property name = "Generate Post-Place &amp; Route Static Timing:Number of Paths in Error/Verbose Report"
+               value = "3" />
+      <property name = "Generate Post-Place &amp; Route Static Timing:Report Type"
+               value = "Verbose Report" />
+      <property name = "Generate Post-Place &amp; Route Static Timing:Change Device Speed To"
+               value = "-3" />
+      <property name = "Generate Post-Place &amp; Route Static Timing:Report Paths by Endpoint"
+               value = "3" />
+      <property name = "Generate Post-Place &amp; Route Static Timing:Report Fastest Path(s) in Each Constraint"
+               value = "true" />
+###################################
+launching map with options  -ol high -xe n -logic_opt on -register_duplication on -t 2 -w  -p xc6slx16-csg324-3 -o Navigation_map.ncd  C:cl:bslfa12sp13_SourceCode:bslteam2:bslbranches:bslFPGA_Development:bslNavigation:spSystem:bslVersion1.1:dsWorking:bslsmartxplorer_results:bslrun6:bslNavigation.pcf...
+runTask: map Navigation.ngd -ol high -xe n -logic_opt on -register_duplication on -t 2 -w -p xc6slx16-csg324-3 -o Navigation_map.ncd C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version1.1-Working\smartxplorer_results\run6\Navigation.pcf
+args = ['map', 'Navigation.ngd', '-ol', 'high', '-xe', 'n', '-logic_opt', 'on', '-register_duplication', 'on', '-t', '2', '-w', '-p', 'xc6slx16-csg324-3', '-o', 'Navigation_map.ncd', 'C:\\fa12sp13_SourceCode\\team2\\branches\\FPGA_Development\\Navigation System\\Version1.1-Working\\smartxplorer_results\\run6\\Navigation.pcf']
+launching par with options  -ol high -xe n  -w Navigation.ncd  C:cl:bslfa12sp13_SourceCode:bslteam2:bslbranches:bslFPGA_Development:bslNavigation:spSystem:bslVersion1.1:dsWorking:bslsmartxplorer_results:bslrun6:bslNavigation.pcf...
+runTask: par Navigation_map.ncd -ol high -xe n -w Navigation.ncd C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version1.1-Working\smartxplorer_results\run6\Navigation.pcf
+args = ['par', 'Navigation_map.ncd', '-ol', 'high', '-xe', 'n', '-w', 'Navigation.ncd', 'C:\\fa12sp13_SourceCode\\team2\\branches\\FPGA_Development\\Navigation System\\Version1.1-Working\\smartxplorer_results\\run6\\Navigation.pcf']
+launching trce...
+runTask: trce C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version1.1-Working\smartxplorer_results\run6\Navigation.ncd C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version1.1-Working\smartxplorer_results\run6\Navigation.pcf -xml C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version1.1-Working\smartxplorer_results\run6\Navigation.twx -v 3 -s 3 -n 3 -fastpaths -ucf System_Connection.ucf -o C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version1.1-Working\smartxplorer_results\run6\Navigation.twr
+args = ['trce', 'C:\\fa12sp13_SourceCode\\team2\\branches\\FPGA_Development\\Navigation System\\Version1.1-Working\\smartxplorer_results\\run6\\Navigation.ncd', 'C:\\fa12sp13_SourceCode\\team2\\branches\\FPGA_Development\\Navigation System\\Version1.1-Working\\smartxplorer_results\\run6\\Navigation.pcf', '-xml', 'C:\\fa12sp13_SourceCode\\team2\\branches\\FPGA_Development\\Navigation System\\Version1.1-Working\\smartxplorer_results\\run6\\Navigation.twx', '-v', '3', '-s', '3', '-n', '3', '-fastpaths', '-ucf', 'System_Connection.ucf', '-o', 'C:\\fa12sp13_SourceCode\\team2\\branches\\FPGA_Development\\Navigation System\\Version1.1-Working\\smartxplorer_results\\run6\\Navigation.twr']

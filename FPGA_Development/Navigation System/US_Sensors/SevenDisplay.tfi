@@ -1,0 +1,13 @@
+
+
+
+// Instantiate the module
+SevenDisplay instance_name (
+    .CLK(CLK), 
+    .SCLK(SCLK), 
+    .DISPLAY(DISPLAY), 
+    .SSEG_CA(SSEG_CA), 
+    .SSEG_AN(SSEG_AN)
+    );
+
+

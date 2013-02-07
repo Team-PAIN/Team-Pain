@@ -1,0 +1,19 @@
+ISim log file
+Running: C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\US_Sensors\US_Sensor_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/US_Sensors/US_Sensor_isim_beh.wdb 
+ISim P.28xd (signature 0xa0883be4)
+WARNING: A WEBPACK license was found.
+WARNING: Please use Xilinx License Configuration Manager to check out a full ISim license.
+WARNING: ISim will run in Lite mode. Please refer to the ISim documentation for more information on the differences between the Lite and the Full version.
+This is a Lite version of ISim.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# restart
+# isim force add /US_Sensor/CLK 1 -radix bin -value 0 -radix bin -time 5 ns -repeat 10 ns
+# run all
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+Stopped at time : 861669760 ns : File "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/US_Sensors/US_Sensor.v" Line 54

@@ -1,0 +1,1 @@
+vhdtdtfi -lang verilog -prj pwm -o "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm/Rivera_Display.tfi" -lib work "P:/CEC 330 FPGA/Rivera_VendingMachine/pwm//Rivera_Display.v" -module Rivera_Display -template C:/Xilinx/14.2/ISE_DS/ISE//data/tfi.tft -deleteonerror 

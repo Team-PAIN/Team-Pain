@@ -1,0 +1,13 @@
+
+
+
+// Instantiate the module
+direction_control instance_name (
+    .CLK(CLK), 
+    .DIR_STATE(DIR_STATE), 
+    .PWM_STATE(PWM_STATE), 
+    .MC1(MC1), 
+    .MC2(MC2)
+    );
+
+

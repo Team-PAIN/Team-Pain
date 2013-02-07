@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\US_Sensors\main.ncd
+OUTFILE=C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\US_Sensors\main.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\US_Sensors
+LICENSE=WebPack
+USER_INFO=210659923_180558143_210541251_749
