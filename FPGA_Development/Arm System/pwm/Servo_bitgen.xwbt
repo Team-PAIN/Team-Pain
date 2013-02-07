@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=P:\CEC 330 FPGA\Rivera_VendingMachine\pwm\Servo.ncd
-OUTFILE=P:\CEC 330 FPGA\Rivera_VendingMachine\pwm\Servo.bit
-FAMILY=Spartan6
-PART=xc6slx16-3csg324
-WORKINGDIR=P:\CEC 330 FPGA\Rivera_VendingMachine\pwm
-LICENSE=ISE
-USER_INFO=210659923_180558143_210541251_342

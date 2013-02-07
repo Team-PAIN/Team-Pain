@@ -1,9 +1,0 @@
-
-
-
-// Instantiate the module
-main instance_name (
-    .CLK(CLK)
-    );
-
-

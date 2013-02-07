@@ -1,1 +1,0 @@
-vhdtdtfi -lang verilog -prj PING_EXAMPLE -o "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/PING_EXAMPLE/main.tfi" -lib work "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/PING_EXAMPLE//main.v" -module main -template C:/Xilinx/14.2/ISE_DS/ISE//data/tfi.tft -deleteonerror 

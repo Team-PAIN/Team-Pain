@@ -1,8 +1,0 @@
-INTSTYLE=ise
-INFILE=C:\fa12sp13\team2\branches\FPGA_Development\Arm System\pwm\Arm.ncd
-OUTFILE=C:\fa12sp13\team2\branches\FPGA_Development\Arm System\pwm\Arm.bit
-FAMILY=Spartan6
-PART=xc6slx16-3csg324
-WORKINGDIR=C:\fa12sp13\team2\branches\FPGA_Development\Arm System\pwm
-LICENSE=ISE
-USER_INFO=210659923_180558143_210541251_342

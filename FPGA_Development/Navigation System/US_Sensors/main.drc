@@ -1,8 +1,0 @@
-Release 14.2 Drc P.28xd (nt64)
-Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
-
-Sun Nov 11 12:57:00 2012
-
-drc -z main.ncd main.pcf
-
-DRC detected 0 errors and 0 warnings.

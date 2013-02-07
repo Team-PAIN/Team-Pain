@@ -1,1 +1,0 @@
--intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -lib "secureip" -o "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/US_Sensors/US_Sensor_isim_beh.exe" -prj "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/US_Sensors/US_Sensor_beh.prj" "work.US_Sensor" "work.glbl" 
