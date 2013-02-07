@@ -30,17 +30,20 @@ module Navigation(
 		input [7:0] COMMAND,
 		input [7:0] PATH,
 		input [7:0] COMPARE_DISTANCE,
+		output NEXT_FLAG,
 		output PWM, //Pulse to Motor Controllers
 		output [7:0] SSEG_CA,
 		output [3:0] SSEG_AN,
 		output [7:0] LED,
-		output [1:0] RUN_FLAG
+		input [1:0] RUN_FLAG,
+		output [7:0] DISTANCE_SIDE_FRONT,
+		output [7:0] DISTANCE_SIDE_BACK,
+		output [7:0] DISTANCE_FRONT
     );
 	 
 	reg [18:0] count;
 	wire SCLK_50MHz,DEBOUCED_SCLK;
 	wire [4:0] MC1,MC2;
-	wire [7:0] DISTANCE_FRONT, DISTANCE_BACK, DISTANCE_SIDE_BACK, DISTANCE_SIDE_FRONT;
 	wire [7:0] ANGLE;
 	wire [1:0] ANGLE_DIRECTION;
 	
@@ -76,7 +79,8 @@ module Navigation(
 		 .ANGLE_DIRECTION(ANGLE_DIRECTION), 
 		 .COMMAND(COMMAND),
 		 .PATH(PATH),
-		 .COMPARE_DISTANCE(COMPARE_DISTANCE),
+		 .DISTANCE_CHECK(COMPARE_DISTANCE),
+		 .NEXT_FLAG(NEXT_FLAG),
 		 .MC1(MC1), 
 		 .MC2(MC2),
 		 .LED(LED),

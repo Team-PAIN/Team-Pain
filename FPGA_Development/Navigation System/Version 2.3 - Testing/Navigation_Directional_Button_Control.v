@@ -31,17 +31,20 @@ module direction_control(
 		input [7:0] COMMAND,
 		input [7:0] PATH,
 		input [7:0] DISTANCE_CHECK,
+		output NEXT_FLAG,
 		output reg [4:0] MC1, //Bits 1:0 control Direction, Bits 4:2 Control Power
 		output reg [4:0] MC2,	 //Bits 1:0 control Direction, Bits 4:2 Control Power
 		output [7:0] LED,
-		output reg [1:0] RUN_FLAG
+		input [1:0] RUN_FLAG
     );
 	 
 	wire [7:0] ALIGN_COMP;
-	
+
+	reg NEXT_FLAG;
 	reg [4:0] DIR_STATE, PWM_STATE;
 	reg [7:0] STATE;
 	reg FLAG, STABLE,START;
+	
 
 	parameter [4:0] NEUTRAL = 			5'b 00000;
 	parameter [4:0] FORWARD = 			5'b 00001;
@@ -76,10 +79,11 @@ module direction_control(
 		STATE = 0;
 		FLAG = 1;
 		STABLE = 0;
-		RUN_FLAG = 2'b 00;
+		NEXT_FLAG = 0;
 	end
 	
-	assign LED = RUN_FLAG;
+	assign LED = DISTANCE_CHECK;
+
 	assign ALIGN_COMP = (DISTANCE_SIDE_FRONT > DISTANCE_SIDE_BACK) ? DISTANCE_SIDE_FRONT-DISTANCE_SIDE_BACK : DISTANCE_SIDE_BACK-DISTANCE_SIDE_FRONT;
 	
 	always @(posedge CLK) begin
@@ -150,14 +154,11 @@ module direction_control(
 				
 			case(COMMAND)                              
 				STRAIGHT:begin
-								if(RUN_FLAG == RUN_ERR)begin
-									DIR_STATE <= NEUTRAL;
-								end else if((RUN_FLAG == RUN_INI) & (OLD_RUN != 2'b 01))begin
-									RUN_FLAG <= RUN_EXC;
-								end else if(RUN_FLAG == RUN_EXC)begin
-									if(DISTANCE_FRONT <= COMPARE_DISTANCE)begin
+								if(RUN_FLAG)begin
+									NEXT_FLAG <= 0;
+									if(DISTANCE_FRONT <= DISTANCE_CHECK)begin
 										DIR_STATE <= NEUTRAL;
-										RUN_FLAG <= RUN_COM;
+										NEXT_FLAG <= 1;
 									end else begin
 										DIR_STATE <= FORWARD;
 										if(PWM_STATE[1:0] == 2'b 11) begin //Both MC Receive Same Power
@@ -175,54 +176,46 @@ module direction_control(
 											MC1[4:2] <= 3'b 000;
 											MC2[4:2] <= 3'b 000;
 										end
-									end								
-								end else if(RUN_FLAG == RUN_COM)begin
-									RUN_FLAG <= RUN_INI;
+									end		
+								end else begin
+									DIR_STATE <= NEUTRAL;
 								end
+									
 							end
 				TURN_RIGHT:	begin
-									OLD_RUN <= RUN_ERR;
-									if(RUN_FLAG == RUN_ERR)begin
-										DIR_STATE <= NEUTRAL;
-									end else if((RUN_FLAG == RUN_INI) & (OLD_RUN != 2'b 01))begin
-										RUN_FLAG <= RUN_EXC;
-										DISTANCE_CHECK <= COMPARE_DISTANCE - DISTANCE_SIDE_FRONT; //140 Compare distance
-									end else if(RUN_FLAG == RUN_EXC)begin
+									if(RUN_FLAG)begin
 										MC1[4:2] <= PWM_STATE[4:2];
 										MC2[4:2] <= PWM_STATE[4:2];
+										NEXT_FLAG <= 0;
 										if((DISTANCE_CHECK - DISTANCE_FRONT) > 10)begin
 											DIR_STATE <= R_360; //FORWARD_RIGHT
-										end else if(((DISTANCE_CHECK-DISTANCE_FRONT) <= 10)|(ANGLE == 0))begin
+										end else if(((DISTANCE_CHECK-DISTANCE_FRONT) <= 10)|(ANGLE_DIRECTION == 0))begin
 											DIR_STATE <= NEUTRAL;
-											RUN_FLAG <= RUN_COM;
+											NEXT_FLAG <= 1;
 										end else begin
 											DIR_STATE <= NEUTRAL;
-										end										
-									end else if(RUN_FLAG == RUN_COM)begin
-										RUN_FLAG <= RUN_INI;
+										end 
+									end else begin
+										DIR_STATE <= NEUTRAL;
 									end
 								end
 				TURN_LEFT:	begin
-									OLD_RUN <= RUN_ERR;
-									if(RUN_FLAG == RUN_ERR)begin
-										DIR_STATE <= NEUTRAL;
-									end else if((RUN_FLAG == RUN_INI) & (OLD_RUN != 2'b 01))begin
-										RUN_FLAG <= RUN_EXC;
-									end else if(RUN_FLAG == RUN_EXC)begin
+									if(RUN_FLAG)begin
 										MC1[4:2] <= PWM_STATE[4:2];
 										MC2[4:2] <= PWM_STATE[4:2];
-										if(((DISTANCE_CHECK-DISTANCE_FRONT) <= 10)|(ANGLE == 0))begin
+										NEXT_FLAG <= 0;
+										if(((DISTANCE_CHECK-DISTANCE_FRONT) <= 10)|(ANGLE_DIRECTION == 0))begin
 											DIR_STATE <= NEUTRAL;
-											RUN_FLAG <= RUN_COM;
-										end else if()begin
+											NEXT_FLAG <= 1;
+										end else if(DISTANCE_SIDE_FRONT <= 3)begin
+											DIR_STATE <= FORWARD;
+										end else begin
 											DIR_STATE <= FORWARD_LEFT;
-										end 										
-									end else if(RUN_FLAG == RUN_COM)begin
-										RUN_FLAG <= RUN_INI;
+										end 					
+									end else begin
 										DIR_STATE <= NEUTRAL;
 									end
 								end
-				
 			endcase
 				
 		end	
