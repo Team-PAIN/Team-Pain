@@ -27,7 +27,7 @@ module Navigation(
 		inout US_SIDE_BACK,//Left Side, Back Sensor
 		input [7:0] SW,
 		input [4:0] BTN,
-		input [7:0] COMMAND,
+		input [4:0] COMMAND,
 		input [7:0] PATH,
 		input [7:0] COMPARE_DISTANCE,
 		output NEXT_FLAG,

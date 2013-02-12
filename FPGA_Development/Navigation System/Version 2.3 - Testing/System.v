@@ -37,7 +37,8 @@ module System(
 	
 	wire NEXT_FLAG;
 	reg [1:0] RUN_FLAG;
-	reg [7:0] COMMAND, COMPARE_DISTANCE, PATH,state;
+	reg [4:0] COMMAND;
+	reg [7:0] COMPARE_DISTANCE, PATH,state;
 	wire [7:0] DISTANCE_SIDE_FRONT, DISTANCE_SIDE_BACK, DISTANCE_FRONT;
 	
 	initial begin
@@ -46,6 +47,7 @@ module System(
 		PATH = 0;
 		state = 0;
 		RUN_FLAG = RUN_INI;
+		COMMAND = 0;
 	end
 	
 	parameter [1:0] RUN_INI = 2'b 00; //Initialization State
@@ -53,9 +55,10 @@ module System(
 	parameter [1:0] RUN_COM = 2'b 10; //Completion State
 	parameter [1:0] RUN_ERR = 2'b 11; //Error State
 	
-	parameter [4:0] TURN_RIGHT = 	5'b 01111;
-	parameter [4:0] TURN_LEFT = 	5'b 01110;
-	parameter [4:0] STRAIGHT = 	5'b 01100;
+	//	Command Parameters
+	parameter [4:0] TURN_RIGHT 	= 5'b 01100;
+	parameter [4:0] TURN_LEFT 		= 5'b 00110;
+	parameter [4:0] STRAIGHT 		= 5'b 01110;
 	
 	//*** Sub-Systems ***//
 		// Navigational System
