@@ -1,12 +1,12 @@
 /*
 refer: http://itp.nyu.edu/physcomp/Labs/DCMotorControl
 */
-#define PIN_ENABLE 2
+#define PIN_ENABLE 4
 #define PIN_MOTOPS 3
-#define PIN_MOTONG 4
+#define PIN_MOTONG 2
 
-#define DELAY_HIGH 2
-#define DELAY_LOW 5
+#define DELAY_HIGH 5
+#define DELAY_LOW 2
 #define PIN_POSIN A0
 #define FILTER_DELAY 1
 
