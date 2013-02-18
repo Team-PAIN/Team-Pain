@@ -20,8 +20,6 @@
 //////////////////////////////////////////////////////////////////////////////////
 module localization(
 		input CLK,
-		input [7:0] ANGLE,
-		input [1:0] ANGLE_DIRECTION,
 		input [7:0] DISTANCE_FRONT,
 		input [7:0] DISTANCE_SIDE_FRONT,
 		input [7:0] DISTANCE_SIDE_BACK,
@@ -30,16 +28,19 @@ module localization(
 		input [7:0] INITIAL_X,
 		input [7:0] INITIAL_Y,
 		output reg [1:0] ORIENTATION,
-		output reg [2:0] SECTOR
+		output reg [2:0] SECTOR,
+		output reg [7:0] BACK_DISTANCE,
+		output reg [7:0] RIGHT_DISTANCE
 		);
 		
 		reg [4:0] old_command;
-		reg [7:0] X_A_B, X_B_A, Y_A_C;
-		reg [7:0] COURSE_W_2_E, COURSE_N_2_S_SECTORS_AC, COURSE_N_2_S_SECTOR_B;
-		reg [7:0] MISSING_X_B, MISSING_Y_A, MISSING_Y_B;
-		reg [7:0] S_1, S_2, S_3, S_4, S_5, S_6; 
-		reg [7:0] R_1, R_2, R_3, R_4, R_5, R_6;
-		reg [7:0] C_1, C_2, C_3, C_4, C_5, C_6, C_7, C_8, C_9, C_10, C_11, C_12, C_13, C_14;
+		wire [7:0] X_A_B, X_B_A, Y_A_C;
+		wire [7:0] COURSE_W_2_E, COURSE_N_2_S_SECTORS_AC, COURSE_N_2_S_SECTOR_B;
+		wire [7:0] MISSING_X_B, MISSING_Y_A, MISSING_Y_B;
+		wire [7:0] S_1, S_2, S_3, S_4, S_5, S_6; 
+		wire [7:0] R_1, R_2, R_3, R_4, R_5, R_6;
+		wire [7:0] C_1, C_2, C_3, C_4, C_5, C_6, C_7, C_8, C_9, C_10, C_11, C_12, C_13, C_14;
+		wire [7:0] BACK_SUB, RIGHT_SUB;
 		
 		// Robot Size Parameters  *************************************
 		parameter [7:0] ROBOT_SIZE_W_2_E = 8'b 00011010; //26 cm
@@ -79,14 +80,15 @@ module localization(
 		end
 		
 		// Course Turning Point Distances
-		assign X_A_2_B = ;
-		assign X_B_2_A = ;
-		assign Y_A_2_C = ;
+		assign X_A_2_B = (COURSE_W_2_E/2); //Half of the length of the course
+		assign X_B_2_A = (COURSE_W_2_E/2); //Half of the length of the course
+		assign Y_A_2_C = (COURSE_W_2_E/2);
+		assign Y_C_2_A = COURSE_N_2_S_SECTORS_AC - (COURSE_W_2_E/2);
 		
 		// Course Distances
 		assign COURSE_W_2_E = INITIAL_X + ROBOT_SIZE_W_2_E;
 		assign COURSE_N_2_S_SECTORS_AC = INITIAL_Y + ROBOT_SIZE_N_2_S;
-		assign COURSE_N_2_S_SECTOR_B = COURSE_N_2_S_SECTORS_AC - 57; //57.15 cm is difference in Y distances
+		assign COURSE_N_2_S_SECTOR_B = COURSE_N_2_S_SECTORS_AC - 57; //22.5 inches = 57.15 cm is difference in Y distances
 		
 		//Missing Information Determination
 		assign MISSING_X_B = ((COURSE_W_2_E - SEA_COVERAGE - START_COVERAGE)/(2));
@@ -123,6 +125,11 @@ module localization(
 		assign C_2  = C_3  + ZONE_SEPERATION; //Cargo Zone 2
 		assign C_1  = C_2  + ZONE_SEPERATION; //Cargo Zone 1
 		
+		//Back and Right Distances
+		assign BACK_SUB  = ROBOT_SIZE_N_2_S + DISTANCE_FRONT;
+		assign RIGHT_SUB = ROBOT_SIZE_W_2_E + DISTANCE_SIDE_FRONT;
+		
+		
 		always@(posedge CLK)begin
 		
 			///*** ORIENTATION SUB-SECTION ALGORITHM ***///
@@ -145,6 +152,9 @@ module localization(
 			///*** SECTOR SUB-SECTION ALGORITHM ***///
 			case(SECTOR)
 				SECTOR_A:	begin
+									BACK_DISTANCE  <= ((ORIENTATION == NORTH)|(ORIENTATION == SOUTH))?  COURSE_N_2_S_SECTORS_AC - BACK_SUB : COURSE_W_2_E - BACK_SUB;
+									RIGHT_DISTANCE <= ((ORIENTATION == NORTH)|(ORIENTATION == SOUTH))?  COURSE_W_2_E - BACK_SUB : COURSE_N_2_S_SECTORS_AC - BACK_SUB;
+									
 									if((ORIENTATION == WEST)&(DISTANCE_FRONT <= X_A_2_B))begin
 											SECTOR <= SECTOR_B;
 									end else if((ORIENTATION == NORTH)&(DISTANCE_FRONT <= Y_A_2_C))begin
@@ -154,16 +164,14 @@ module localization(
 									end
 								end
 				SECTOR_B:	begin
-									if((ORIENTATION == EAST)&(DISTANCE_FRONT <= X_B_2_A))begin
-											SECTOR <= SECTOR_A;
-									end else begin
-										SECTOR <= SECTOR_B;
-									end
+									
+									SECTOR <= ((ORIENTATION == EAST)&(DISTANCE_FRONT <= X_B_2_A)) ? SECTOR_A : SECTOR_B;
+								
 								end
 				SECTOR_C:	begin
 									if((ORIENTATION == WEST)&(TILT == 1))begin //fix tilt
 											SECTOR <= SECTOR_D;
-									end else if((ORIENTATION == SOTH)&(DISTANCE_FRONT <= Y_A_C))begin
+									end else if((ORIENTATION == SOUTH)&(DISTANCE_FRONT <= Y_C_2_A))begin
 											SECTOR <= SECTOR_A;
 									end else begin
 										SECTOR <= SECTOR_C;
@@ -197,15 +205,14 @@ module localization(
 									end
 								end
 				SECTOR_G:	begin
-									if((ORIENTATION == NORTH)&(TILT == 1))begin //fix tilt
-											SECTOR <= SECTOR_F;
-									end else begin
-										SECTOR <= SECTOR_G;
-									end
+									SECTOR <= ((ORIENTATION == NORTH)&(TILT == 1)) ? SECTOR_F : SECTOR_G;
+									
 								end
 			endcase
-				///***  END OF SECTOR SUB-SECTION ALGORITHM ***///
+			///***  END OF SECTOR SUB-SECTION ALGORITHM ***///
 		
+				
+			
 		end
 
 

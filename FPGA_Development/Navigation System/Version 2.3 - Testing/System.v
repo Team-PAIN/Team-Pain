@@ -37,28 +37,40 @@ module System(
 	
 	wire NEXT_FLAG;
 	reg [1:0] RUN_FLAG;
-	reg [4:0] COMMAND;
-	reg [7:0] COMPARE_DISTANCE, PATH,state;
+	reg [4:0] COMMAND, STATE;
+	reg [7:0] COMPARE_DISTANCE, PATH,INITIAL_X,INITIAL_Y;
 	wire [7:0] DISTANCE_SIDE_FRONT, DISTANCE_SIDE_BACK, DISTANCE_FRONT;
 	
-	initial begin
-		//COMMAND = TURN_LEFT;
-		COMPARE_DISTANCE = 0;
-		PATH = 0;
-		state = 0;
-		RUN_FLAG = RUN_INI;
-		COMMAND = 0;
-	end
 	
+	// State Parameters
 	parameter [1:0] RUN_INI = 2'b 00; //Initialization State
 	parameter [1:0] RUN_EXC = 2'b 01; //Execution State
 	parameter [1:0] RUN_COM = 2'b 10; //Completion State
 	parameter [1:0] RUN_ERR = 2'b 11; //Error State
 	
 	//	Command Parameters
+	parameter [4:0] NO_COMMAND 	= 5'b 01100;
 	parameter [4:0] TURN_RIGHT 	= 5'b 01100;
 	parameter [4:0] TURN_LEFT 		= 5'b 00110;
 	parameter [4:0] STRAIGHT 		= 5'b 01110;
+	
+	// State Command
+	parameter [4:0] START			= 5'b 00000;
+	parameter [4:0] INI_FORWARD 	= 5'b 00001;
+	parameter [4:0] INI_LEFT	 	= 5'b 00010;
+	parameter [4:0] SEA_SCAN	 	= 5'b 00011;
+	parameter [4:0] RIGHT_CARGO	= 5'b 00100;
+	parameter [4:0] CARGO_SCAN 	= 5'b 00101;
+	
+	
+	initial begin
+		COMPARE_DISTANCE = 0;
+		PATH = 0;
+		STATE = START;
+		RUN_FLAG = RUN_INI;
+		COMMAND = NO_COMMAND;
+	end
+	
 	
 	//*** Sub-Systems ***//
 		// Navigational System
@@ -84,6 +96,22 @@ module System(
 			 .DISTANCE_FRONT(DISTANCE_FRONT)
 			 );
 
+		localization Localize (
+			 .CLK(CLK), 
+			 .DISTANCE_FRONT(DISTANCE_FRONT), 
+			 .DISTANCE_SIDE_FRONT(DISTANCE_SIDE_FRONT), 
+			 .DISTANCE_SIDE_BACK(DISTANCE_SIDE_BACK), 
+			 .COMMAND(COMMAND), 
+			 .TILT(TILT), 
+			 .INITIAL_X(INITIAL_X), 
+			 .INITIAL_Y(INITIAL_Y), 
+			 .ORIENTATION(ORIENTATION), 
+			 .SECTOR(SECTOR), 
+			 .BACK_DISTANCE(BACK_DISTANCE), 
+			 .RIGHT_DISTANCE(RIGHT_DISTANCE)
+			 );
+			 
+			 
 		// Arm System
 		Arm ARM (
 			 .CLK(CLK), 
@@ -94,12 +122,37 @@ module System(
 			 );
 			 
 	always @(posedge CLK)begin
-		case(state)
-			0: begin
-					if(SW[7]==0)
-						state <= 1;
+		case(STATE)
+			START: begin
+					if(SW[7] == 0)begin
+						STATE <= INI_FORWARD;
+					end else begin
+						INITIAL_X <= DISTANCE_SIDE_FRONT;
+						INITIAL_Y <= DISTANCE_FRONT;
+					end
+					
 				end
-			1:	begin
+			INI_FORWARD:begin
+					case(RUN_FLAG)
+						RUN_INI:	begin //Initialization State
+										COMMAND <= STRAIGHT;
+										PATH <= DISTANCE_SIDE_FRONT;	
+										COMPARE_DISTANCE <= DISTANCE_SIDE_FRONT - 4;
+										RUN_FLAG <= RUN_EXC;
+									end
+						RUN_EXC:	begin //Execution State
+										RUN_FLAG <= (NEXT_FLAG) ? RUN_COM : RUN_EXC;
+									end
+						RUN_COM:	begin //Completion State
+										RUN_FLAG <= RUN_INI;
+										STATE <= INI_LEFT;
+									end
+						RUN_ERR:	begin //Error State
+						
+									end
+					endcase
+				end
+			INI_LEFT:begin
 					case(RUN_FLAG)
 						RUN_INI:	begin //Initialization State
 										COMMAND <= TURN_LEFT;
@@ -107,12 +160,10 @@ module System(
 										RUN_FLAG <= RUN_EXC;
 									end
 						RUN_EXC:	begin //Execution State
-										if(NEXT_FLAG) begin
-											RUN_FLAG <= RUN_EXC;
-										end
+										RUN_FLAG <= (NEXT_FLAG) ? RUN_COM : RUN_EXC;
 									end
 						RUN_COM:	begin //Completion State
-										state <= 2;
+										STATE <= SEA_SCAN;
 										RUN_FLAG <= RUN_INI;
 									end
 						RUN_ERR:	begin //Error State
@@ -120,7 +171,7 @@ module System(
 									end
 					endcase
 				end
-			2:	begin
+			SEA_SCAN:begin
 					case(RUN_FLAG)
 						RUN_INI:	begin //Initialization State
 										COMMAND <= STRAIGHT;
@@ -129,33 +180,29 @@ module System(
 										RUN_FLAG <= RUN_EXC;
 									end
 						RUN_EXC:	begin //Execution State
-										if(NEXT_FLAG)begin
-											RUN_FLAG <= RUN_COM;
-										end
+										RUN_FLAG <= (NEXT_FLAG) ? RUN_COM : RUN_EXC;
 									end
 						RUN_COM:	begin //Completion State
 										RUN_FLAG <= RUN_INI;
-										state <= 3;
+										STATE <= RIGHT_CARGO;
 									end
 						RUN_ERR:	begin //Error State
 						
 									end
 					endcase
 				end
-			3:	begin
+			RIGHT_CARGO:begin
 					case(RUN_FLAG)
 						RUN_INI:	begin //Initialization State
 										COMMAND <= TURN_RIGHT;
 										RUN_FLAG <= RUN_EXC;
-										COMPARE_DISTANCE <= 140 - DISTANCE_SIDE_FRONT; //140 Compare distance
+										COMPARE_DISTANCE <= RIGHT_DISTANCE; 
 									end
 						RUN_EXC:	begin //Execution State
-										if(NEXT_FLAG) begin
-											RUN_FLAG <= RUN_COM;
-										end
+										RUN_FLAG <= (NEXT_FLAG) ? RUN_COM : RUN_EXC;
 									end
 						RUN_COM:	begin //Completion State
-										state <= 4;
+										STATE <= CARGO_SCAN;
 										RUN_FLAG <= RUN_INI;
 									end
 						RUN_ERR:	begin //Error State
@@ -163,7 +210,7 @@ module System(
 									end
 					endcase
 				end
-			4:	begin
+			CARGO_SCAN:	begin
 					case(RUN_FLAG)
 						RUN_INI:	begin //Initialization State
 										COMMAND <= STRAIGHT;
@@ -172,12 +219,10 @@ module System(
 										RUN_FLAG <= RUN_EXC;
 									end
 						RUN_EXC:	begin //Execution State
-										if(NEXT_FLAG) begin
-											RUN_FLAG <= RUN_COM;
-										end
+										RUN_FLAG <= (NEXT_FLAG) ? RUN_COM : RUN_EXC;
 									end
 						RUN_COM:	begin //Completion State
-										state <= 3;
+										STATE <= RIGHT_CARGO;
 										RUN_FLAG <= RUN_INI;
 									end
 						RUN_ERR:	begin //Error State
