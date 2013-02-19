@@ -10,13 +10,13 @@
          <ClosedNode>/sin C:|fa12sp13_SourceCode|team2|branches|FPGA_Development|Navigation System|Version1.1-Working|sin.v</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem>NAV - Navigation (C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/Version 2.3 - Testing/Navigation.v)</SelectedItem>
+         <SelectedItem>System (C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/Version 2.3 - Testing/System.v)</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
       <ViewHeaderState orientation="horizontal" >000000ff0000000000000001000000010000000000000000000000000000000002020000000100000001000000640000032d000000020000000000000000000000000200000064ffffffff0000008100000003000000020000032d0000000100000003000000000000000100000003</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >true</UserChangedColumnWidths>
-      <CurrentItem>NAV - Navigation (C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/Version 2.3 - Testing/Navigation.v)</CurrentItem>
+      <CurrentItem>System (C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/Version 2.3 - Testing/System.v)</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="" guiview="Process" >
       <ClosedNodes>
@@ -39,7 +39,7 @@
       <SelectedItems/>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000263000000040101000100000000000000000000000064ffffffff000000810000000000000004000000420000000100000000000000240000000100000000000000660000000100000000000001970000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000000000000010000000000000000000000000000000000000175000000040101000100000000000000000000000064ffffffff000000810000000000000004000000420000000100000000000000240000000100000000000000660000000100000000000000a90000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
       <CurrentItem>C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Navigation System\Version 2.3 - Testing\Arm.v</CurrentItem>
    </ItemView>
@@ -65,13 +65,13 @@
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem></SelectedItem>
+         <SelectedItem>Generate Programming File</SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000175000000010000000100000000000000000000000064ffffffff000000810000000000000001000001750000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem></CurrentItem>
+      <CurrentItem>Generate Programming File</CurrentItem>
    </ItemView>
    <ItemView engineview="SynthesisOnly" sourcetype="DESUT_UCF" guiview="Process" >
       <ClosedNodes>
@@ -79,13 +79,13 @@
          <ClosedNode>User Constraints</ClosedNode>
       </ClosedNodes>
       <SelectedItems>
-         <SelectedItem/>
+         <SelectedItem></SelectedItem>
       </SelectedItems>
       <ScrollbarPosition orientation="vertical" >0</ScrollbarPosition>
       <ScrollbarPosition orientation="horizontal" >0</ScrollbarPosition>
-      <ViewHeaderState orientation="horizontal" >000000ff00000000000000010000000100000000000000000000000000000000000000000000000175000000010000000100000000000000000000000064ffffffff000000810000000000000001000001750000000100000000</ViewHeaderState>
+      <ViewHeaderState orientation="horizontal" >000000ff000000000000000100000001000000000000000000000000000000000000000000000000f8000000010000000100000000000000000000000064ffffffff000000810000000000000001000000f80000000100000000</ViewHeaderState>
       <UserChangedColumnWidths orientation="horizontal" >false</UserChangedColumnWidths>
-      <CurrentItem/>
+      <CurrentItem></CurrentItem>
    </ItemView>
    <SourceProcessView>000000ff00000000000000020000016e0000017901000000050100000002</SourceProcessView>
    <CurrentView>Implementation</CurrentView>

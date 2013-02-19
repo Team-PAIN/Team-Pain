@@ -96,21 +96,21 @@ module localization(
 		assign MISSING_Y_B = ((COURSE_N_2_S_SECTOR_B - CARGO_AREA_COVERAGE)/(2));
 		
 		//Stopping Location Distances
-		assign S_6 = MISSING_X_B + 4; 			  //1.75 inches = 4.445 cm ~= 4, Sea Zone 6
+		assign S_6 = MISSING_X_B + 4; 		//1.75 inches = 4.445 cm ~= 4, Sea Zone 6
 		assign S_5 = S_6 + ZONE_SEPERATION; //Sea Zone 5
 		assign S_4 = S_5 + ZONE_SEPERATION; //Sea Zone 4
 		assign S_3 = S_4 + ZONE_SEPERATION; //Sea Zone 3
 		assign S_2 = S_3 + ZONE_SEPERATION; //Sea Zone 2
 		assign S_1 = S_2 + ZONE_SEPERATION; //Sea Zone 1
 		
-		assign R_6 = MISSING_Y_A + 4; 			  //1.75 inches = 4.445 cm ~= 4, Rail Zone 6
+		assign R_6 = MISSING_Y_A + 4; 		//1.75 inches = 4.445 cm ~= 4, Rail Zone 6
 		assign R_5 = R_6 + ZONE_SEPERATION; //Rail Zone 5
 		assign R_4 = R_5 + ZONE_SEPERATION; //Rail Zone 4
 		assign R_3 = R_4 + ZONE_SEPERATION; //Rail Zone 3
 		assign R_2 = R_3 + ZONE_SEPERATION; //Rail Zone 2
 		assign R_1 = R_2 + ZONE_SEPERATION; //Rail Zone 1
 		
-		assign C_14 = MISSING_Y_B + 4; 			  //1.75 inches = 4.445 cm ~= 4, Cargo Zone 14
+		assign C_14 = MISSING_Y_B + 4; 		  //1.75 inches = 4.445 cm ~= 4, Cargo Zone 14
 		assign C_13 = C_14 + ZONE_SEPERATION; //Cargo Zone 13
 		assign C_12 = C_13 + ZONE_SEPERATION; //Cargo Zone 12
 		assign C_11 = C_12 + ZONE_SEPERATION; //Cargo Zone 11
@@ -206,7 +206,6 @@ module localization(
 								end
 				SECTOR_G:	begin
 									SECTOR <= ((ORIENTATION == NORTH)&(TILT == 1)) ? SECTOR_F : SECTOR_G;
-									
 								end
 			endcase
 			///***  END OF SECTOR SUB-SECTION ALGORITHM ***///

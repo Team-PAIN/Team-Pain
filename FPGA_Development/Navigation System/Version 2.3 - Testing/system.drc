@@ -1,8 +1,15 @@
 Release 14.2 Drc P.28xd (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-Thu Feb 14 16:03:39 2013
+Tue Feb 19 14:14:20 2013
 
 drc -z System.ncd System.pcf
 
-DRC detected 0 errors and 0 warnings.
+ERROR:PhysDesignRules:368 - The signal <SLIDER<0>_OBUF> is incomplete. The
+   signal is not driven by any source pin in the design.
+ERROR:PhysDesignRules:368 - The signal <SLIDER<1>_OBUF> is incomplete. The
+   signal is not driven by any source pin in the design.
+ERROR:PhysDesignRules:10 - The network <SLIDER<0>_OBUF> is completely unrouted.
+ERROR:PhysDesignRules:10 - The network <SLIDER<1>_OBUF> is completely unrouted.
+ERROR:Bitgen:25 - DRC detected 4 errors and 0 warnings.  Please see the
+   previously displayed individual error or warning messages for more details.

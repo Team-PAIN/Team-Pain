@@ -21,21 +21,25 @@
 module System(
 		input CLK,
 		inout US_FRONT, //Top Side Sensor
-		inout US_BACK,	//Bottom Side Sensor
 		inout US_SIDE_FRONT, //Left Side, Front Sensor
 		inout US_SIDE_BACK,//Left Side, Back Sensor
 		input [7:0] SW,
 		input [4:0] BTN,
+		input RCLK, //Color and Size Receiving Clock
+		input RDATA, //Color and Size Receiving Data
+		input RESET, //Color and Size Receiving Reset
 		output PWM, //Pulse to Motor Controllers
 		output [7:0] SSEG_CA,
 		output [3:0] SSEG_AN,
 		output [7:0] LED,
 		output CLAW,
 		output JOINTHIGH,
-		output JOINTLOW
+		output JOINTLOW,
+		output [1:0] SLIDER
     );
 	
 	wire NEXT_FLAG;
+	wire[3:0] COLOR, SIZE;
 	reg [1:0] RUN_FLAG;
 	reg [4:0] COMMAND, STATE;
 	reg [7:0] COMPARE_DISTANCE, PATH,INITIAL_X,INITIAL_Y;
@@ -62,6 +66,26 @@ module System(
 	parameter [4:0] RIGHT_CARGO	= 5'b 00100;
 	parameter [4:0] CARGO_SCAN 	= 5'b 00101;
 	
+	// Color Parameters
+	parameter [3:0] RED 		= 4'b 0000;
+	parameter [3:0] ORANGE 	= 4'b 0001;
+	parameter [3:0] YELLOW 	= 4'b 0010;
+	parameter [3:0] GREEN 	= 4'b 0011;
+	parameter [3:0] BLUE 	= 4'b 0100;
+	parameter [3:0] BROWN 	= 4'b 0101;
+	
+	// Size Parameters
+	parameter [3:0] AIR 		= 4'b 0000;
+	parameter [3:0] SEA 		= 4'b 0001;
+	parameter [3:0] RAIL		= 4'b 0010;
+	
+	// RAIL Position Parameters
+	parameter [1:0] INITIAL		 	= 2'b 00;
+	parameter [1:0] ZONE_DETECT 	= 2'b 01;
+	parameter [1:0] BLOCK_DETECT 	= 2'b 10;
+	parameter [1:0] RAMP_DETECT 	= 2'b 11;
+	
+	assign SLIDER = 0;
 	
 	initial begin
 		COMPARE_DISTANCE = 0;
@@ -77,7 +101,6 @@ module System(
 		Navigation NAV (
 			 .CLK(CLK), 
 			 .US_FRONT(US_FRONT), 
-			 .US_BACK(US_BACK), 
 			 .US_SIDE_FRONT(US_SIDE_FRONT), 
 			 .US_SIDE_BACK(US_SIDE_BACK), 
 			 .SW(SW), 
@@ -120,7 +143,16 @@ module System(
 			 .JOINTHIGH(JOINTHIGH), 
 			 .JOINTLOW(JOINTLOW)
 			 );
-			 
+		
+		serialCOMM COLOR_SIZE (
+		 .CLK(CLK), 
+		 .RCLK(RCLK), 
+		 .RDATA(RDATA), 
+		 .RESET(RESET), 
+		 .SIZE(SIZE), 
+		 .COLOR(COLOR)
+		 );
+
 	always @(posedge CLK)begin
 		case(STATE)
 			START: begin
@@ -137,7 +169,7 @@ module System(
 						RUN_INI:	begin //Initialization State
 										COMMAND <= STRAIGHT;
 										PATH <= DISTANCE_SIDE_FRONT;	
-										COMPARE_DISTANCE <= DISTANCE_SIDE_FRONT - 4;
+										COMPARE_DISTANCE <= DISTANCE_SIDE_FRONT - 5;
 										RUN_FLAG <= RUN_EXC;
 									end
 						RUN_EXC:	begin //Execution State
