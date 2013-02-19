@@ -693,3 +693,4 @@ xst -intstyle ise -ifn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Develop
 ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc System_Connection.ucf -p xc6slx16-csg324-3 "System.ngc" System.ngd  
 map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o System_map.ncd System.ngd System.pcf 
 par -w -intstyle ise -ol high -mt off System_map.ncd System.ncd System.pcf 
+bitgen -intstyle ise -f System.ut System.ncd 
