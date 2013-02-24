@@ -1,39 +1,49 @@
-/*=========================================================================================
-/ Identification Subsystem (including slider) with FPGA serial communication enable V2.0
-/ Working with Arduino MEGA
-/ IR pins: A0, A1, A2
-/ One Vertical IR(bottom) Vo to pin A0
-/ Two horizontal IR(middle) Vo to pin A1, IR(top) Vo to pin A2, 
-/ ColorPAL pins:
-/ ColorPAL SIG to pin DIG52 and DIG53 (rx = 52, tx = 53). (see attachment below)
-/ Slider controling pins:
-/ Position output from slider pin to pin A3
-/ H-bridge leg Neg PWM 2
-/ H-bridge leg Pos PWM 3
-/ Enable pin PWM4
-/ Power pins:
-/ All Vcc of sensors to 5V
-/ Slider Vcc to 10V.
-/ GND to GND
-/ ========================================================================================
-/ This Code works with Arduino Library 0.2X Only!
-/ Reference to SensorWiki - http://ap.urpi.fei.stuba.sk/sensorwiki/index.php/Acrob040
-/ Reference to ITP PHYSICAL COMPUTING - http://itp.nyu.edu/physcomp/Labs/DCMotorControl
-/ Modified by Wing Wang for CEC420 - Senior Design Team 2 - Identification Subsystem
-/=========================================================================================*/
+/*  Identification Subsystem (including slider) with FPGA serial communication enable V2.5  /
+/                    Working with Arduino MEGA and Arduino Library 0.2X                     /
+/     Modified by Wing Wang for CEC420 - Senior Design Team 2 - Identification Subsystem    /
+/==========================================================================================*/
+/*===================PINS SETUP=================/
+/ IR pins: Analog0, Analog1, Analog2            /
+/          One Vertical IR(bottom)   Vo --> A0  /
+/          Two horizontal IR(middle) Vo --> A1  /
+/                         IR(top)    Vo --> A2  /
+/-----------------------------------------------/=============================/
+/ ColorPAL pins: Digital52, Digital53                                         /          
+/               SIG --> 52 and 53 (rx = 52, tx = 53)                          /
+                 |_____________/                                              /
+/ Attachment reading:                                                         /
+/ ~~~~~~~~~~~~~~~~~~~                                                         /
+/ This oscillates back and forth on one wire to turn off led, send signal,    /
+/ turn on led, read signal. very fast strobe read - arduino is not capable of /
+/ one wire signal communication over digital ports, so this is a way around   /
+/ that over 2 wires communicating with 1 pin on the sensor.                   /
+/-------------------------------------------------------/======================
+/ Slider Controling pins: Analog3, PWM 2, PWM 3, PWM 4  /
+/                         Position voltage --> A3       /
+/                         H-bridge leg Neg --> PWM 2    /
+/                         H-bridge leg Pos --> PWM 3    /
+/                         H-bridge Enable  --> PWM 4    /
+/-------------------------------------------------------/
+/ Communication pins: OUTPUT - PWM 5,PWM 6, PWM 7       /
+/                     INPUT  - PWM 8, PWM 9             /
+/                     CLOCK   --> PWM 5                 /
+/                     DATA    --> PWM 6                 /
+/                     RESET   --> PWM 7                 /
+/                     STAGE_0 --> PWM 8                 /
+/                     STAGE_1 --> PWM 9                 /
+/-------------------------------------------------------/
+/ Power pins:                                           /
+/ Sensors --> 5V  from Voltage Regulator circuit        /
+/ Slider  --> 10V PWM from H-bridge circuit             /
+/======================================================*/
+/*================================IMPORTANT INFORMATION==================================/
+/ This Code works with Arduino Library 0.2X Only!                                        /
+/ Reference to SensorWiki - http://ap.urpi.fei.stuba.sk/sensorwiki/index.php/Acrob040    /
+/ Reference to ITP PHYSICAL COMPUTING - http://itp.nyu.edu/physcomp/Labs/DCMotorControl  /
+/=======================================================================================*/
 
-/*-----------------------------------------------------------------------------------
-//	Attachment - SIG to same port 52 and 53
-//
-// This oscillates back and forth on one wire to turn off led, send signal,
-// turn on led, read signal. very fast strobe read - arduino is not capable of
-// one wire signal communication over digital ports, so this is a way around
-// that over 2 wires communicating with 1 pin on the sensor.
-//-----------------------------------------------------------------------------------
-*/
-
-
-#include <SoftwareSerial.h> //use Arduino Library 0.2X Only!
+//Use Arduino Library 0.2X Only!
+#include <SoftwareSerial.h> 
 
 //define pins
 //IR pins
@@ -52,6 +62,8 @@
 #define PIN_COM_CL 5
 #define PIN_COM_DA 6
 #define PIN_COM_RE 7
+#define PIN_COM_S1 8
+#define PIN_COM_S2 9
 
 //constent
 //IR
@@ -59,6 +71,7 @@
 #define IRS_BLK_LO 480
 #define IRS_RAM_HI 480
 #define IRS_RAM_LO 480
+#define IRS_ATD_DE 1 //convert delay
 //ColorPAL
 #define COL_BUF_SZ 20 //color sampling size
 //Slider
@@ -84,8 +97,8 @@
 #define COM_ZON_SE 1
 #define COM_ZON_RA 2
 #define COM_ZON_NU 15 //(F)
-#define COM_SEN_SP 1
-#define COM_SEN_DE 1
+#define COM_SEN_SP 1 //transfer speed low is faster
+#define COM_SEN_DE 1 //delay between signal change
 
 //system stage
 #define SYS_STG_ST 0
@@ -93,9 +106,12 @@
 #define SYS_STG_BL 2
 #define SYS_STG_RP 3
 
+
 SoftwareSerial ColorPAL(2, 3); 
 int sysStage = SYS_STG_ST;
-
+boolean isChecked = true;
+int sizeTemp = COM_ZON_NU;
+int colorTemp = COM_COL_NU;
 
 //initial function - call by Arduino at the beginning of the system started.
 void setup(){
@@ -111,7 +127,7 @@ void setup(){
 	//for debug info
 	Serial.println("COL: initialized");
   
-	//setup Motor pins and disable it at beginning
+	//setup Slider Motor pins and disable it at beginning
 	pinMode(PIN_SLI_EN, OUTPUT);
 	pinMode(PIN_SLI_PS, OUTPUT);
 	pinMode(PIN_SLI_NG, OUTPUT);
@@ -126,6 +142,9 @@ void setup(){
 	digitalWrite(PIN_COM_CL,LOW);
 	digitalWrite(PIN_COM_DA,LOW);
 	comReset();
+	pinMode(PIN_COM_S1,INPUT);
+	pinMode(PIN_COM_S2,INPUT);
+	
 	//for debug info
 	Serial.println("COM: initialized and reseted");
 }
@@ -133,7 +152,7 @@ void setup(){
 //main loop function - call by Arduino periodically
 void loop(){
 //use communication to get sytage from FPGA defalt is SYS_STG_ST
-
+	comReadStage();
 //working in different stage
 	switch(sysStage){
 		case SYS_STG_ST:
@@ -143,23 +162,28 @@ void loop(){
 		case SYS_STG_ZO:
 			//stage 1 zone color
 			sliderDriver(SLI_POS_ZO);
+			checkZone();
 			break;
 		case SYS_STG_BL:
 			//stage 2 block id
 			sliderDriver(SLI_POS_BL);
+			checkBlock();
 			break;
 		case SYS_STG_RP:
 			//stage 3 ramp edge
 			sliderDriver(SLI_POS_RP);
+			checkRamp();
 			break;
 		default:
+			sliderDriver(SLI_POS_ST);
 			break;
   }
-
 
 }  /* End of loop()*/
 
 
+/*ColorPAL Sensor functions
+*/
 
 void colorPALInitial(){
 	ColorPAL.begin(4800);
@@ -190,12 +214,130 @@ void colorPALInitial(){
 	pinMode(PIN_COL_TX,INPUT);
 }
 
+void checkColor(){
+}
+void checkZone(){
+}
+
+/*IR Sensor functions
+*/
+//this function will detected new block then call the check algorithm(size & color), call by loop().
+void checkBlock(){
+	//read the IR voltage
+	float volts0 = analogRead(PIN_IRS_VB);
+	delay(IRS_ATD_DE);
+	//If vertical IR detected the gap between blocks and print flag is not set.
+	if(volts0 > IRS_BLK_HI && !isChecked){
+		isChecked = true;//set flag
+		checkSize();
+		checkColor();
+		sendBlock();
+	}
+	//If vertical IR detected next block, clean the flag. 
+	if(volts0 < IRS_BLK_LO){
+		isChecked = false;
+	}
+}
+void checkSize(){
+//read the IR voltage
+	float volts1 = analogRead(PIN_IRS_HM);
+	delay(IRS_ATD_DE);
+	float volts2 = analogRead(PIN_IRS_HT);
+	delay(IRS_ATD_DE);
+	//top and middle are not detect. small block - air
+	if(volts1 > IRS_BLK_LO && volts2 > IRS_BLK_LO){
+		Serial.println("Air block!");
+		sizeTemp = COM_ZON_AI;
+	}
+	//top is not detect, middle is detected. middle block - sea
+	else if(volts1 < IRS_BLK_HI && volts2 > IRS_BLK_LO){
+		Serial.println("Sea block!");
+		sizeTemp = COM_ZON_SE;
+	}
+	//top and middle are detect. big block - rail
+	else if(volts1 < IRS_BLK_HI && volts2 < IRS_BLK_HI){
+		Serial.println("Rail block!");
+		sizeTemp = COM_ZON_RA;
+	}
+}
+
+void checkRamp(){
+	
+}
+
+
+
+
+
+/*FPGA Communication functions
+*/
 void comReset(){
 	digitalWrite(PIN_COM_RE,HIGH);
-	delay(1);
+	delay(COM_SEN_SP);
 	digitalWrite(PIN_COM_RE,LOW);
 }
 
+void comReadStage(){
+	if(digitalRead(PIN_COM_S1) == LOW && digitalRead(PIN_COM_S2) == LOW){
+		sysStage = SLI_POS_ST;
+	}
+	else if(digitalRead(PIN_COM_S1) == HIGH && digitalRead(PIN_COM_S2) == LOW){
+		sysStage = SLI_POS_ZO;
+	}
+	else if(digitalRead(PIN_COM_S1) == LOW && digitalRead(PIN_COM_S2) == HIGH){
+		sysStage = SLI_POS_BL;
+	}
+	else if(digitalRead(PIN_COM_S1) == HIGH && digitalRead(PIN_COM_S2) == HIGH){
+		sysStage = SLI_POS_RP;
+	}
+	else{
+		sysStage = SLI_POS_ST;
+	}
+}
+
+void sendBlock(){
+  char sendData = (sizeTemp<<4) + colorTemp;
+  Serial.print("sendSize:");
+  Serial.println(sizeTemp);
+  Serial.print("sendColor:");
+  Serial.println(colorTemp);
+  Serial.print("sendData:");
+  Serial.println(sendData);
+  comReset();
+  sendChar(sendData, PIN_COM_DA, PIN_COM_CL);
+}
+
+void sendChar(char sendData, int datPin, int clkPin){
+  Serial.println("dat start");
+  for(int i = 0; i < 8; i++){
+    delay(COM_SEN_SP);
+    if((sendData&1) == 1){
+      Serial.print("1");
+      digitalWrite(datPin,HIGH);
+      delay(COM_SEN_DE);
+      digitalWrite(clkPin,HIGH);
+      delay(COM_SEN_DE);
+      digitalWrite(clkPin,LOW);
+      //digitalWrite(datPin,LOW);
+      delay(COM_SEN_DE);
+    }
+    else{
+      Serial.print("0");
+      digitalWrite(datPin,LOW);
+      delay(COM_SEN_DE);
+      digitalWrite(clkPin,HIGH);
+      delay(COM_SEN_DE);
+      digitalWrite(clkPin,LOW);
+      //digitalWrite(datPin,LOW);
+      delay(COM_SEN_DE);
+    }
+    sendData = sendData>>1;
+  }
+  Serial.println("");
+}
+
+/*Slider control functions
+*/
 void sliderDriver(int setPosition){
 	if(setPosition <= SLI_POS_FI && setPosition>=SLI_POS_IN){
 		boolean isMoving = true;
@@ -226,5 +368,8 @@ void sliderDriver(int setPosition){
 				}
 			}
 		} while(isMoving);
+	}
+	else{
+		Serial.println("SLI: invalid position!");
 	}
 }
