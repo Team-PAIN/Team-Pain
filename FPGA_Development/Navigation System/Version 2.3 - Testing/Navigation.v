@@ -53,14 +53,14 @@ module Navigation(
 	end
 	
 	assign SCLK_50MHz = count[0]; //50 MHz Signal for US sensors
-	assign DEBOUCED_SCLK = count[16];
+	assign DEBOUCED_SCLK = count[17];
 			 
 			 
 	//Display of Data
 	SevenDisplay DataDisplay (
 		 .CLK(CLK), 
 		 .SCLK(count[16:15]), 
-		 .DISPLAY({DISTANCE_SIDE_BACK,DISTANCE_FRONT}), 
+		 .DISPLAY({DISTANCE_SIDE_BACK,DISTANCE_SIDE_FRONT}), 
 		 .SSEG_CA(SSEG_CA), 
 		 .SSEG_AN(SSEG_AN)
 		 );

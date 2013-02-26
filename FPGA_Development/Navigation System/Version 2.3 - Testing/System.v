@@ -169,7 +169,7 @@ module System(
 						RUN_INI:	begin //Initialization State
 										COMMAND <= STRAIGHT;
 										PATH <= DISTANCE_SIDE_FRONT;	
-										COMPARE_DISTANCE <= DISTANCE_SIDE_FRONT - 5;
+										COMPARE_DISTANCE <= DISTANCE_FRONT - 5;
 										RUN_FLAG <= RUN_EXC;
 									end
 						RUN_EXC:	begin //Execution State

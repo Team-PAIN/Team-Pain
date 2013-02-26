@@ -64,12 +64,12 @@ module pulseout(
 		if(count >= refresh)begin //11 ms Refresh Rate
 			count[20:0] <= 0;
 
-			if(MC1State == 23) //State Reset for Motor #1
+			if(MC1State == 11) //State Reset for Motor #1
 				MC1State <= 0;
 			else 
 				MC1State <= MC1State + 1;
 			
-			if(MC2State == 23) //State Reset for Motor #2
+			if(MC2State == 11) //State Reset for Motor #2
 				MC2State <= 0;
 			else 
 				MC2State <= MC2State + 1;

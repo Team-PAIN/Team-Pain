@@ -443,7 +443,7 @@ Synthesizing Unit <PulseModulation1>.
     Related source file is "C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Navigation System\Version 2.3 - Testing\MC_Pulse_Modulation.v".
         CLK_RATE = 28'b0101111101011110000100000000
     Found 21-bit register for signal <Pulse>.
-    Found 21-bit 8-to-1 multiplexer for signal <ModInfo[4]_State[4]_wide_mux_60_OUT> created at line 37.
+    Found 21-bit 8-to-1 multiplexer for signal <ModInfo[4]_State[4]_wide_mux_57_OUT> created at line 37.
     Summary:
 	inferred  21 D-type flip-flop(s).
 	inferred   9 Multiplexer(s).
@@ -453,10 +453,10 @@ Synthesizing Unit <PulseModulation2>.
     Related source file is "C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Navigation System\Version 2.3 - Testing\PulseModulation2.v".
         CLK_RATE = 28'b0101111101011110000100000000
     Found 21-bit register for signal <Pulse>.
-    Found 21-bit 7-to-1 multiplexer for signal <ModInfo[4]_State[4]_wide_mux_64_OUT> created at line 37.
+    Found 21-bit 8-to-1 multiplexer for signal <ModInfo[4]_State[4]_wide_mux_57_OUT> created at line 37.
     Summary:
 	inferred  21 D-type flip-flop(s).
-	inferred   8 Multiplexer(s).
+	inferred   9 Multiplexer(s).
 Unit <PulseModulation2> synthesized.
 
 Synthesizing Unit <acceleration_modulation>.
@@ -723,14 +723,13 @@ Macro Statistics
  8-bit comparator equal                                : 7
  8-bit comparator greater                              : 6
  8-bit comparator lessequal                            : 1
-# Multiplexers                                         : 171
+# Multiplexers                                         : 172
  1-bit 2-to-1 multiplexer                              : 48
  16-bit 2-to-1 multiplexer                             : 9
  2-bit 2-to-1 multiplexer                              : 8
  20-bit 2-to-1 multiplexer                             : 4
- 21-bit 2-to-1 multiplexer                             : 15
- 21-bit 7-to-1 multiplexer                             : 1
- 21-bit 8-to-1 multiplexer                             : 1
+ 21-bit 2-to-1 multiplexer                             : 16
+ 21-bit 8-to-1 multiplexer                             : 2
  26-bit 2-to-1 multiplexer                             : 27
  3-bit 2-to-1 multiplexer                              : 2
  4-bit 4-to-1 multiplexer                              : 1
@@ -898,14 +897,13 @@ Macro Statistics
  8-bit comparator equal                                : 7
  8-bit comparator greater                              : 6
  8-bit comparator lessequal                            : 1
-# Multiplexers                                         : 177
+# Multiplexers                                         : 178
  1-bit 2-to-1 multiplexer                              : 58
  16-bit 2-to-1 multiplexer                             : 9
  2-bit 2-to-1 multiplexer                              : 8
  20-bit 2-to-1 multiplexer                             : 4
- 21-bit 2-to-1 multiplexer                             : 15
- 21-bit 7-to-1 multiplexer                             : 1
- 21-bit 8-to-1 multiplexer                             : 1
+ 21-bit 2-to-1 multiplexer                             : 16
+ 21-bit 8-to-1 multiplexer                             : 2
  26-bit 2-to-1 multiplexer                             : 27
  4-bit 4-to-1 multiplexer                              : 1
  5-bit 2-to-1 multiplexer                              : 17
@@ -1020,16 +1018,16 @@ WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <JOINTHIGH_DESIRED_9
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <JOINTHIGH_DESIRED_2> has a constant value of 0 in block <Arm>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <JOINTHIGH_DESIRED_0> has a constant value of 0 in block <Arm>. This FF/Latch will be trimmed during the optimization process.
 INFO:Xst:2261 - The FF/Latch <PWM_STATE_0> in Unit <direction_control> is equivalent to the following FF/Latch, which will be removed : <PWM_STATE_1> 
-INFO:Xst:2261 - The FF/Latch <Pulse_9> in Unit <PulseModulation1> is equivalent to the following FF/Latch, which will be removed : <Pulse_15> 
 INFO:Xst:2261 - The FF/Latch <Pulse_10> in Unit <PulseModulation1> is equivalent to the following FF/Latch, which will be removed : <Pulse_16> 
 INFO:Xst:2261 - The FF/Latch <Pulse_6> in Unit <PulseModulation1> is equivalent to the following 3 FFs/Latches, which will be removed : <Pulse_8> <Pulse_11> <Pulse_17> 
 INFO:Xst:2261 - The FF/Latch <Pulse_4> in Unit <PulseModulation1> is equivalent to the following FF/Latch, which will be removed : <Pulse_14> 
 INFO:Xst:2261 - The FF/Latch <Pulse_5> in Unit <PulseModulation1> is equivalent to the following FF/Latch, which will be removed : <Pulse_7> 
+INFO:Xst:2261 - The FF/Latch <Pulse_9> in Unit <PulseModulation1> is equivalent to the following FF/Latch, which will be removed : <Pulse_15> 
+INFO:Xst:2261 - The FF/Latch <Pulse_10> in Unit <PulseModulation2> is equivalent to the following FF/Latch, which will be removed : <Pulse_16> 
+INFO:Xst:2261 - The FF/Latch <Pulse_6> in Unit <PulseModulation2> is equivalent to the following 3 FFs/Latches, which will be removed : <Pulse_8> <Pulse_11> <Pulse_17> 
 INFO:Xst:2261 - The FF/Latch <Pulse_4> in Unit <PulseModulation2> is equivalent to the following FF/Latch, which will be removed : <Pulse_14> 
 INFO:Xst:2261 - The FF/Latch <Pulse_5> in Unit <PulseModulation2> is equivalent to the following FF/Latch, which will be removed : <Pulse_7> 
 INFO:Xst:2261 - The FF/Latch <Pulse_9> in Unit <PulseModulation2> is equivalent to the following FF/Latch, which will be removed : <Pulse_15> 
-INFO:Xst:2261 - The FF/Latch <Pulse_10> in Unit <PulseModulation2> is equivalent to the following FF/Latch, which will be removed : <Pulse_16> 
-INFO:Xst:2261 - The FF/Latch <Pulse_6> in Unit <PulseModulation2> is equivalent to the following 3 FFs/Latches, which will be removed : <Pulse_8> <Pulse_11> <Pulse_17> 
 INFO:Xst:2261 - The FF/Latch <JOINTHIGH_DESIRED_4> in Unit <Arm> is equivalent to the following 3 FFs/Latches, which will be removed : <JOINTHIGH_DESIRED_12> <JOINTLOW_DESIRED_14> <JOINTLOW_DESIRED_17> 
 INFO:Xst:2261 - The FF/Latch <JOINTHIGH_DESIRED_7> in Unit <Arm> is equivalent to the following 5 FFs/Latches, which will be removed : <JOINTHIGH_DESIRED_8> <JOINTHIGH_DESIRED_17> <JOINTLOW_DESIRED_4> <JOINTLOW_DESIRED_12> <JOINTLOW_DESIRED_16> 
 INFO:Xst:2261 - The FF/Latch <JOINTHIGH_DESIRED_1> in Unit <Arm> is equivalent to the following 5 FFs/Latches, which will be removed : <JOINTHIGH_DESIRED_5> <JOINTHIGH_DESIRED_15> <JOINTLOW_DESIRED_1> <JOINTLOW_DESIRED_9> <JOINTLOW_DESIRED_13> 
@@ -1154,11 +1152,13 @@ WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor2/i_14> has a constant value of 0
 WARNING:Xst:1293 - FF/Latch <NAV/US_DATA/sensor2/i_15> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ARM/COUNT_24> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ARM/COUNT_25> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ARM/COUNT_26> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ARM/COUNT_23> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ARM/COUNT_22> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ARM/COUNT_21> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
-WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ARM/COUNT_26> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <ARM/COUNT_27> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <NAV/MC/MCSignal/MC1State_4> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <NAV/MC/MCSignal/MC2State_4> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <NAV/MC/AC_MOD1/count_24> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <NAV/MC/AC_MOD2/count_24> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
 WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <NAV/count_18> has a constant value of 0 in block <System>. This FF/Latch will be trimmed during the optimization process.
@@ -1213,7 +1213,6 @@ INFO:Xst:2261 - The FF/Latch <NAV/MC/MCSignal/MC2State_0> in Unit <System> is eq
 INFO:Xst:2261 - The FF/Latch <NAV/MC/MCSignal/MC2State_1> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/MCSignal/MC1State_1> 
 INFO:Xst:2261 - The FF/Latch <NAV/MC/MCSignal/MC2State_2> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/MCSignal/MC1State_2> 
 INFO:Xst:2261 - The FF/Latch <NAV/MC/MCSignal/MC2State_3> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/MCSignal/MC1State_3> 
-INFO:Xst:2261 - The FF/Latch <NAV/MC/MCSignal/MC2State_4> in Unit <System> is equivalent to the following FF/Latch, which will be removed : <NAV/MC/MCSignal/MC1State_4> 
 INFO:Xst:2261 - The FF/Latch <NAV/US_DATA/sensor2/WriteData> in Unit <System> is equivalent to the following 2 FFs/Latches, which will be removed : <NAV/US_DATA/sensor3/WriteData> <NAV/US_DATA/sensor1/WriteData> 
 INFO:Xst:3203 - The FF/Latch <ARM/JOINTLOW_DESIRED_10> in Unit <System> is the opposite to the following FF/Latch, which will be removed : <ARM/JOINTHIGH_DESIRED_1> 
 INFO:Xst:3203 - The FF/Latch <ARM/JOINTHIGH_DESIRED_7> in Unit <System> is the opposite to the following FF/Latch, which will be removed : <ARM/JOINTHIGH_DESIRED_4> 
@@ -1248,8 +1247,8 @@ Final Macro Processing ...
 Final Register Report
 
 Macro Statistics
-# Registers                                            : 441
- Flip-Flops                                            : 441
+# Registers                                            : 440
+ Flip-Flops                                            : 440
 
 =========================================================================
 
@@ -1277,19 +1276,19 @@ Primitive and Black Box Usage:
 #      INV                         : 29
 #      LUT1                        : 142
 #      LUT2                        : 172
-#      LUT3                        : 98
-#      LUT4                        : 251
-#      LUT5                        : 196
-#      LUT6                        : 198
+#      LUT3                        : 96
+#      LUT4                        : 253
+#      LUT5                        : 197
+#      LUT6                        : 197
 #      MUXCY                       : 469
 #      MUXF7                       : 1
 #      VCC                         : 1
 #      XORCY                       : 250
-# FlipFlops/Latches                : 441
+# FlipFlops/Latches                : 440
 #      FD                          : 81
 #      FDE                         : 161
 #      FDR                         : 174
-#      FDRE                        : 25
+#      FDRE                        : 24
 # Clock Buffers                    : 4
 #      BUFG                        : 3
 #      BUFGP                       : 1
@@ -1305,15 +1304,15 @@ Selected Device : 6slx16csg324-3
 
 
 Slice Logic Utilization: 
- Number of Slice Registers:             441  out of  18224     2%  
+ Number of Slice Registers:             440  out of  18224     2%  
  Number of Slice LUTs:                 1086  out of   9112    11%  
     Number used as Logic:              1086  out of   9112    11%  
 
 Slice Logic Distribution: 
- Number of LUT Flip Flop pairs used:   1148
-   Number with an unused Flip Flop:     707  out of   1148    61%  
-   Number with an unused LUT:            62  out of   1148     5%  
-   Number of fully used LUT-FF pairs:   379  out of   1148    33%  
+ Number of LUT Flip Flop pairs used:   1149
+   Number with an unused Flip Flop:     709  out of   1149    61%  
+   Number with an unused LUT:            63  out of   1149     5%  
+   Number of fully used LUT-FF pairs:   377  out of   1149    32%  
    Number of unique control sets:        33
 
 IO Utilization: 
@@ -1344,9 +1343,9 @@ Clock Information:
 -----------------------------------+-------------------------------+-------+
 Clock Signal                       | Clock buffer(FF name)         | Load  |
 -----------------------------------+-------------------------------+-------+
-CLK                                | BUFGP                         | 183   |
+CLK                                | BUFGP                         | 182   |
 NAV/count_0                        | BUFG                          | 132   |
-NAV/count_16                       | BUFG                          | 60    |
+NAV/count_17                       | BUFG                          | 60    |
 ARM/COUNT_10                       | NONE(ARM/sw_debounce/OLD_IN_0)| 6     |
 ARM/COUNT_8                        | BUFG                          | 60    |
 -----------------------------------+-------------------------------+-------+
@@ -1372,7 +1371,7 @@ All values displayed in nanoseconds (ns)
 =========================================================================
 Timing constraint: Default period analysis for Clock 'CLK'
   Clock period: 8.250ns (frequency: 121.210MHz)
-  Total number of paths / destination ports: 6951 / 304
+  Total number of paths / destination ports: 6937 / 301
 -------------------------------------------------------------------------
 Delay:               8.250ns (Levels of Logic = 7)
   Source:            COMPARE_DISTANCE_2 (FF)
@@ -1427,15 +1426,15 @@ Delay:               5.872ns (Levels of Logic = 8)
                                        (30.7% logic, 69.3% route)
 
 =========================================================================
-Timing constraint: Default period analysis for Clock 'NAV/count_16'
+Timing constraint: Default period analysis for Clock 'NAV/count_17'
   Clock period: 4.150ns (frequency: 240.961MHz)
   Total number of paths / destination ports: 380 / 66
 -------------------------------------------------------------------------
 Delay:               4.150ns (Levels of Logic = 3)
   Source:            NAV/US_DATA/sensor2_debounce/OLD_IN_1 (FF)
   Destination:       NAV/US_DATA/sensor2_debounce/NEXT_STATE_0 (FF)
-  Source Clock:      NAV/count_16 rising
-  Destination Clock: NAV/count_16 rising
+  Source Clock:      NAV/count_17 rising
+  Destination Clock: NAV/count_17 rising
 
   Data Path: NAV/US_DATA/sensor2_debounce/OLD_IN_1 to NAV/US_DATA/sensor2_debounce/NEXT_STATE_0
                                 Gate     Net
@@ -1540,8 +1539,8 @@ Offset:              4.198ns (Levels of Logic = 4)
                                 Gate     Net
     Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
     ----------------------------------------  ------------
-     IOBUF:IO->O          19   1.222   1.176  US_FRONT_IOBUF (N90)
-     LUT3:I1->O            3   0.203   0.879  NAV/US_DATA/sensor3/_n0224_inv1_SW1 (N132)
+     IOBUF:IO->O          19   1.222   1.176  US_FRONT_IOBUF (N94)
+     LUT3:I1->O            3   0.203   0.879  NAV/US_DATA/sensor3/_n0224_inv1_SW1 (N136)
      LUT5:I2->O            1   0.205   0.000  NAV/US_DATA/sensor3/distCount_4_rstpot_lut1 (NAV/US_DATA/sensor3/distCount_4_rstpot_lut1)
      MUXCY:S->O            1   0.411   0.000  NAV/US_DATA/sensor3/distCount_4_rstpot_cy1 (NAV/US_DATA/sensor3/distCount_4_rstpot)
      FDR:D                     0.102          NAV/US_DATA/sensor3/distCount_4
@@ -1637,7 +1636,7 @@ Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ARM/COUNT_10   |    2.344|         |         |         |
 ARM/COUNT_8    |    2.425|         |         |         |
 CLK            |    8.250|         |         |         |
-NAV/count_16   |   10.331|         |         |         |
+NAV/count_17   |   10.250|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 Clock to Setup on destination clock NAV/count_0
@@ -1648,26 +1647,26 @@ Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 NAV/count_0    |    6.056|    5.872|    7.623|         |
 ---------------+---------+---------+---------+---------+
 
-Clock to Setup on destination clock NAV/count_16
+Clock to Setup on destination clock NAV/count_17
 ---------------+---------+---------+---------+---------+
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
 NAV/count_0    |    4.236|    4.204|         |         |
-NAV/count_16   |    4.150|         |         |         |
+NAV/count_17   |    4.150|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 =========================================================================
 
 
 Total REAL time to Xst completion: 18.00 secs
-Total CPU time to Xst completion: 17.17 secs
+Total CPU time to Xst completion: 17.90 secs
  
 --> 
 
-Total memory usage is 263312 kilobytes
+Total memory usage is 264208 kilobytes
 
 Number of errors   :    0 (   0 filtered)
-Number of warnings :  277 (   0 filtered)
-Number of infos    :   92 (   0 filtered)
+Number of warnings :  279 (   0 filtered)
+Number of infos    :   91 (   0 filtered)
 

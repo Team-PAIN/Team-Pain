@@ -1,5 +1,5 @@
 //! **************************************************************************
-// Written by: Map P.28xd on Mon Dec 03 11:31:51 2012
+// Written by: Map P.28xd on Tue Feb 26 14:02:25 2013
 //! **************************************************************************
 
 SCHEMATIC START;
@@ -7,7 +7,7 @@ COMP "PWM_MC1" LOCATE = SITE "N10" LEVEL 1;
 COMP "PWM_MC2" LOCATE = SITE "U11" LEVEL 1;
 COMP "CLK" LOCATE = SITE "V10" LEVEL 1;
 COMP "US_BACK" LOCATE = SITE "K2" LEVEL 1;
-COMP "CLAW" LOCATE = SITE "H3" LEVEL 1;
+COMP "CLAW" LOCATE = SITE "K6" LEVEL 1;
 COMP "US_FRONT" LOCATE = SITE "L3" LEVEL 1;
 COMP "SSEG_CA<0>" LOCATE = SITE "T17" LEVEL 1;
 COMP "SSEG_CA<1>" LOCATE = SITE "T18" LEVEL 1;
@@ -41,6 +41,6 @@ COMP "BTN<4>" LOCATE = SITE "B8" LEVEL 1;
 COMP "US_SIDE_FRONT" LOCATE = SITE "L4" LEVEL 1;
 COMP "US_SIDE_BACK" LOCATE = SITE "K1" LEVEL 1;
 COMP "JOINTHIGH" LOCATE = SITE "L7" LEVEL 1;
-COMP "JOINTLOW" LOCATE = SITE "K6" LEVEL 1;
+COMP "JOINTLOW" LOCATE = SITE "H3" LEVEL 1;
 SCHEMATIC END;
 

@@ -37,19 +37,19 @@ Setup/Hold to clock CLK
             |Max Setup to|  Process   |Max Hold to |  Process   |                  | Clock  |
 Source      | clk (edge) |   Corner   | clk (edge) |   Corner   |Internal Clock(s) | Phase  |
 ------------+------------+------------+------------+------------+------------------+--------+
-BTN<0>      |    4.898(R)|      SLOW  |   -2.193(R)|      FAST  |CLK_BUFGP         |   0.000|
-BTN<1>      |    4.830(R)|      SLOW  |   -2.291(R)|      FAST  |CLK_BUFGP         |   0.000|
-BTN<2>      |    4.434(R)|      SLOW  |   -2.113(R)|      FAST  |CLK_BUFGP         |   0.000|
-BTN<3>      |    5.317(R)|      SLOW  |   -2.644(R)|      FAST  |CLK_BUFGP         |   0.000|
-BTN<4>      |    4.355(R)|      SLOW  |   -1.997(R)|      FAST  |CLK_BUFGP         |   0.000|
-SW<0>       |    1.171(R)|      FAST  |   -0.579(R)|      SLOW  |CLK_BUFGP         |   0.000|
-SW<1>       |    1.215(R)|      FAST  |   -0.513(R)|      SLOW  |CLK_BUFGP         |   0.000|
-SW<2>       |    1.175(R)|      FAST  |   -0.241(R)|      SLOW  |CLK_BUFGP         |   0.000|
-SW<3>       |    1.290(R)|      SLOW  |   -0.585(R)|      SLOW  |CLK_BUFGP         |   0.000|
-SW<4>       |    1.439(R)|      SLOW  |   -0.726(R)|      SLOW  |CLK_BUFGP         |   0.000|
-SW<5>       |    1.358(R)|      SLOW  |   -0.646(R)|      SLOW  |CLK_BUFGP         |   0.000|
-SW<6>       |    1.661(R)|      SLOW  |   -0.891(R)|      FAST  |CLK_BUFGP         |   0.000|
-SW<7>       |    8.377(R)|      SLOW  |   -0.628(R)|      SLOW  |CLK_BUFGP         |   0.000|
+BTN<0>      |    5.436(R)|      SLOW  |   -2.746(R)|      FAST  |CLK_BUFGP         |   0.000|
+BTN<1>      |    4.975(R)|      SLOW  |   -2.726(R)|      FAST  |CLK_BUFGP         |   0.000|
+BTN<2>      |    4.770(R)|      SLOW  |   -2.662(R)|      FAST  |CLK_BUFGP         |   0.000|
+BTN<3>      |    5.690(R)|      SLOW  |   -3.219(R)|      FAST  |CLK_BUFGP         |   0.000|
+BTN<4>      |    4.804(R)|      SLOW  |   -2.598(R)|      FAST  |CLK_BUFGP         |   0.000|
+SW<0>       |    1.250(R)|      FAST  |   -0.738(R)|      SLOW  |CLK_BUFGP         |   0.000|
+SW<1>       |    1.074(R)|      FAST  |   -0.409(R)|      SLOW  |CLK_BUFGP         |   0.000|
+SW<2>       |    1.141(R)|      FAST  |   -0.531(R)|      SLOW  |CLK_BUFGP         |   0.000|
+SW<3>       |    2.032(R)|      SLOW  |   -0.965(R)|      FAST  |CLK_BUFGP         |   0.000|
+SW<4>       |    1.657(R)|      SLOW  |   -0.663(R)|      SLOW  |CLK_BUFGP         |   0.000|
+SW<5>       |    1.523(R)|      SLOW  |   -0.533(R)|      SLOW  |CLK_BUFGP         |   0.000|
+SW<6>       |    1.447(R)|      SLOW  |   -0.463(R)|      SLOW  |CLK_BUFGP         |   0.000|
+SW<7>       |    8.600(R)|      SLOW  |   -0.140(R)|      SLOW  |CLK_BUFGP         |   0.000|
 ------------+------------+------------+------------+------------+------------------+--------+
 
 Clock CLK to Pad
@@ -57,29 +57,29 @@ Clock CLK to Pad
             |Max (slowest) clk|  Process   |Min (fastest) clk|  Process   |                  | Clock  |
 Destination |  (edge) to PAD  |   Corner   |  (edge) to PAD  |   Corner   |Internal Clock(s) | Phase  |
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
-CLAW        |         8.548(R)|      SLOW  |         4.601(R)|      FAST  |CLK_BUFGP         |   0.000|
-JOINTHIGH   |         8.609(R)|      SLOW  |         4.637(R)|      FAST  |CLK_BUFGP         |   0.000|
-JOINTLOW    |         8.896(R)|      SLOW  |         4.803(R)|      FAST  |CLK_BUFGP         |   0.000|
-LED<0>      |         8.454(R)|      SLOW  |         4.560(R)|      FAST  |CLK_BUFGP         |   0.000|
-LED<1>      |         8.566(R)|      SLOW  |         4.619(R)|      FAST  |CLK_BUFGP         |   0.000|
-LED<2>      |         8.379(R)|      SLOW  |         4.535(R)|      FAST  |CLK_BUFGP         |   0.000|
-LED<3>      |         8.189(R)|      SLOW  |         4.408(R)|      FAST  |CLK_BUFGP         |   0.000|
-LED<4>      |         8.045(R)|      SLOW  |         4.233(R)|      FAST  |CLK_BUFGP         |   0.000|
-LED<5>      |         7.888(R)|      SLOW  |         4.132(R)|      FAST  |CLK_BUFGP         |   0.000|
-LED<6>      |         7.976(R)|      SLOW  |         4.223(R)|      FAST  |CLK_BUFGP         |   0.000|
-LED<7>      |         7.743(R)|      SLOW  |         4.063(R)|      FAST  |CLK_BUFGP         |   0.000|
-PWM         |         7.284(R)|      SLOW  |         3.818(R)|      FAST  |CLK_BUFGP         |   0.000|
-SSEG_AN<0>  |         6.972(R)|      SLOW  |         3.555(R)|      FAST  |CLK_BUFGP         |   0.000|
+CLAW        |         8.131(R)|      SLOW  |         4.383(R)|      FAST  |CLK_BUFGP         |   0.000|
+JOINTHIGH   |         7.360(R)|      SLOW  |         3.828(R)|      FAST  |CLK_BUFGP         |   0.000|
+JOINTLOW    |         8.139(R)|      SLOW  |         4.355(R)|      FAST  |CLK_BUFGP         |   0.000|
+LED<0>      |         8.203(R)|      SLOW  |         4.408(R)|      FAST  |CLK_BUFGP         |   0.000|
+LED<1>      |         8.202(R)|      SLOW  |         4.400(R)|      FAST  |CLK_BUFGP         |   0.000|
+LED<2>      |         8.137(R)|      SLOW  |         4.355(R)|      FAST  |CLK_BUFGP         |   0.000|
+LED<3>      |         8.251(R)|      SLOW  |         4.423(R)|      FAST  |CLK_BUFGP         |   0.000|
+LED<4>      |         7.822(R)|      SLOW  |         4.099(R)|      FAST  |CLK_BUFGP         |   0.000|
+LED<5>      |         7.665(R)|      SLOW  |         3.998(R)|      FAST  |CLK_BUFGP         |   0.000|
+LED<6>      |         7.687(R)|      SLOW  |         4.041(R)|      FAST  |CLK_BUFGP         |   0.000|
+LED<7>      |         7.917(R)|      SLOW  |         4.180(R)|      FAST  |CLK_BUFGP         |   0.000|
+PWM         |         7.134(R)|      SLOW  |         3.709(R)|      FAST  |CLK_BUFGP         |   0.000|
+SSEG_AN<0>  |         6.836(R)|      SLOW  |         3.486(R)|      FAST  |CLK_BUFGP         |   0.000|
 SSEG_AN<1>  |         6.897(R)|      SLOW  |         3.513(R)|      FAST  |CLK_BUFGP         |   0.000|
-SSEG_AN<2>  |         6.622(R)|      SLOW  |         3.345(R)|      FAST  |CLK_BUFGP         |   0.000|
-SSEG_AN<3>  |         6.708(R)|      SLOW  |         3.400(R)|      FAST  |CLK_BUFGP         |   0.000|
-SSEG_CA<0>  |         7.778(R)|      SLOW  |         4.099(R)|      FAST  |CLK_BUFGP         |   0.000|
-SSEG_CA<1>  |         7.570(R)|      SLOW  |         3.963(R)|      FAST  |CLK_BUFGP         |   0.000|
-SSEG_CA<2>  |         7.695(R)|      SLOW  |         4.018(R)|      FAST  |CLK_BUFGP         |   0.000|
-SSEG_CA<3>  |         7.767(R)|      SLOW  |         4.074(R)|      FAST  |CLK_BUFGP         |   0.000|
-SSEG_CA<4>  |         7.931(R)|      SLOW  |         4.174(R)|      FAST  |CLK_BUFGP         |   0.000|
-SSEG_CA<5>  |         7.733(R)|      SLOW  |         4.085(R)|      FAST  |CLK_BUFGP         |   0.000|
-SSEG_CA<6>  |         7.589(R)|      SLOW  |         3.971(R)|      FAST  |CLK_BUFGP         |   0.000|
+SSEG_AN<2>  |         6.789(R)|      SLOW  |         3.474(R)|      FAST  |CLK_BUFGP         |   0.000|
+SSEG_AN<3>  |         6.588(R)|      SLOW  |         3.338(R)|      FAST  |CLK_BUFGP         |   0.000|
+SSEG_CA<0>  |         7.371(R)|      SLOW  |         3.857(R)|      FAST  |CLK_BUFGP         |   0.000|
+SSEG_CA<1>  |         7.350(R)|      SLOW  |         3.831(R)|      FAST  |CLK_BUFGP         |   0.000|
+SSEG_CA<2>  |         7.289(R)|      SLOW  |         3.788(R)|      FAST  |CLK_BUFGP         |   0.000|
+SSEG_CA<3>  |         7.608(R)|      SLOW  |         3.990(R)|      FAST  |CLK_BUFGP         |   0.000|
+SSEG_CA<4>  |         7.721(R)|      SLOW  |         4.064(R)|      FAST  |CLK_BUFGP         |   0.000|
+SSEG_CA<5>  |         7.647(R)|      SLOW  |         4.024(R)|      FAST  |CLK_BUFGP         |   0.000|
+SSEG_CA<6>  |         7.572(R)|      SLOW  |         3.946(R)|      FAST  |CLK_BUFGP         |   0.000|
 ------------+-----------------+------------+-----------------+------------+------------------+--------+
 
 Clock to Setup on destination clock CLK
@@ -87,11 +87,11 @@ Clock to Setup on destination clock CLK
                | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
 Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
 ---------------+---------+---------+---------+---------+
-CLK            |    5.110|         |         |         |
+CLK            |    5.227|         |         |         |
 ---------------+---------+---------+---------+---------+
 
 
-Analysis completed Tue Feb 19 14:14:14 2013 
+Analysis completed Tue Feb 26 14:16:08 2013 
 --------------------------------------------------------------------------------
 
 Trace Settings:

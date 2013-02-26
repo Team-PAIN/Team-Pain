@@ -6,7 +6,7 @@ Command Line: C:\Xilinx\14.2\ISE_DS\ISE\bin\nt64\unwrapped\ngdbuild.exe
 xc6slx16-csg324-3 System.ngc System.ngd
 
 Reading NGO file
-"C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation
+"C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation
 System/Version 2.1 -Working - Arm and Navigation System - FPGA
 Presentation/System.ngc" ...
 Gathering constraint information from source properties...
@@ -30,7 +30,7 @@ NGDBUILD Design Results Summary:
   Number of errors:     0
   Number of warnings:   0
 
-Total memory usage is 162480 kilobytes
+Total memory usage is 162800 kilobytes
 
 Writing NGD file "System.ngd" ...
 Total REAL time to NGDBUILD completion:  4 sec

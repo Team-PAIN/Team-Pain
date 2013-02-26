@@ -221,22 +221,22 @@
 <msg type="warning" file="HDLCompiler" num="634" delta="old" >"C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Navigation System\Version 2.3 - Testing\System.v" Line 128: Net &lt;<arg fmt="%s" index="1">TILT</arg>&gt; does not have a driver.
 </msg>
 
-<msg type="warning" file="Xst" num="2972" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Navigation System\Version 2.3 - Testing\System.v</arg>&quot; line <arg fmt="%d" index="2">147</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">COLOR_SIZE</arg>&gt; of block &lt;<arg fmt="%s" index="4">serialCOMM</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">System</arg>&gt;. Underlying logic will be removed.
+<msg type="warning" file="Xst" num="2972" delta="old" >&quot;<arg fmt="%s" index="1">C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Navigation System\Version 2.3 - Testing\System.v</arg>&quot; line <arg fmt="%d" index="2">147</arg>. All outputs of instance &lt;<arg fmt="%s" index="3">COLOR_SIZE</arg>&gt; of block &lt;<arg fmt="%s" index="4">serialCOMM</arg>&gt; are unconnected in block &lt;<arg fmt="%s" index="5">System</arg>&gt;. Underlying logic will be removed.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Navigation System\Version 2.3 - Testing\System.v</arg>&quot; line <arg fmt="%s" index="2">122</arg>: Output port &lt;<arg fmt="%s" index="3">ORIENTATION</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Localize</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Navigation System\Version 2.3 - Testing\System.v</arg>&quot; line <arg fmt="%s" index="2">122</arg>: Output port &lt;<arg fmt="%s" index="3">ORIENTATION</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Localize</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Navigation System\Version 2.3 - Testing\System.v</arg>&quot; line <arg fmt="%s" index="2">122</arg>: Output port &lt;<arg fmt="%s" index="3">SECTOR</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Localize</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Navigation System\Version 2.3 - Testing\System.v</arg>&quot; line <arg fmt="%s" index="2">122</arg>: Output port &lt;<arg fmt="%s" index="3">SECTOR</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Localize</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Navigation System\Version 2.3 - Testing\System.v</arg>&quot; line <arg fmt="%s" index="2">122</arg>: Output port &lt;<arg fmt="%s" index="3">BACK_DISTANCE</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Localize</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Navigation System\Version 2.3 - Testing\System.v</arg>&quot; line <arg fmt="%s" index="2">122</arg>: Output port &lt;<arg fmt="%s" index="3">BACK_DISTANCE</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">Localize</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Navigation System\Version 2.3 - Testing\System.v</arg>&quot; line <arg fmt="%s" index="2">147</arg>: Output port &lt;<arg fmt="%s" index="3">SIZE</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">COLOR_SIZE</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Navigation System\Version 2.3 - Testing\System.v</arg>&quot; line <arg fmt="%s" index="2">147</arg>: Output port &lt;<arg fmt="%s" index="3">SIZE</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">COLOR_SIZE</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
-<msg type="info" file="Xst" num="3210" delta="new" >&quot;<arg fmt="%s" index="1">C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Navigation System\Version 2.3 - Testing\System.v</arg>&quot; line <arg fmt="%s" index="2">147</arg>: Output port &lt;<arg fmt="%s" index="3">COLOR</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">COLOR_SIZE</arg>&gt; is unconnected or connected to loadless signal.
+<msg type="info" file="Xst" num="3210" delta="old" >&quot;<arg fmt="%s" index="1">C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Navigation System\Version 2.3 - Testing\System.v</arg>&quot; line <arg fmt="%s" index="2">147</arg>: Output port &lt;<arg fmt="%s" index="3">COLOR</arg>&gt; of the instance &lt;<arg fmt="%s" index="4">COLOR_SIZE</arg>&gt; is unconnected or connected to loadless signal.
 </msg>
 
 <msg type="warning" file="Xst" num="653" delta="old" >Signal &lt;<arg fmt="%s" index="1">TILT</arg>&gt; is used but never assigned. This sourceless signal will be automatically connected to value <arg fmt="%s" index="2">GND</arg>.
@@ -594,9 +594,6 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">PWM_STATE_0</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">direction_control</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;PWM_STATE_1&gt; </arg>
 </msg>
 
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Pulse_9</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">PulseModulation1</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Pulse_15&gt; </arg>
-</msg>
-
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Pulse_10</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">PulseModulation1</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Pulse_16&gt; </arg>
 </msg>
 
@@ -609,6 +606,15 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Pulse_5</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">PulseModulation1</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Pulse_7&gt; </arg>
 </msg>
 
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Pulse_9</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">PulseModulation1</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Pulse_15&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Pulse_10</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">PulseModulation2</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Pulse_16&gt; </arg>
+</msg>
+
+<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Pulse_6</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">PulseModulation2</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Pulse_8&gt; &lt;Pulse_11&gt; &lt;Pulse_17&gt; </arg>
+</msg>
+
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Pulse_4</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">PulseModulation2</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Pulse_14&gt; </arg>
 </msg>
 
@@ -616,12 +622,6 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Pulse_9</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">PulseModulation2</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Pulse_15&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Pulse_10</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">PulseModulation2</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Pulse_16&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">Pulse_6</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">PulseModulation2</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;Pulse_8&gt; &lt;Pulse_11&gt; &lt;Pulse_17&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">JOINTHIGH_DESIRED_4</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">Arm</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">3 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;JOINTHIGH_DESIRED_12&gt; &lt;JOINTLOW_DESIRED_14&gt; &lt;JOINTLOW_DESIRED_17&gt; </arg>
@@ -922,6 +922,9 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 <msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">ARM/COUNT_25</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">System</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">ARM/COUNT_26</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">System</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
 <msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">ARM/COUNT_23</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">System</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
@@ -931,10 +934,13 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 <msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">ARM/COUNT_21</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">System</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">ARM/COUNT_26</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">System</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">ARM/COUNT_27</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">System</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
-<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">ARM/COUNT_27</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">System</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">NAV/MC/MCSignal/MC1State_4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">System</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
+</msg>
+
+<msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">NAV/MC/MCSignal/MC2State_4</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">System</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
 </msg>
 
 <msg type="warning" file="Xst" num="1896" delta="old" >Due to other FF/Latch trimming, FF/Latch &lt;<arg fmt="%s" index="1">NAV/MC/AC_MOD1/count_24</arg>&gt; has a constant value of <arg fmt="%d" index="2">0</arg> in block &lt;<arg fmt="%s" index="3">System</arg>&gt;. This FF/Latch will be trimmed during the optimization process.
@@ -1097,9 +1103,6 @@ You should achieve better results by setting this init to <arg fmt="%i" index="3
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">NAV/MC/MCSignal/MC2State_3</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">System</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;NAV/MC/MCSignal/MC1State_3&gt; </arg>
-</msg>
-
-<msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">NAV/MC/MCSignal/MC2State_4</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">System</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">FF/Latch</arg>, which will be removed : <arg fmt="%s" index="4">&lt;NAV/MC/MCSignal/MC1State_4&gt; </arg>
 </msg>
 
 <msg type="info" file="Xst" num="2261" delta="old" >The FF/Latch &lt;<arg fmt="%s" index="1">NAV/US_DATA/sensor2/WriteData</arg>&gt; in Unit &lt;<arg fmt="%s" index="2">System</arg>&gt; is equivalent to the following <arg fmt="%s" index="3">2 FFs/Latches</arg>, which will be removed : <arg fmt="%s" index="4">&lt;NAV/US_DATA/sensor3/WriteData&gt; &lt;NAV/US_DATA/sensor1/WriteData&gt; </arg>

@@ -10,7 +10,7 @@ Target Device  : xc6slx16
 Target Package : csg324
 Target Speed   : -3
 Mapper Version : spartan6 -- $Revision: 1.55 $
-Mapped Date    : Wed Nov 28 22:14:31 2012
+Mapped Date    : Tue Feb 26 13:46:15 2013
 
 Mapping design into LUTs...
 Running directed packing...
@@ -20,7 +20,7 @@ INFO:Map:215 - The Interim Design Summary has been generated in the MAP Report
    (.mrp).
 Running timing-driven placement...
 Total REAL time at the beginning of Placer: 5 secs 
-Total CPU  time at the beginning of Placer: 5 secs 
+Total CPU  time at the beginning of Placer: 4 secs 
 
 Phase 1.1  Initial Placement Analysis
 Phase 1.1  Initial Placement Analysis (Checksum:b4a668fe) REAL time: 5 secs 
@@ -144,7 +144,7 @@ Average Fanout of Non-Clock Nets:                4.92
 
 Peak Memory Usage:  363 MB
 Total REAL time to MAP completion:  7 secs 
-Total CPU time to MAP completion:   7 secs 
+Total CPU time to MAP completion:   6 secs 
 
 Mapping completed.
 See MAP report file "Arm_map.mrp" for details.
