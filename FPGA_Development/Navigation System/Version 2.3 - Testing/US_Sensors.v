@@ -29,12 +29,11 @@ module US_Sensors(
 		output [1:0] ANGLE_DIRECTION,
 		output [7:0] DISTANCE1_DEBOUNCED, //side back
 		output [7:0] DISTANCE2_DEBOUNCED, //side front
-		output [7:0] DISTANCE3_DEBOUNCED, //front
-		output [7:0] DISTANCE4_DEBOUNCED  //back
+		output [7:0] DISTANCE3_DEBOUNCED //front
     );
 
-	wire reset, enable1, enable2, enable3, enable4;
-	wire [7:0] distance1, distance2, distance3, distance4;
+	wire reset, enable1, enable2, enable3;
+	wire [7:0] distance1, distance2, distance3;
 	
 	//***Ultra Sonic Sensor 1 ***//
 			//Send & Receive Signal

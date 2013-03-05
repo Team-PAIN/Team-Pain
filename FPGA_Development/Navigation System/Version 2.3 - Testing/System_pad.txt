@@ -1,7 +1,7 @@
 Release 14.2 - par P.28xd (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-Tue Feb 26 14:16:01 2013
+Sun Mar 03 17:37:31 2013
 
 
 INFO: The IO information is provided in three file formats as part of the Place and Route (PAR) process.  These formats are:
@@ -130,7 +130,7 @@ Pinout by Pin Number:
 |F18       |             |IOBS     |IO_L35N_A10_M1A2_1           |UNUSED   |           |1             |          |         |           |         |       |          |           |                |
 |G1        |             |IOBS     |IO_L46N_M3CLKN_3             |UNUSED   |           |3             |          |         |           |         |       |          |           |                |
 |G2        |             |         |GND                          |         |           |              |          |         |           |         |       |          |           |                |
-|G3        |             |IOBM     |IO_L46P_M3CLK_3              |UNUSED   |           |3             |          |         |           |         |       |          |           |                |
+|G3        |CLAW         |IOB      |IO_L46P_M3CLK_3              |OUTPUT   |LVCMOS25*  |3             |12        |SLOW     |           |         |       |LOCATED   |NO         |NONE            |
 |G4        |             |         |VCCO_3                       |         |           |3             |          |         |           |         |2.50   |          |           |                |
 |G5        |             |         |GND                          |         |           |              |          |         |           |         |       |          |           |                |
 |G6        |             |IOBS     |IO_L53N_M3A12_3              |UNUSED   |           |3             |          |         |           |         |       |          |           |                |
@@ -148,7 +148,7 @@ Pinout by Pin Number:
 |G18       |             |IOBS     |IO_L38N_A4_M1CLKN_1          |UNUSED   |           |1             |          |         |           |         |       |          |           |                |
 |H1        |             |IOBS     |IO_L41N_GCLK26_M3DQ5_3       |UNUSED   |           |3             |          |         |           |         |       |          |           |                |
 |H2        |             |IOBM     |IO_L41P_GCLK27_M3DQ4_3       |UNUSED   |           |3             |          |         |           |         |       |          |           |                |
-|H3        |JOINTLOW     |IOB      |IO_L44N_GCLK20_M3A6_3        |OUTPUT   |LVCMOS25*  |3             |12        |SLOW     |           |         |       |LOCATED   |NO         |NONE            |
+|H3        |             |IOBS     |IO_L44N_GCLK20_M3A6_3        |UNUSED   |           |3             |          |         |           |         |       |          |           |                |
 |H4        |             |IOBM     |IO_L44P_GCLK21_M3A5_3        |UNUSED   |           |3             |          |         |           |         |       |          |           |                |
 |H5        |             |IOBS     |IO_L49N_M3A2_3               |UNUSED   |           |3             |          |         |           |         |       |          |           |                |
 |H6        |             |IOBM     |IO_L49P_M3A7_3               |UNUSED   |           |3             |          |         |           |         |       |          |           |                |
@@ -182,12 +182,12 @@ Pinout by Pin Number:
 |J16       |             |IOBM     |IO_L44P_A3_M1DQ6_1           |UNUSED   |           |1             |          |         |           |         |       |          |           |                |
 |J17       |             |         |VCCO_1                       |         |           |1             |          |         |           |         |2.50   |          |           |                |
 |J18       |             |IOBS     |IO_L44N_A2_M1DQ7_1           |UNUSED   |           |1             |          |         |           |         |       |          |           |                |
-|K1        |US_SIDE_BACK |IOB      |IO_L38N_M3DQ3_3              |BIDIR    |LVCMOS25*  |3             |12        |SLOW     |           |NONE     |       |LOCATED   |NO         |NONE            |
-|K2        |US_FRONT     |IOB      |IO_L38P_M3DQ2_3              |BIDIR    |LVCMOS25*  |3             |12        |SLOW     |           |NONE     |       |LOCATED   |NO         |NONE            |
+|K1        |US_FRONT     |IOB      |IO_L38N_M3DQ3_3              |BIDIR    |LVCMOS25*  |3             |12        |SLOW     |           |NONE     |       |LOCATED   |NO         |NONE            |
+|K2        |             |IOBM     |IO_L38P_M3DQ2_3              |UNUSED   |           |3             |          |         |           |         |       |          |           |                |
 |K3        |             |IOBS     |IO_L42N_GCLK24_M3LDM_3       |UNUSED   |           |3             |          |         |           |         |       |          |           |                |
 |K4        |             |IOBM     |IO_L42P_GCLK25_TRDY2_M3UDM_3 |UNUSED   |           |3             |          |         |           |         |       |          |           |                |
 |K5        |             |IOBS     |IO_L43N_GCLK22_IRDY2_M3CASN_3|UNUSED   |           |3             |          |         |           |         |       |          |           |                |
-|K6        |CLAW         |IOB      |IO_L45N_M3ODT_3              |OUTPUT   |LVCMOS25*  |3             |12        |SLOW     |           |         |       |LOCATED   |NO         |NONE            |
+|K6        |JOINTHIGH    |IOB      |IO_L45N_M3ODT_3              |OUTPUT   |LVCMOS25*  |3             |12        |SLOW     |           |         |       |LOCATED   |NO         |NONE            |
 |K7        |             |         |VCCAUX                       |         |           |              |          |         |           |         |2.5    |          |           |                |
 |K8        |             |         |GND                          |         |           |              |          |         |           |         |       |          |           |                |
 |K9        |             |         |VCCINT                       |         |           |              |          |         |           |         |1.2    |          |           |                |
@@ -202,11 +202,11 @@ Pinout by Pin Number:
 |K18       |             |IOBS     |IO_L45N_A0_M1LDQSN_1         |UNUSED   |           |1             |          |         |           |         |       |          |           |                |
 |L1        |             |IOBS     |IO_L37N_M3DQ1_3              |UNUSED   |           |3             |          |         |           |         |       |          |           |                |
 |L2        |             |IOBM     |IO_L37P_M3DQ0_3              |UNUSED   |           |3             |          |         |           |         |       |          |           |                |
-|L3        |             |IOBS     |IO_L39N_M3LDQSN_3            |UNUSED   |           |3             |          |         |           |         |       |          |           |                |
-|L4        |US_SIDE_FRONT|IOB      |IO_L39P_M3LDQS_3             |BIDIR    |LVCMOS25*  |3             |12        |SLOW     |           |NONE     |       |LOCATED   |NO         |NONE            |
+|L3        |US_SIDE_FRONT|IOB      |IO_L39N_M3LDQSN_3            |BIDIR    |LVCMOS25*  |3             |12        |SLOW     |           |NONE     |       |LOCATED   |NO         |NONE            |
+|L4        |US_SIDE_BACK |IOB      |IO_L39P_M3LDQS_3             |BIDIR    |LVCMOS25*  |3             |12        |SLOW     |           |NONE     |       |LOCATED   |NO         |NONE            |
 |L5        |             |IOBM     |IO_L43P_GCLK23_M3RASN_3      |UNUSED   |           |3             |          |         |           |         |       |          |           |                |
 |L6        |             |IOBM     |IO_L31P_3                    |UNUSED   |           |3             |          |         |           |         |       |          |           |                |
-|L7        |JOINTHIGH    |IOB      |IO_L45P_M3A3_3               |OUTPUT   |LVCMOS25*  |3             |12        |SLOW     |           |         |       |LOCATED   |NO         |NONE            |
+|L7        |JOINTLOW     |IOB      |IO_L45P_M3A3_3               |OUTPUT   |LVCMOS25*  |3             |12        |SLOW     |           |         |       |LOCATED   |NO         |NONE            |
 |L8        |             |         |VCCINT                       |         |           |              |          |         |           |         |1.2    |          |           |                |
 |L9        |             |         |GND                          |         |           |              |          |         |           |         |       |          |           |                |
 |L10       |             |         |VCCINT                       |         |           |              |          |         |           |         |1.2    |          |           |                |

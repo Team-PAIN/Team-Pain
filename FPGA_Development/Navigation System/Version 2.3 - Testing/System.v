@@ -37,9 +37,11 @@ module System(
 		output JOINTLOW,
 		output [1:0] SLIDER
     );
-	
+	 
+	wire SCLK_50MHz, DEBOUCED_SCLK;
 	wire NEXT_FLAG;
 	wire[3:0] COLOR, SIZE;
+	reg [20:0] count;
 	reg [1:0] RUN_FLAG;
 	reg [4:0] COMMAND, STATE;
 	reg [7:0] COMPARE_DISTANCE, PATH,INITIAL_X,INITIAL_Y;
@@ -85,17 +87,20 @@ module System(
 	parameter [1:0] BLOCK_DETECT 	= 2'b 10;
 	parameter [1:0] RAMP_DETECT 	= 2'b 11;
 	
-	assign SLIDER = 0;
-	
+	assign SLIDER[1:0] = SW[1:0];
+	assign SCLK_50MHz = count[0]; //50 MHz Signal for US sensors
+	assign DEBOUCED_SCLK = count[19];
+
 	initial begin
 		COMPARE_DISTANCE = 0;
 		PATH = 0;
 		STATE = START;
 		RUN_FLAG = RUN_INI;
 		COMMAND = NO_COMMAND;
+		count = 0;
 	end
 	
-	
+		
 	//*** Sub-Systems ***//
 		// Navigational System
 		Navigation NAV (
@@ -105,20 +110,20 @@ module System(
 			 .US_SIDE_BACK(US_SIDE_BACK), 
 			 .SW(SW), 
 			 .BTN(BTN), 
-			 .COMMAND(COMMAND),
-			 .PATH(PATH),
-			 .COMPARE_DISTANCE(COMPARE_DISTANCE),
-			 .NEXT_FLAG(NEXT_FLAG),
+			 .COMMAND(COMMAND), 
+			 .PATH(PATH), 
+			 .COMPARE_DISTANCE(COMPARE_DISTANCE), 
+			 .RUN_FLAG(RUN_FLAG), 
+			 .SCLK_50MHz(SCLK_50MHz), 
+			 .DEBOUCED_SCLK(DEBOUCED_SCLK), 
+			 .NEXT_FLAG(NEXT_FLAG), 
 			 .PWM(PWM), 
-			 .SSEG_CA(SSEG_CA), 
-			 .SSEG_AN(SSEG_AN),
-			 .LED(LED[7:0]),
-			 .RUN_FLAG(RUN_FLAG),
-			 .DISTANCE_SIDE_FRONT(DISTANCE_SIDE_FRONT),
-			 .DISTANCE_SIDE_BACK(DISTANCE_SIDE_BACK),
+			 .LED(LED[7:0]), 
+			 .DISTANCE_SIDE_FRONT(DISTANCE_SIDE_FRONT), 
+			 .DISTANCE_SIDE_BACK(DISTANCE_SIDE_BACK), 
 			 .DISTANCE_FRONT(DISTANCE_FRONT)
 			 );
-
+			 
 		localization Localize (
 			 .CLK(CLK), 
 			 .DISTANCE_FRONT(DISTANCE_FRONT), 
@@ -153,7 +158,26 @@ module System(
 		 .COLOR(COLOR)
 		 );
 
+	//Display of Data
+	SevenDisplay DataDisplay (
+		 .CLK(CLK), 
+		 .SCLK(count[16:15]), 
+		 .DISPLAY({DISTANCE_FRONT,DISTANCE_SIDE_FRONT}), 
+		 .SSEG_CA(SSEG_CA), 
+		 .SSEG_AN(SSEG_AN)
+		 );
+		 
+		 
 	always @(posedge CLK)begin
+		//Counter to derive slower clocks
+		if(count >= 524288) //52428 Fits in an 20 bit reg
+			count <= 0;
+		else
+			count <= count + 1;	
+	
+	
+	
+	
 		case(STATE)
 			START: begin
 					if(SW[7] == 0)begin
@@ -169,15 +193,17 @@ module System(
 						RUN_INI:	begin //Initialization State
 										COMMAND <= STRAIGHT;
 										PATH <= DISTANCE_SIDE_FRONT;	
-										COMPARE_DISTANCE <= DISTANCE_FRONT - 5;
+										COMPARE_DISTANCE <= DISTANCE_FRONT - 15;
 										RUN_FLAG <= RUN_EXC;
 									end
 						RUN_EXC:	begin //Execution State
 										RUN_FLAG <= (NEXT_FLAG) ? RUN_COM : RUN_EXC;
 									end
 						RUN_COM:	begin //Completion State
-										RUN_FLAG <= RUN_INI;
-										STATE <= INI_LEFT;
+										if(SW[5])begin
+											RUN_FLAG <= RUN_INI;
+											STATE <= INI_LEFT;
+										end 
 									end
 						RUN_ERR:	begin //Error State
 						
@@ -195,8 +221,10 @@ module System(
 										RUN_FLAG <= (NEXT_FLAG) ? RUN_COM : RUN_EXC;
 									end
 						RUN_COM:	begin //Completion State
+										if(SW[5])begin
 										STATE <= SEA_SCAN;
 										RUN_FLAG <= RUN_INI;
+										end
 									end
 						RUN_ERR:	begin //Error State
 						
@@ -207,7 +235,7 @@ module System(
 					case(RUN_FLAG)
 						RUN_INI:	begin //Initialization State
 										COMMAND <= STRAIGHT;
-										PATH <= 4;	
+										PATH <= 5;	
 										COMPARE_DISTANCE <= 12;
 										RUN_FLAG <= RUN_EXC;
 									end
@@ -215,8 +243,10 @@ module System(
 										RUN_FLAG <= (NEXT_FLAG) ? RUN_COM : RUN_EXC;
 									end
 						RUN_COM:	begin //Completion State
+										if(SW[5])begin
 										RUN_FLAG <= RUN_INI;
 										STATE <= RIGHT_CARGO;
+										end
 									end
 						RUN_ERR:	begin //Error State
 						
@@ -266,4 +296,8 @@ module System(
 		endcase
 	end
 			 
+			 
+			 
+	
+
 endmodule

@@ -23,7 +23,6 @@ module direction_control(
 		input [7:0] SW,
 		input [4:0] BTN,
 		input [7:0] DISTANCE_FRONT,
-		input [7:0] DISTANCE_BACK,
 		input [7:0] DISTANCE_SIDE_BACK,
 		input [7:0] DISTANCE_SIDE_FRONT,
 		input [7:0] ANGLE,
@@ -39,11 +38,13 @@ module direction_control(
     );
 	 
 	wire [7:0] ALIGN_COMP;
-
+	reg [26:0] sum1,sum2;
+	reg [7:0] count,side_front,side_back;
 	reg NEXT_FLAG;
 	reg [4:0] DIR_STATE, PWM_STATE;
 	reg [7:0] STATE;
 	reg FLAG, STABLE,START;
+	wire [1:0] MOTOR_ADJUSTMENT;
 	
 	
 	//	Movement Parameters
@@ -86,13 +87,29 @@ module direction_control(
 		FLAG = 1;
 		STABLE = 0;
 		NEXT_FLAG = 0;
+		
 	end
 	
 	assign LED = DISTANCE_CHECK;
 
-	assign ALIGN_COMP = (DISTANCE_SIDE_FRONT > DISTANCE_SIDE_BACK) ? DISTANCE_SIDE_FRONT-DISTANCE_SIDE_BACK : DISTANCE_SIDE_BACK-DISTANCE_SIDE_FRONT;
+	assign ALIGN_COMP = (side_front > side_back) ? side_front-side_back : side_back-side_front;
 	
+	assign MOTOR_ADJUSTMENT = (ALIGN_COMP > 10) ? 2'b 10 : 2'b 01;
+		
 	always @(posedge CLK) begin
+		if(count == 100)begin
+			count <= 0;
+			sum1 <= 0;
+			sum2 <= 0;
+			side_front <= sum1/100; 
+			side_back <= sum2/100;
+		end else
+			count <= count + 1;
+			
+		sum1 <= sum1 + DISTANCE_SIDE_FRONT;
+		sum2 <= sum2 + DISTANCE_SIDE_BACK;
+		
+		
 		//Direction Control
 		case(DIR_STATE) //MC1 is on right side, MC2 is on left side 
 			NEUTRAL:begin //Neutral
@@ -162,30 +179,150 @@ module direction_control(
 				STRAIGHT:begin
 								NEXT_FLAG <= 0;
 								if(RUN_FLAG)begin
-									if(DISTANCE_FRONT <= DISTANCE_CHECK)begin
+								
+									if(DISTANCE_FRONT == DISTANCE_CHECK)begin
 										DIR_STATE <= NEUTRAL;
 										NEXT_FLAG <= 1;
-									end else begin
+									end else if(DISTANCE_FRONT > DISTANCE_CHECK) begin
 										DIR_STATE <= FORWARD;
-										if(PWM_STATE[1:0] == 2'b 11) begin //Both MC Receive Same Power
-											if(DISTANCE_SIDE_FRONT == DISTANCE_SIDE_BACK)begin
-												MC1[4:2] <= PWM_STATE[4:2];
-												MC2[4:2] <= PWM_STATE[4:2];
-											end else if(DISTANCE_SIDE_FRONT < DISTANCE_SIDE_BACK)begin
-												MC1[4:2] <= PWM_STATE[4:2];
-												MC2[4:2] <= PWM_STATE[4:2] + 3'b 001;
-											end else begin
-												MC2[4:2] <= PWM_STATE[4:2];
-												MC1[4:2] <= PWM_STATE[4:2] + 3'b 001;
-											end
-										end else begin //Default Power for both MC 12.5%
-											MC1[4:2] <= 3'b 000;
-											MC2[4:2] <= 3'b 000;
+									end else begin
+										DIR_STATE <= REVERSE;
+									end
+									
+									MC1[4:2] <= PWM_STATE[4:2];
+									MC2[4:2] <= PWM_STATE[4:2];
+											
+									if(PWM_STATE[1:0] == 2'b 11) begin //Both MC Receive Same Power
+										if(side_front == side_back)begin
+											MC1[4:2] <= PWM_STATE[4:2];
+											MC2[4:2] <= PWM_STATE[4:2];
+										end else if(side_front < side_back)begin
+											MC1[4:2] <= PWM_STATE[4:2];
+											MC2[4:2] <= PWM_STATE[4:2] + 1;
+										end else begin
+											MC2[4:2] <= PWM_STATE[4:2];
+											MC1[4:2] <= PWM_STATE[4:2] + 1;
 										end
-									end		
+									end else begin //Default Power for both MC 12.5%
+										MC1[4:2] <= 3'b 000;
+										MC2[4:2] <= 3'b 000;
+									end
+									
+									
 								end else begin
 									DIR_STATE <= NEUTRAL;
 								end
+								
+								
+								
+								
+								
+//								if(DISTANCE_FRONT <= 7)begin //12
+//										COMMAND_FLAG <= 1;
+//										START <= 1;
+//										DIR_STATE <= NEUTRAL;
+//									end else if(FLAG)begin
+//										if((DISTANCE_SIDE_FRONT == PATH)&(DISTANCE_SIDE_BACK == PATH))begin
+//											STATE <= 1;
+//										end else if((DISTANCE_SIDE_FRONT < PATH)&(DISTANCE_SIDE_BACK >= PATH))begin
+//											STATE <= 2;
+//										end else if((DISTANCE_SIDE_FRONT > PATH)&(DISTANCE_SIDE_BACK == PATH))begin
+//											STATE <= 3;
+//										end else if(DISTANCE_SIDE_FRONT == PATH)begin
+//											STATE <= 4;
+//										end else if((DISTANCE_SIDE_FRONT > PATH)&(DISTANCE_SIDE_BACK > PATH))begin
+//											STATE <= 5;
+//										end else if((DISTANCE_SIDE_FRONT < PATH)&(DISTANCE_SIDE_BACK < PATH))begin
+//											STATE <= 6;
+//										end else if((DISTANCE_SIDE_FRONT > PATH)&(DISTANCE_SIDE_BACK < PATH))begin
+//											STATE <= 4;
+//										end else
+//											STATE <= 3;
+//									end
+//									
+//									case(STATE)
+//										0:	begin
+////												if((DISTANCE_SIDE_FRONT <= 32)&(DISTANCE_SIDE_BACK <= 21)&(DISTANCE_FRONT <= 96))begin
+////													FLAG <= 1;
+//													DIR_STATE <= NEUTRAL;
+////												end else
+////													DIR_STATE <= FORWARD_LEFT;
+//											end
+//										1:	begin
+//												DIR_STATE <= FORWARD;
+//												FLAG <= 1;
+//											end
+//										2:	begin
+//												if((DISTANCE_FRONT < 3)|(DISTANCE_SIDE_FRONT < 3)|(DISTANCE_SIDE_BACK < 3))begin
+//														DIR_STATE <= BACK_RIGHT;
+//												end else if(DISTANCE_SIDE_FRONT == PATH)begin
+//													DIR_STATE <= NEUTRAL;
+//													FLAG <= 1;
+//												end else
+//													DIR_STATE <= BACK_RIGHT;
+//											end
+//										3:	begin
+//												if((DISTANCE_FRONT < 3)|(DISTANCE_SIDE_FRONT < 3)|(DISTANCE_SIDE_BACK < 3))begin
+//													if(DISTANCE_SIDE_BACK < 3)
+//														DIR_STATE <= FORWARD;
+//													else
+//														DIR_STATE <= BACK_RIGHT;
+//												end else if(DISTANCE_SIDE_FRONT == PATH)begin
+//													DIR_STATE <= NEUTRAL;
+//													FLAG <= 1;
+//												end else
+//													DIR_STATE <= FORWARD_LEFT;
+//											end
+//										4:	begin
+//												if((DISTANCE_FRONT < 3)|(DISTANCE_SIDE_FRONT < 3)|(DISTANCE_SIDE_BACK < 3))begin
+//													DIR_STATE <= BACK_RIGHT;
+//												end else if(DISTANCE_SIDE_BACK == PATH)begin
+//													DIR_STATE <= NEUTRAL;
+//													FLAG <= 1;
+//												end else
+//													DIR_STATE <= FORWARD;
+//											end
+//										5:	begin
+//												if((DISTANCE_FRONT < 3)|(DISTANCE_SIDE_FRONT < 3)|(DISTANCE_SIDE_BACK < 3))begin
+//													if(DISTANCE_SIDE_BACK < 3)
+//														DIR_STATE <= FORWARD;
+//													else
+//														DIR_STATE <= BACK_RIGHT;
+//												end else if(DISTANCE_SIDE_BACK == PATH)begin
+//													DIR_STATE <= NEUTRAL;
+//													FLAG <= 1;
+//												end else begin
+//													if(DISTANCE_SIDE_BACK > DISTANCE_SIDE_FRONT)begin
+//														if((DISTANCE_SIDE_BACK-DISTANCE_SIDE_FRONT) > 2)begin
+//															DIR_STATE <= BACK_RIGHT;
+//														end else if((DISTANCE_SIDE_BACK-DISTANCE_SIDE_FRONT) < 2)begin
+//															DIR_STATE <= FORWARD_LEFT;
+//														end else
+//															DIR_STATE <= FORWARD;
+//													end else
+//														DIR_STATE <= FORWARD_LEFT;	
+//												end
+//												
+//											end
+//										6:	begin
+//												if((DISTANCE_FRONT <= 3)|(DISTANCE_SIDE_FRONT <= 3)|(DISTANCE_SIDE_BACK <= 3))begin
+//													DIR_STATE <= BACK_RIGHT;
+//												end else if(DISTANCE_SIDE_BACK == PATH)begin
+//													DIR_STATE <= NEUTRAL;
+//													FLAG <= 1;
+//												end else begin
+//													if(DISTANCE_SIDE_BACK < DISTANCE_SIDE_FRONT)begin
+//														if((DISTANCE_SIDE_FRONT-DISTANCE_SIDE_BACK) > 2)begin
+//															DIR_STATE <= FORWARD_LEFT;
+//														end else if((DISTANCE_SIDE_FRONT-DISTANCE_SIDE_BACK) < 2)begin
+//															DIR_STATE <= FORWARD_RIGHT;
+//														end else
+//															DIR_STATE <= FORWARD;
+//													end else
+//														DIR_STATE <= FORWARD_RIGHT;	
+//												end
+//											end
+//										endcase
 							end
 				TURN_RIGHT:	begin
 									NEXT_FLAG <= 0;
@@ -204,10 +341,12 @@ module direction_control(
 								end
 				TURN_LEFT:	begin
 									NEXT_FLAG <= 0;
+									MC1[4:2] <= PWM_STATE[4:2];
+									MC2[4:2] <= PWM_STATE[4:2];
 									if(RUN_FLAG)begin
-										MC1[4:2] <= PWM_STATE[4:2];
-										MC2[4:2] <= PWM_STATE[4:2];
-										if(((DISTANCE_CHECK-DISTANCE_FRONT) <= 10)|(ALIGN_COMP == 0))begin
+										if(DISTANCE_SIDE_BACK <= 3)begin
+											DIR_STATE <= FORWARD;
+										end else if((DISTANCE_SIDE_FRONT <= 5) &(DISTANCE_SIDE_BACK <= 5))begin
 											DIR_STATE <= NEUTRAL;
 											NEXT_FLAG <= 1;
 										end else begin

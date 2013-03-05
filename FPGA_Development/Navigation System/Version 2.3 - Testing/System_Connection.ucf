@@ -49,14 +49,14 @@ NET "BTN[4]" LOC = B8;//BTNC
 NET "PWM" LOC = N10;//JA Pin #3
 
 # PmodB
-NET "US_FRONT" LOC = K2; //JB Pin #1 
-NET "US_SIDE_BACK" LOC = K1; //JB Pin #2 
-NET "US_SIDE_FRONT" LOC = L4;//JB Pin #3
+NET "US_FRONT" LOC = K1; //JB Pin #2  
+NET "US_SIDE_BACK" LOC = L4; //JB Pin #3
+NET "US_SIDE_FRONT" LOC = L3; //JB Pin #4
 
 # PmodC
-NET "JOINTLOW" LOC = H3; //JC Pin#1
-NET "JOINTHIGH" LOC =  L7; //JC Pin#2 
-NET "CLAW" LOC = K6; //JC Pin #3 
+NET "JOINTLOW" LOC = L7; //JC Pin#2 
+NET "JOINTHIGH" LOC = K6; //JC Pin #3 
+NET "CLAW" LOC = G3; //JC Pin #4
 
 # PmodD
 NET "RCLK" LOC = G11; //JD Pin #1
