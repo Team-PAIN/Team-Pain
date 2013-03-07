@@ -1,0 +1,73 @@
+xst -intstyle ise -ifn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.xst" -ofn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc System_Connection.ucf -p xc6slx16-csg324-3 "serialCOMM.ngc" serialCOMM.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc System_Connection.ucf -p xc6slx16-csg324-3 "serialCOMM.ngc" serialCOMM.ngd  
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc System_Connection.ucf -p xc6slx16-csg324-3 "serialCOMM.ngc" serialCOMM.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o serialCOMM_map.ncd serialCOMM.ngd serialCOMM.pcf 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc System_Connection.ucf -p xc6slx16-csg324-3 "serialCOMM.ngc" serialCOMM.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o serialCOMM_map.ncd serialCOMM.ngd serialCOMM.pcf 
+par -w -intstyle ise -ol high -mt off serialCOMM_map.ncd serialCOMM.ncd serialCOMM.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml serialCOMM.twx serialCOMM.ncd -o serialCOMM.twr serialCOMM.pcf -ucf System_Connection.ucf 
+bitgen -intstyle ise -f serialCOMM.ut serialCOMM.ncd 
+xst -intstyle ise -ifn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.xst" -ofn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc System_Connection.ucf -p xc6slx16-csg324-3 "serialCOMM.ngc" serialCOMM.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o serialCOMM_map.ncd serialCOMM.ngd serialCOMM.pcf 
+par -w -intstyle ise -ol high -mt off serialCOMM_map.ncd serialCOMM.ncd serialCOMM.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml serialCOMM.twx serialCOMM.ncd -o serialCOMM.twr serialCOMM.pcf -ucf System_Connection.ucf 
+bitgen -intstyle ise -f serialCOMM.ut serialCOMM.ncd 
+xst -intstyle ise -ifn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.xst" -ofn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc System_Connection.ucf -p xc6slx16-csg324-3 "serialCOMM.ngc" serialCOMM.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o serialCOMM_map.ncd serialCOMM.ngd serialCOMM.pcf 
+par -w -intstyle ise -ol high -mt off serialCOMM_map.ncd serialCOMM.ncd serialCOMM.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml serialCOMM.twx serialCOMM.ncd -o serialCOMM.twr serialCOMM.pcf -ucf System_Connection.ucf 
+bitgen -intstyle ise -f serialCOMM.ut serialCOMM.ncd 
+xst -intstyle ise -ifn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.xst" -ofn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc System_Connection.ucf -p xc6slx16-csg324-3 "serialCOMM.ngc" serialCOMM.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o serialCOMM_map.ncd serialCOMM.ngd serialCOMM.pcf 
+par -w -intstyle ise -ol high -mt off serialCOMM_map.ncd serialCOMM.ncd serialCOMM.pcf 
+bitgen -intstyle ise -f serialCOMM.ut serialCOMM.ncd 
+xst -intstyle ise -ifn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.xst" -ofn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc System_Connection.ucf -p xc6slx16-csg324-3 "serialCOMM.ngc" serialCOMM.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o serialCOMM_map.ncd serialCOMM.ngd serialCOMM.pcf 
+par -w -intstyle ise -ol high -mt off serialCOMM_map.ncd serialCOMM.ncd serialCOMM.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml serialCOMM.twx serialCOMM.ncd -o serialCOMM.twr serialCOMM.pcf -ucf System_Connection.ucf 
+bitgen -intstyle ise -f serialCOMM.ut serialCOMM.ncd 
+xst -intstyle ise -ifn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.xst" -ofn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.syr" 
+xst -intstyle ise -ifn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.xst" -ofn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.syr" 
+xst -intstyle ise -ifn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.xst" -ofn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.syr" 
+xst -intstyle ise -ifn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.xst" -ofn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc System_Connection.ucf -p xc6slx16-csg324-3 "serialCOMM.ngc" serialCOMM.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o serialCOMM_map.ncd serialCOMM.ngd serialCOMM.pcf 
+par -w -intstyle ise -ol high -mt off serialCOMM_map.ncd serialCOMM.ncd serialCOMM.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml serialCOMM.twx serialCOMM.ncd -o serialCOMM.twr serialCOMM.pcf -ucf System_Connection.ucf 
+bitgen -intstyle ise -f serialCOMM.ut serialCOMM.ncd 
+xst -intstyle ise -ifn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.xst" -ofn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc System_Connection.ucf -p xc6slx16-csg324-3 "serialCOMM.ngc" serialCOMM.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o serialCOMM_map.ncd serialCOMM.ngd serialCOMM.pcf 
+par -w -intstyle ise -ol high -mt off serialCOMM_map.ncd serialCOMM.ncd serialCOMM.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml serialCOMM.twx serialCOMM.ncd -o serialCOMM.twr serialCOMM.pcf -ucf System_Connection.ucf 
+bitgen -intstyle ise -f serialCOMM.ut serialCOMM.ncd 
+xst -intstyle ise -ifn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.xst" -ofn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.syr" 
+xst -intstyle ise -ifn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.xst" -ofn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc System_Connection.ucf -p xc6slx16-csg324-3 "serialCOMM.ngc" serialCOMM.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o serialCOMM_map.ncd serialCOMM.ngd serialCOMM.pcf 
+par -w -intstyle ise -ol high -mt off serialCOMM_map.ncd serialCOMM.ncd serialCOMM.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml serialCOMM.twx serialCOMM.ncd -o serialCOMM.twr serialCOMM.pcf -ucf System_Connection.ucf 
+bitgen -intstyle ise -f serialCOMM.ut serialCOMM.ncd 
+xst -intstyle ise -ifn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.xst" -ofn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc System_Connection.ucf -p xc6slx16-csg324-3 "serialCOMM.ngc" serialCOMM.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o serialCOMM_map.ncd serialCOMM.ngd serialCOMM.pcf 
+par -w -intstyle ise -ol high -mt off serialCOMM_map.ncd serialCOMM.ncd serialCOMM.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml serialCOMM.twx serialCOMM.ncd -o serialCOMM.twr serialCOMM.pcf -ucf System_Connection.ucf 
+bitgen -intstyle ise -f serialCOMM.ut serialCOMM.ncd 
+xst -intstyle ise -ifn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.xst" -ofn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc System_Connection.ucf -p xc6slx16-csg324-3 "serialCOMM.ngc" serialCOMM.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o serialCOMM_map.ncd serialCOMM.ngd serialCOMM.pcf 
+par -w -intstyle ise -ol high -mt off serialCOMM_map.ncd serialCOMM.ncd serialCOMM.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml serialCOMM.twx serialCOMM.ncd -o serialCOMM.twr serialCOMM.pcf -ucf System_Connection.ucf 
+bitgen -intstyle ise -f serialCOMM.ut serialCOMM.ncd 
+xst -intstyle ise -ifn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.xst" -ofn "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/serialCOMM.syr" 
+ngdbuild -intstyle ise -dd _ngo -nt timestamp -uc System_Connection.ucf -p xc6slx16-csg324-3 "serialCOMM.ngc" serialCOMM.ngd  
+map -intstyle ise -p xc6slx16-csg324-3 -w -logic_opt off -ol high -t 1 -xt 0 -register_duplication off -r 4 -global_opt off -mt off -ir off -pr off -lc off -power off -o serialCOMM_map.ncd serialCOMM.ngd serialCOMM.pcf 
+par -w -intstyle ise -ol high -mt off serialCOMM_map.ncd serialCOMM.ncd serialCOMM.pcf 
+trce -intstyle ise -v 3 -s 3 -n 3 -fastpaths -xml serialCOMM.twx serialCOMM.ncd -o serialCOMM.twr serialCOMM.pcf -ucf System_Connection.ucf 
+bitgen -intstyle ise -f serialCOMM.ut serialCOMM.ncd 

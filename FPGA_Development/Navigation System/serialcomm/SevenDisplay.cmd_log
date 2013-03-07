@@ -1,0 +1,1 @@
+vhdtdtfi -lang verilog -prj serialcomm -o "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm/SevenDisplay.tfi" -lib work "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/serialcomm//Sensor_Data_Display.v" -module SevenDisplay -template C:/Xilinx/14.2/ISE_DS/ISE//data/tfi.tft -deleteonerror 

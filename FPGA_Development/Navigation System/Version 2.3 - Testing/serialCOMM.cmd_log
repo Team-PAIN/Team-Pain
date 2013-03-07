@@ -1,0 +1,1 @@
+vhdtdtfi -lang verilog -prj Version1.1-Working -o "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/Version 2.3 - Testing/serialCOMM.tfi" -lib work "C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation System/Version 2.3 - Testing//serialCOMM.v" -module serialCOMM -template C:/Xilinx/14.2/ISE_DS/ISE//data/tfi.tft -deleteonerror 
