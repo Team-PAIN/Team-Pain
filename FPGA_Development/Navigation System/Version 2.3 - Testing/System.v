@@ -44,9 +44,9 @@ module System(
 	reg [20:0] count;
 	reg [1:0] RUN_FLAG;
 	reg [4:0] COMMAND, STATE;
-	reg [7:0] COMPARE_DISTANCE, PATH,INITIAL_X,INITIAL_Y;
+	reg [7:0] COMPARE_DISTANCE, PATH, INITIAL_X,INITIAL_Y;
 	wire [7:0] DISTANCE_SIDE_FRONT, DISTANCE_SIDE_BACK, DISTANCE_FRONT;
-	
+	reg SENSOR_IGNORE;
 	
 	// State Parameters
 	parameter [1:0] RUN_INI = 2'b 00; //Initialization State
@@ -59,6 +59,8 @@ module System(
 	parameter [4:0] TURN_RIGHT 	= 5'b 01100;
 	parameter [4:0] TURN_LEFT 		= 5'b 00110;
 	parameter [4:0] STRAIGHT 		= 5'b 01110;
+	parameter [4:0] ALIGN	 		= 5'b 00100;
+	
 	
 	// State Command
 	parameter [4:0] START			= 5'b 00000;
@@ -67,6 +69,9 @@ module System(
 	parameter [4:0] SEA_SCAN	 	= 5'b 00011;
 	parameter [4:0] RIGHT_CARGO	= 5'b 00100;
 	parameter [4:0] CARGO_SCAN 	= 5'b 00101;
+	parameter [4:0] ALIGN1		 	= 5'b 00110;
+	
+	
 	
 	// Color Parameters
 	parameter [3:0] RED 		= 4'b 0000;
@@ -87,7 +92,7 @@ module System(
 	parameter [1:0] BLOCK_DETECT 	= 2'b 10;
 	parameter [1:0] RAMP_DETECT 	= 2'b 11;
 	
-	assign SLIDER[1:0] = SW[1:0];
+	assign SLIDER[1:0] = SW[4:3];
 	assign SCLK_50MHz = count[0]; //50 MHz Signal for US sensors
 	assign DEBOUCED_SCLK = count[19];
 
@@ -98,6 +103,7 @@ module System(
 		RUN_FLAG = RUN_INI;
 		COMMAND = NO_COMMAND;
 		count = 0;
+		SENSOR_IGNORE = 0;
 	end
 	
 		
@@ -116,6 +122,7 @@ module System(
 			 .RUN_FLAG(RUN_FLAG), 
 			 .SCLK_50MHz(SCLK_50MHz), 
 			 .DEBOUCED_SCLK(DEBOUCED_SCLK), 
+			 .SENSOR_IGNORE(SENSOR_IGNORE),
 			 .NEXT_FLAG(NEXT_FLAG), 
 			 .PWM(PWM), 
 			 .LED(LED[7:0]), 
@@ -170,7 +177,7 @@ module System(
 		 
 	always @(posedge CLK)begin
 		//Counter to derive slower clocks
-		if(count >= 524288) //52428 Fits in an 20 bit reg
+		if(count >= 524289) //52428 Fits in an 20 bit reg
 			count <= 0;
 		else
 			count <= count + 1;	
@@ -193,8 +200,9 @@ module System(
 						RUN_INI:	begin //Initialization State
 										COMMAND <= STRAIGHT;
 										PATH <= DISTANCE_SIDE_FRONT;	
-										COMPARE_DISTANCE <= DISTANCE_FRONT - 15;
+										COMPARE_DISTANCE <= DISTANCE_FRONT-12;
 										RUN_FLAG <= RUN_EXC;
+										SENSOR_IGNORE <= 0;
 									end
 						RUN_EXC:	begin //Execution State
 										RUN_FLAG <= (NEXT_FLAG) ? RUN_COM : RUN_EXC;
@@ -231,6 +239,27 @@ module System(
 									end
 					endcase
 				end
+//			ALIGN1:begin
+//					case(RUN_FLAG)
+//						RUN_INI:	begin //Initialization State
+//										COMMAND <= ALIGN;
+//										COMPARE_DISTANCE <= 5;
+//										RUN_FLAG <= RUN_EXC;
+//									end
+//						RUN_EXC:	begin //Execution State
+//										RUN_FLAG <= (NEXT_FLAG) ? RUN_COM : RUN_EXC;
+//									end
+//						RUN_COM:	begin //Completion State
+//										if(SW[5])begin
+//										STATE <= SEA_SCAN;
+//										RUN_FLAG <= RUN_INI;
+//										end
+//									end
+//						RUN_ERR:	begin //Error State
+//						
+//									end
+//					endcase
+//				end
 			SEA_SCAN:begin
 					case(RUN_FLAG)
 						RUN_INI:	begin //Initialization State
@@ -238,6 +267,7 @@ module System(
 										PATH <= 5;	
 										COMPARE_DISTANCE <= 12;
 										RUN_FLAG <= RUN_EXC;
+										SENSOR_IGNORE <= 0;
 									end
 						RUN_EXC:	begin //Execution State
 										RUN_FLAG <= (NEXT_FLAG) ? RUN_COM : RUN_EXC;
@@ -279,6 +309,7 @@ module System(
 										PATH <= 16;
 										COMPARE_DISTANCE <= 12;
 										RUN_FLAG <= RUN_EXC;
+										SENSOR_IGNORE <= 0;
 									end
 						RUN_EXC:	begin //Execution State
 										RUN_FLAG <= (NEXT_FLAG) ? RUN_COM : RUN_EXC;

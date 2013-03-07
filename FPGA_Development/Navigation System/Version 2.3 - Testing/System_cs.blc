@@ -1,0 +1,37 @@
+Release 14.2 ngcbuild P.28xd (nt64)
+Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
+
+Command Line: ngcbuild.exe -dd
+C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation
+System/Version 2.3 - Testing/_ngo -p xc6slx16-csg324-3 -i
+C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Navigation
+System\Version 2.3 - Testing\System.ngc
+C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Navigation
+System\Version 2.3 - Testing\System_cs.ngc
+
+Reading NGO file
+"C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation
+System/Version 2.3 - Testing/System.ngc" ...
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+NGCBUILD Design Results Summary:
+  Number of errors:     0
+  Number of warnings:   0
+
+Total memory usage is 159148 kilobytes
+
+Writing NGC file
+"C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation
+System/Version 2.3 - Testing/System_cs.ngc" ...
+Total REAL time to NGCBUILD completion:  3 sec
+Total CPU time to NGCBUILD completion:   3 sec
+
+Writing NGCBUILD log file
+"C:/Users/ALONSOY/Documents/GitHub/Team-Pain/FPGA_Development/Navigation
+System/Version 2.3 - Testing/System_cs.blc"...

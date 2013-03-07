@@ -40,7 +40,7 @@ module Arm(
 	parameter UPPER_PICKUP = 31248; //Upper Pick up block at 31248 counts at 100 MHz
 	parameter UPPER_DROPOFF = 191394; //Upper Drop block at 191394 counts at 100 MHz
 	parameter LOWER_PICKUP = 183582; //Lower Pick up block at 183582 counts at 100 MHz* //old sig 183400
-	parameter LOWER_DROPOFF = 19600; //Lower Drop block at 113274 counts at 100 MHz
+	parameter LOWER_DROPOFF = 113274; //Lower Drop block at 113274 counts at 100 MHz
 	
 	initial begin
 		COUNT = 0;

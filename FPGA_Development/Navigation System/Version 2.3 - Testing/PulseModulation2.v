@@ -30,7 +30,7 @@ module PulseModulation2(
 	initial begin
 		direction[0] = CLK_RATE/1000; //Forward, 1 ms
 		direction[1] = 150000;  //CLK_RATE/667, Neutral, 1.5 ms
-		direction[2] = CLK_RATE/500; //Reverse, 2 ms
+		direction[2] = CLK_RATE/500; //Reverse, 2 ms 
 	end
 	
 	always @(posedge CLK) begin

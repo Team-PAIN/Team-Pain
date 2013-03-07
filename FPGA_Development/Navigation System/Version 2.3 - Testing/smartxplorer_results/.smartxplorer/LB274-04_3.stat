@@ -1,30 +1,15 @@
 START:Strategy:4:MapRegDup
-REMOTE_PID:74524
-RUNNING:74524:76544:MapRegDup:map:Navigation.ngd: -ol high -xe n -register_duplication on -w  -p xc6slx16-csg324-3 -o Navigation_map.ncd  C:cl:bslfa12sp13_SourceCode:bslteam2:bslbranches:bslFPGA_Development:bslNavigation:spSystem:bslVersion1.1:dsWorking:bslsmartxplorer_results:bslrun4:bslNavigation.pcf
-STATUS:MapRegDup:map:Score:None:lut:None:slice_reg:212 (1%):slice:None:bram:None:dsp48:None:mult18x18:None:Power:None:wnsInfo:None:Time:40.34 secs 
-STATUS:MapRegDup:map:Score:None:lut:438 (4%):slice_reg:212 (1%):slice:None:bram:None:dsp48:None:mult18x18:None:Power:None:wnsInfo:None:Time:40.34 secs 
-STATUS:MapRegDup:map:Score:None:lut:438 (4%):slice_reg:212 (1%):slice:160 (7%):bram:None:dsp48:None:mult18x18:None:Power:None:wnsInfo:None:Time:40.34 secs 
-STATUS:MapRegDup:map:Score:None:lut:438 (4%):slice_reg:212 (1%):slice:160 (7%):bram:0:dsp48:None:mult18x18:None:Power:None:wnsInfo:None:Time:40.34 secs 
-STATUS:MapRegDup:map:Score:None:lut:438 (4%):slice_reg:212 (1%):slice:160 (7%):bram:0:dsp48:None:mult18x18:None:Power:None:wnsInfo:None:Time:40.34 secs 
-STATUS:MapRegDup:map:Score:None:lut:438 (4%):slice_reg:212 (1%):slice:160 (7%):bram:0:dsp48:0 (0%):mult18x18:None:Power:None:wnsInfo:None:Time:40.34 secs 
+REMOTE_PID:9712
+RUNNING:9712:9756:MapRegDup:map:System.ngd: -ol high -xe n -register_duplication on -w  -p xc6slx16-csg324-3 -o System_map.ncd  C:cl:bslUsers:bslALONSOY:bslDocuments:bslGitHub:bslTeam:dsPain:bslFPGA_Development:bslNavigation:spSystem:bslVersion:sp2.3:sp:ds:spTesting:bslsmartxplorer_results:bslrun4:bslSystem.pcf
+STATUS:MapRegDup:map:Score:None:lut:None:slice_reg:452 (2%):slice:None:bram:None:dsp48:None:mult18x18:None:Power:None:wnsInfo:None:Time:60.39 secs 
+STATUS:MapRegDup:map:Score:None:lut:949 (10%):slice_reg:452 (2%):slice:None:bram:None:dsp48:None:mult18x18:None:Power:None:wnsInfo:None:Time:60.39 secs 
+STATUS:MapRegDup:map:Score:None:lut:949 (10%):slice_reg:452 (2%):slice:325 (14%):bram:None:dsp48:None:mult18x18:None:Power:None:wnsInfo:None:Time:60.39 secs 
+STATUS:MapRegDup:map:Score:None:lut:949 (10%):slice_reg:452 (2%):slice:325 (14%):bram:0:dsp48:None:mult18x18:None:Power:None:wnsInfo:None:Time:60.39 secs 
+STATUS:MapRegDup:map:Score:None:lut:949 (10%):slice_reg:452 (2%):slice:325 (14%):bram:0:dsp48:None:mult18x18:None:Power:None:wnsInfo:None:Time:60.39 secs 
+STATUS:MapRegDup:map:Score:None:lut:949 (10%):slice_reg:452 (2%):slice:325 (14%):bram:0:dsp48:0 (0%):mult18x18:None:Power:None:wnsInfo:None:Time:60.39 secs 
 DONE:map:0
-RUNNING:74524:74764:MapRegDup:par:Navigation_map.ncd: -ol high -xe n  -w Navigation.ncd  C:cl:bslfa12sp13_SourceCode:bslteam2:bslbranches:bslFPGA_Development:bslNavigation:spSystem:bslVersion1.1:dsWorking:bslsmartxplorer_results:bslrun4:bslNavigation.pcf
-STATUS:MapRegDup:par:Score:None:lut:None:slice_reg:None:slice:None:bram:None:dsp48:None:mult18x18:None:Power:None:wnsInfo:N/A:Time:50.40 secs 
+RUNNING:9712:10116:MapRegDup:par:System_map.ncd: -ol high -xe n  -w System.ncd  C:cl:bslUsers:bslALONSOY:bslDocuments:bslGitHub:bslTeam:dsPain:bslFPGA_Development:bslNavigation:spSystem:bslVersion:sp2.3:sp:ds:spTesting:bslsmartxplorer_results:bslrun4:bslSystem.pcf
+STATUS:MapRegDup:par:Score:None:lut:None:slice_reg:None:slice:None:bram:None:dsp48:None:mult18x18:None:Power:None:wnsInfo:N/A:Time:75.44 secs 
 DONE:par:0
-RUNNING:74524:74880:MapRegDup:trce:C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version1.1-Working\smartxplorer_results\run4\Navigation.ncd:C:cl:bslfa12sp13_SourceCode:bslteam2:bslbranches:bslFPGA_Development:bslNavigation:spSystem:bslVersion1.1:dsWorking:bslsmartxplorer_results:bslrun4:bslNavigation.pcf -xml C:cl:bslfa12sp13_SourceCode:bslteam2:bslbranches:bslFPGA_Development:bslNavigation:spSystem:bslVersion1.1:dsWorking:bslsmartxplorer_results:bslrun4:bslNavigation.twx -v 3 -s 3 -n 3 -fastpaths   -ucf System_Connection.ucf -o C:cl:bslfa12sp13_SourceCode:bslteam2:bslbranches:bslFPGA_Development:bslNavigation:spSystem:bslVersion1.1:dsWorking:bslsmartxplorer_results:bslrun4:bslNavigation.twr
-DONE:trce:0
-START:Strategy:7:MapExtraEffort2
-REMOTE_PID:77516
-RUNNING:77516:76936:MapExtraEffort2:map:Navigation.ngd: -ol high -xe n -t 3 -w  -p xc6slx16-csg324-3 -o Navigation_map.ncd  C:cl:bslfa12sp13_SourceCode:bslteam2:bslbranches:bslFPGA_Development:bslNavigation:spSystem:bslVersion1.1:dsWorking:bslsmartxplorer_results:bslrun7:bslNavigation.pcf
-STATUS:MapExtraEffort2:map:Score:None:lut:None:slice_reg:211 (1%):slice:None:bram:None:dsp48:None:mult18x18:None:Power:None:wnsInfo:None:Time:15.16 secs 
-STATUS:MapExtraEffort2:map:Score:None:lut:434 (4%):slice_reg:211 (1%):slice:None:bram:None:dsp48:None:mult18x18:None:Power:None:wnsInfo:None:Time:15.16 secs 
-STATUS:MapExtraEffort2:map:Score:None:lut:434 (4%):slice_reg:211 (1%):slice:160 (7%):bram:None:dsp48:None:mult18x18:None:Power:None:wnsInfo:None:Time:15.16 secs 
-STATUS:MapExtraEffort2:map:Score:None:lut:434 (4%):slice_reg:211 (1%):slice:160 (7%):bram:0:dsp48:None:mult18x18:None:Power:None:wnsInfo:None:Time:15.16 secs 
-STATUS:MapExtraEffort2:map:Score:None:lut:434 (4%):slice_reg:211 (1%):slice:160 (7%):bram:0:dsp48:None:mult18x18:None:Power:None:wnsInfo:None:Time:15.16 secs 
-STATUS:MapExtraEffort2:map:Score:None:lut:434 (4%):slice_reg:211 (1%):slice:160 (7%):bram:0:dsp48:0 (0%):mult18x18:None:Power:None:wnsInfo:None:Time:15.16 secs 
-DONE:map:0
-RUNNING:77516:75832:MapExtraEffort2:par:Navigation_map.ncd: -ol high  -w Navigation.ncd  C:cl:bslfa12sp13_SourceCode:bslteam2:bslbranches:bslFPGA_Development:bslNavigation:spSystem:bslVersion1.1:dsWorking:bslsmartxplorer_results:bslrun7:bslNavigation.pcf
-STATUS:MapExtraEffort2:par:Score:None:lut:None:slice_reg:None:slice:None:bram:None:dsp48:None:mult18x18:None:Power:None:wnsInfo:N/A:Time:25.19 secs 
-DONE:par:0
-RUNNING:77516:77776:MapExtraEffort2:trce:C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version1.1-Working\smartxplorer_results\run7\Navigation.ncd:C:cl:bslfa12sp13_SourceCode:bslteam2:bslbranches:bslFPGA_Development:bslNavigation:spSystem:bslVersion1.1:dsWorking:bslsmartxplorer_results:bslrun7:bslNavigation.pcf -xml C:cl:bslfa12sp13_SourceCode:bslteam2:bslbranches:bslFPGA_Development:bslNavigation:spSystem:bslVersion1.1:dsWorking:bslsmartxplorer_results:bslrun7:bslNavigation.twx -v 3 -s 3 -n 3 -fastpaths   -ucf System_Connection.ucf -o C:cl:bslfa12sp13_SourceCode:bslteam2:bslbranches:bslFPGA_Development:bslNavigation:spSystem:bslVersion1.1:dsWorking:bslsmartxplorer_results:bslrun7:bslNavigation.twr
+RUNNING:9712:9288:MapRegDup:trce:C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Navigation System\Version 2.3 - Testing\smartxplorer_results\run4\System.ncd:C:cl:bslUsers:bslALONSOY:bslDocuments:bslGitHub:bslTeam:dsPain:bslFPGA_Development:bslNavigation:spSystem:bslVersion:sp2.3:sp:ds:spTesting:bslsmartxplorer_results:bslrun4:bslSystem.pcf -xml C:cl:bslUsers:bslALONSOY:bslDocuments:bslGitHub:bslTeam:dsPain:bslFPGA_Development:bslNavigation:spSystem:bslVersion:sp2.3:sp:ds:spTesting:bslsmartxplorer_results:bslrun4:bslSystem.twx -v 3 -s 3 -n 3 -fastpaths   -ucf System_Connection.ucf -o C:cl:bslUsers:bslALONSOY:bslDocuments:bslGitHub:bslTeam:dsPain:bslFPGA_Development:bslNavigation:spSystem:bslVersion:sp2.3:sp:ds:spTesting:bslsmartxplorer_results:bslrun4:bslSystem.twr
 DONE:trce:0

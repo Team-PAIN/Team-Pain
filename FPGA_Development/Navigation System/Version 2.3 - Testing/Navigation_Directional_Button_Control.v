@@ -30,6 +30,7 @@ module direction_control(
 		input [4:0] COMMAND,
 		input [7:0] PATH,
 		input [7:0] DISTANCE_CHECK,
+		input SENSOR_IGNORE,
 		output NEXT_FLAG,
 		output reg [4:0] MC1, //Bits 1:0 control Direction, Bits 4:2 Control Power
 		output reg [4:0] MC2,	 //Bits 1:0 control Direction, Bits 4:2 Control Power
@@ -38,14 +39,9 @@ module direction_control(
     );
 	 
 	wire [7:0] ALIGN_COMP;
-	reg [26:0] sum1,sum2;
-	reg [7:0] count,side_front,side_back;
 	reg NEXT_FLAG;
 	reg [4:0] DIR_STATE, PWM_STATE;
-	reg [7:0] STATE;
-	reg FLAG, STABLE,START;
-	wire [1:0] MOTOR_ADJUSTMENT;
-	
+	reg [3:0] STATE;	
 	
 	//	Movement Parameters
 	parameter [4:0] NEUTRAL = 			5'b 00000;
@@ -74,6 +70,7 @@ module direction_control(
 	parameter [4:0] TURN_RIGHT 	= 5'b 01100;
 	parameter [4:0] TURN_LEFT 		= 5'b 00110;
 	parameter [4:0] STRAIGHT 		= 5'b 01110;
+	parameter [4:0] ALIGN	 		= 5'b 00100;
 	
 	//	Phase Parameters
 	parameter [1:0] RUN_INI = 2'b 00; //Initialization State
@@ -81,35 +78,28 @@ module direction_control(
 	parameter [1:0] RUN_COM = 2'b 10; //Completion State
 	parameter [1:0] RUN_ERR = 2'b 11; //Error State
 	
+	
+	// STATE Parameters
+	parameter [2:0] UNDETERMINED 				= 3'b 000;
+	parameter [2:0] BOTH_EQUAL 				= 3'b 001;
+	parameter [2:0] BOTH_LESS	 				= 3'b 010;
+	parameter [2:0] BOTH_GREATER 				= 3'b 011;
+	parameter [2:0] F_LESS_B_EQUAL_GREATER = 3'b 100;
+	parameter [2:0] F_GREATER_B_LESS_EQUAL = 3'b 101;
+	parameter [2:0] F_EQUAL_B_NOT_EQUAL 	= 3'b 110;
+	parameter [2:0] GOAL							= 3'b 111;
+	
 	initial begin
-		START = 1;
-		STATE = 0;
-		FLAG = 1;
-		STABLE = 0;
+		STATE = UNDETERMINED;
 		NEXT_FLAG = 0;
 		
 	end
 	
-	assign LED = DISTANCE_CHECK;
-
-	assign ALIGN_COMP = (side_front > side_back) ? side_front-side_back : side_back-side_front;
+	assign LED = STATE;
+	assign ALIGN_COMP = (DISTANCE_SIDE_FRONT > DISTANCE_SIDE_BACK) ? DISTANCE_SIDE_FRONT-DISTANCE_SIDE_BACK : DISTANCE_SIDE_BACK-DISTANCE_SIDE_FRONT;
 	
-	assign MOTOR_ADJUSTMENT = (ALIGN_COMP > 10) ? 2'b 10 : 2'b 01;
 		
-	always @(posedge CLK) begin
-		if(count == 100)begin
-			count <= 0;
-			sum1 <= 0;
-			sum2 <= 0;
-			side_front <= sum1/100; 
-			side_back <= sum2/100;
-		end else
-			count <= count + 1;
-			
-		sum1 <= sum1 + DISTANCE_SIDE_FRONT;
-		sum2 <= sum2 + DISTANCE_SIDE_BACK;
-		
-		
+	always @(posedge CLK) begin		
 		//Direction Control
 		case(DIR_STATE) //MC1 is on right side, MC2 is on left side 
 			NEUTRAL:begin //Neutral
@@ -175,190 +165,201 @@ module direction_control(
 			
 		end else begin 
 				
-			case(COMMAND)                              
-				STRAIGHT:begin
-								NEXT_FLAG <= 0;
+			case(COMMAND)      
+				STRAIGHT: 	begin
 								if(RUN_FLAG)begin
-								
-									if(DISTANCE_FRONT == DISTANCE_CHECK)begin
-										DIR_STATE <= NEUTRAL;
-										NEXT_FLAG <= 1;
-									end else if(DISTANCE_FRONT > DISTANCE_CHECK) begin
-										DIR_STATE <= FORWARD;
-									end else begin
-										DIR_STATE <= REVERSE;
-									end
-									
+									NEXT_FLAG <= 0;
 									MC1[4:2] <= PWM_STATE[4:2];
 									MC2[4:2] <= PWM_STATE[4:2];
-											
-									if(PWM_STATE[1:0] == 2'b 11) begin //Both MC Receive Same Power
-										if(side_front == side_back)begin
-											MC1[4:2] <= PWM_STATE[4:2];
-											MC2[4:2] <= PWM_STATE[4:2];
-										end else if(side_front < side_back)begin
-											MC1[4:2] <= PWM_STATE[4:2];
-											MC2[4:2] <= PWM_STATE[4:2] + 1;
-										end else begin
-											MC2[4:2] <= PWM_STATE[4:2];
-											MC1[4:2] <= PWM_STATE[4:2] + 1;
-										end
-									end else begin //Default Power for both MC 12.5%
-										MC1[4:2] <= 3'b 000;
-										MC2[4:2] <= 3'b 000;
+									
+									if(DISTANCE_FRONT <= DISTANCE_CHECK)begin
+										DIR_STATE <= NEUTRAL;
+										NEXT_FLAG <= 1;
+										STATE <= GOAL;
 									end
-									
-									
+								
+									case(STATE)
+										UNDETERMINED:begin
+												if((DISTANCE_SIDE_FRONT == PATH)&(DISTANCE_SIDE_BACK == PATH))begin
+													STATE <= BOTH_EQUAL;
+												end else if((DISTANCE_SIDE_FRONT < PATH)&(DISTANCE_SIDE_BACK < PATH))begin
+													STATE <= BOTH_LESS;
+												end else if((DISTANCE_SIDE_FRONT > PATH)&(DISTANCE_SIDE_BACK > PATH))begin
+													STATE <= BOTH_GREATER;
+												end else if((DISTANCE_SIDE_FRONT < PATH)&(DISTANCE_SIDE_BACK >= PATH))begin
+													STATE <= F_LESS_B_EQUAL_GREATER;
+												end else if((DISTANCE_SIDE_FRONT > PATH)&(DISTANCE_SIDE_BACK <= PATH))begin
+													STATE <= F_GREATER_B_LESS_EQUAL;
+												end else if((DISTANCE_SIDE_FRONT == PATH)&(DISTANCE_SIDE_BACK < PATH))begin
+													STATE <= F_EQUAL_B_NOT_EQUAL;
+												end
+											end
+										BOTH_EQUAL:	begin
+												if(DISTANCE_FRONT <= DISTANCE_CHECK) begin
+													DIR_STATE <= NEUTRAL;
+													STATE <= GOAL;
+													NEXT_FLAG <= 1;
+												end else if(DISTANCE_FRONT < 3) begin
+													DIR_STATE <= NEUTRAL;
+												end else if((DISTANCE_SIDE_FRONT == PATH)&(DISTANCE_SIDE_BACK == PATH))begin
+													DIR_STATE <= FORWARD;
+												end else begin
+													STATE <= UNDETERMINED;
+													DIR_STATE <= NEUTRAL;
+												end
+											end
+										F_LESS_B_EQUAL_GREATER:	begin
+												if(DISTANCE_FRONT <= DISTANCE_CHECK) begin
+													DIR_STATE <= NEUTRAL;
+													STATE <= GOAL;
+													NEXT_FLAG <= 1;
+												end else if((DISTANCE_FRONT < 3)|(DISTANCE_SIDE_FRONT < 3)|(DISTANCE_SIDE_BACK < 3))begin
+														DIR_STATE <= BACK_RIGHT;
+												end else if(DISTANCE_SIDE_FRONT >= PATH)begin
+													DIR_STATE <= NEUTRAL;
+													STATE <= UNDETERMINED;
+												end else if((DISTANCE_SIDE_FRONT < PATH)&(DISTANCE_SIDE_BACK >= PATH))begin
+													DIR_STATE <= BACK_RIGHT;
+												end else begin
+													STATE <= UNDETERMINED;
+													DIR_STATE <= NEUTRAL;
+												end
+											end
+										F_GREATER_B_LESS_EQUAL:begin
+												if(DISTANCE_FRONT <= DISTANCE_CHECK) begin
+													DIR_STATE <= NEUTRAL;
+													STATE <= GOAL;
+													NEXT_FLAG <= 1;
+												end else if((DISTANCE_FRONT < 3)|(DISTANCE_SIDE_FRONT < 3)|(DISTANCE_SIDE_BACK < 3))begin
+													if(DISTANCE_SIDE_BACK < 3)
+														DIR_STATE <= FORWARD;
+													else
+														DIR_STATE <= BACK_RIGHT;
+												end else if(DISTANCE_SIDE_FRONT <= PATH)begin
+													DIR_STATE <= NEUTRAL;
+													STATE <= UNDETERMINED;
+												end else if((DISTANCE_SIDE_FRONT > PATH)&(DISTANCE_SIDE_BACK <= PATH))begin
+													DIR_STATE <= FORWARD_LEFT;
+												end else begin
+													STATE <= UNDETERMINED;
+													DIR_STATE <= NEUTRAL;
+												end										
+											end
+										F_EQUAL_B_NOT_EQUAL:	begin
+												if(DISTANCE_FRONT <= DISTANCE_CHECK) begin
+													DIR_STATE <= NEUTRAL;
+													STATE <= GOAL;
+													NEXT_FLAG <= 1;
+												end else if((DISTANCE_FRONT < 3)|(DISTANCE_SIDE_FRONT < 3)|(DISTANCE_SIDE_BACK < 3))begin
+													DIR_STATE <= BACK_RIGHT;
+												end else if(DISTANCE_SIDE_BACK == PATH)begin
+													STATE <= UNDETERMINED;
+													DIR_STATE <= NEUTRAL;
+												end else if ((DISTANCE_SIDE_FRONT == PATH)&((DISTANCE_SIDE_BACK > PATH)|(DISTANCE_SIDE_BACK < PATH)))begin
+													DIR_STATE <= FORWARD;
+												end else begin
+													STATE <= UNDETERMINED;
+													DIR_STATE <= NEUTRAL;
+												end
+											end
+										BOTH_GREATER:	begin
+												if(DISTANCE_FRONT <= DISTANCE_CHECK) begin
+													DIR_STATE <= NEUTRAL;
+													STATE <= GOAL;
+													NEXT_FLAG <= 1;
+												end else if((DISTANCE_FRONT < 3)|(DISTANCE_SIDE_FRONT < 3)|(DISTANCE_SIDE_BACK < 3))begin
+													if(DISTANCE_SIDE_BACK < 3)
+														DIR_STATE <= FORWARD;
+													else
+														DIR_STATE <= BACK_RIGHT;
+												end else if(DISTANCE_SIDE_BACK <= PATH)begin
+													STATE <= UNDETERMINED;
+													DIR_STATE <= NEUTRAL;
+												end else if((DISTANCE_SIDE_FRONT > PATH)&(DISTANCE_SIDE_BACK > PATH))begin
+													if(DISTANCE_SIDE_BACK > DISTANCE_SIDE_FRONT)begin
+														if((DISTANCE_SIDE_BACK-DISTANCE_SIDE_FRONT) > 2)begin
+															DIR_STATE <= BACK_RIGHT;
+														end else if((DISTANCE_SIDE_BACK-DISTANCE_SIDE_FRONT) < 2)begin
+															DIR_STATE <= FORWARD_LEFT;
+														end else
+															DIR_STATE <= FORWARD;
+													end else
+														DIR_STATE <= FORWARD_LEFT;	
+												end else begin
+													STATE <= UNDETERMINED;
+													DIR_STATE <= NEUTRAL; 
+												end
+											end
+										BOTH_LESS: begin
+												if(DISTANCE_FRONT <= DISTANCE_CHECK) begin
+													DIR_STATE <= NEUTRAL;
+													STATE <= GOAL;
+													NEXT_FLAG <= 1;
+												end else if((DISTANCE_FRONT <= 3)|(DISTANCE_SIDE_FRONT <= 3)|(DISTANCE_SIDE_BACK <= 3))begin
+													DIR_STATE <= BACK_RIGHT;
+												end else if(DISTANCE_SIDE_BACK == PATH)begin
+													STATE <= UNDETERMINED;
+													DIR_STATE <= NEUTRAL;
+												end else if((DISTANCE_SIDE_FRONT < PATH)&(DISTANCE_SIDE_BACK < PATH))begin
+													if(DISTANCE_SIDE_BACK < DISTANCE_SIDE_FRONT)begin
+														if((DISTANCE_SIDE_FRONT-DISTANCE_SIDE_BACK) > 2)begin
+															DIR_STATE <= FORWARD_LEFT;
+														end else if((DISTANCE_SIDE_FRONT-DISTANCE_SIDE_BACK) < 2)begin
+															DIR_STATE <= FORWARD_RIGHT;
+														end else
+															DIR_STATE <= FORWARD;
+													end else
+														DIR_STATE <= FORWARD_RIGHT;	
+												end else begin
+													STATE <= UNDETERMINED;
+													DIR_STATE <= NEUTRAL; 
+												end
+											end
+										GOAL: begin
+												STATE <= UNDETERMINED;
+												DIR_STATE <= NEUTRAL; 
+												NEXT_FLAG <= 1;
+											end
+									endcase
 								end else begin
 									DIR_STATE <= NEUTRAL;
 								end
-								
-								
-								
-								
-								
-//								if(DISTANCE_FRONT <= 7)begin //12
-//										COMMAND_FLAG <= 1;
-//										START <= 1;
-//										DIR_STATE <= NEUTRAL;
-//									end else if(FLAG)begin
-//										if((DISTANCE_SIDE_FRONT == PATH)&(DISTANCE_SIDE_BACK == PATH))begin
-//											STATE <= 1;
-//										end else if((DISTANCE_SIDE_FRONT < PATH)&(DISTANCE_SIDE_BACK >= PATH))begin
-//											STATE <= 2;
-//										end else if((DISTANCE_SIDE_FRONT > PATH)&(DISTANCE_SIDE_BACK == PATH))begin
-//											STATE <= 3;
-//										end else if(DISTANCE_SIDE_FRONT == PATH)begin
-//											STATE <= 4;
-//										end else if((DISTANCE_SIDE_FRONT > PATH)&(DISTANCE_SIDE_BACK > PATH))begin
-//											STATE <= 5;
-//										end else if((DISTANCE_SIDE_FRONT < PATH)&(DISTANCE_SIDE_BACK < PATH))begin
-//											STATE <= 6;
-//										end else if((DISTANCE_SIDE_FRONT > PATH)&(DISTANCE_SIDE_BACK < PATH))begin
-//											STATE <= 4;
-//										end else
-//											STATE <= 3;
-//									end
-//									
-//									case(STATE)
-//										0:	begin
-////												if((DISTANCE_SIDE_FRONT <= 32)&(DISTANCE_SIDE_BACK <= 21)&(DISTANCE_FRONT <= 96))begin
-////													FLAG <= 1;
-//													DIR_STATE <= NEUTRAL;
-////												end else
-////													DIR_STATE <= FORWARD_LEFT;
-//											end
-//										1:	begin
-//												DIR_STATE <= FORWARD;
-//												FLAG <= 1;
-//											end
-//										2:	begin
-//												if((DISTANCE_FRONT < 3)|(DISTANCE_SIDE_FRONT < 3)|(DISTANCE_SIDE_BACK < 3))begin
-//														DIR_STATE <= BACK_RIGHT;
-//												end else if(DISTANCE_SIDE_FRONT == PATH)begin
-//													DIR_STATE <= NEUTRAL;
-//													FLAG <= 1;
-//												end else
-//													DIR_STATE <= BACK_RIGHT;
-//											end
-//										3:	begin
-//												if((DISTANCE_FRONT < 3)|(DISTANCE_SIDE_FRONT < 3)|(DISTANCE_SIDE_BACK < 3))begin
-//													if(DISTANCE_SIDE_BACK < 3)
-//														DIR_STATE <= FORWARD;
-//													else
-//														DIR_STATE <= BACK_RIGHT;
-//												end else if(DISTANCE_SIDE_FRONT == PATH)begin
-//													DIR_STATE <= NEUTRAL;
-//													FLAG <= 1;
-//												end else
-//													DIR_STATE <= FORWARD_LEFT;
-//											end
-//										4:	begin
-//												if((DISTANCE_FRONT < 3)|(DISTANCE_SIDE_FRONT < 3)|(DISTANCE_SIDE_BACK < 3))begin
-//													DIR_STATE <= BACK_RIGHT;
-//												end else if(DISTANCE_SIDE_BACK == PATH)begin
-//													DIR_STATE <= NEUTRAL;
-//													FLAG <= 1;
-//												end else
-//													DIR_STATE <= FORWARD;
-//											end
-//										5:	begin
-//												if((DISTANCE_FRONT < 3)|(DISTANCE_SIDE_FRONT < 3)|(DISTANCE_SIDE_BACK < 3))begin
-//													if(DISTANCE_SIDE_BACK < 3)
-//														DIR_STATE <= FORWARD;
-//													else
-//														DIR_STATE <= BACK_RIGHT;
-//												end else if(DISTANCE_SIDE_BACK == PATH)begin
-//													DIR_STATE <= NEUTRAL;
-//													FLAG <= 1;
-//												end else begin
-//													if(DISTANCE_SIDE_BACK > DISTANCE_SIDE_FRONT)begin
-//														if((DISTANCE_SIDE_BACK-DISTANCE_SIDE_FRONT) > 2)begin
-//															DIR_STATE <= BACK_RIGHT;
-//														end else if((DISTANCE_SIDE_BACK-DISTANCE_SIDE_FRONT) < 2)begin
-//															DIR_STATE <= FORWARD_LEFT;
-//														end else
-//															DIR_STATE <= FORWARD;
-//													end else
-//														DIR_STATE <= FORWARD_LEFT;	
-//												end
-//												
-//											end
-//										6:	begin
-//												if((DISTANCE_FRONT <= 3)|(DISTANCE_SIDE_FRONT <= 3)|(DISTANCE_SIDE_BACK <= 3))begin
-//													DIR_STATE <= BACK_RIGHT;
-//												end else if(DISTANCE_SIDE_BACK == PATH)begin
-//													DIR_STATE <= NEUTRAL;
-//													FLAG <= 1;
-//												end else begin
-//													if(DISTANCE_SIDE_BACK < DISTANCE_SIDE_FRONT)begin
-//														if((DISTANCE_SIDE_FRONT-DISTANCE_SIDE_BACK) > 2)begin
-//															DIR_STATE <= FORWARD_LEFT;
-//														end else if((DISTANCE_SIDE_FRONT-DISTANCE_SIDE_BACK) < 2)begin
-//															DIR_STATE <= FORWARD_RIGHT;
-//														end else
-//															DIR_STATE <= FORWARD;
-//													end else
-//														DIR_STATE <= FORWARD_RIGHT;	
-//												end
-//											end
-//										endcase
-							end
+							end			
 				TURN_RIGHT:	begin
-									NEXT_FLAG <= 0;
-									if(RUN_FLAG)begin
-										MC1[4:2] <= PWM_STATE[4:2];
-										MC2[4:2] <= PWM_STATE[4:2];
-										if(((DISTANCE_CHECK-DISTANCE_FRONT) <= 10)|(ANGLE_DIRECTION == 0))begin
-											DIR_STATE <= NEUTRAL;
-											NEXT_FLAG <= 1;
-										end else begin
-											DIR_STATE <= R_360;
-										end 
-									end else begin
-										DIR_STATE <= NEUTRAL;
-									end
-								end
-				TURN_LEFT:	begin
-									NEXT_FLAG <= 0;
+								NEXT_FLAG <= 0;
+								if(RUN_FLAG)begin
 									MC1[4:2] <= PWM_STATE[4:2];
 									MC2[4:2] <= PWM_STATE[4:2];
-									if(RUN_FLAG)begin
-										if(DISTANCE_SIDE_BACK <= 3)begin
-											DIR_STATE <= FORWARD;
-										end else if((DISTANCE_SIDE_FRONT <= 5) &(DISTANCE_SIDE_BACK <= 5))begin
-											DIR_STATE <= NEUTRAL;
-											NEXT_FLAG <= 1;
-										end else begin
-											DIR_STATE <= L_360;
-										end 					
-									end else begin
+									if(((DISTANCE_CHECK-DISTANCE_FRONT) <= 10)|(ANGLE_DIRECTION == 0))begin
 										DIR_STATE <= NEUTRAL;
-									end
-								end
-				NO_COMMAND:	begin
+										NEXT_FLAG <= 1;
+									end else begin
+										DIR_STATE <= R_360;
+									end 
+								end else begin
 									DIR_STATE <= NEUTRAL;
 								end
+							end
+				TURN_LEFT:	begin
+								NEXT_FLAG <= 0;
+								MC1[4:2] <= PWM_STATE[4:2];
+								MC2[4:2] <= PWM_STATE[4:2];
+								if(RUN_FLAG)begin
+									if(DISTANCE_SIDE_BACK <= 3)begin
+										DIR_STATE <= FORWARD;
+									end else if(((DISTANCE_SIDE_FRONT <= 5) &(DISTANCE_SIDE_BACK <= 5))|(ALIGN_COMP ==0))begin
+										DIR_STATE <= NEUTRAL;
+										NEXT_FLAG <= 1;
+									end else begin
+										DIR_STATE <= L_360;
+									end 					
+								end else begin
+									DIR_STATE <= NEUTRAL;
+								end
+							end
+				NO_COMMAND:	begin
+								DIR_STATE <= NEUTRAL;
+							end
 			endcase
 				
 		end	

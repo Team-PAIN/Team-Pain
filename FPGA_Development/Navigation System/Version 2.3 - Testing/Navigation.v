@@ -32,6 +32,7 @@ module Navigation(
 		input [1:0] RUN_FLAG,
 		input SCLK_50MHz, 
 		input DEBOUCED_SCLK, 
+		input SENSOR_IGNORE,
 		output NEXT_FLAG,
 		output PWM, //Pulse to Motor Controllers
 		output [7:0] LED,
@@ -58,6 +59,7 @@ module Navigation(
 		 .COMMAND(COMMAND),
 		 .PATH(PATH),
 		 .DISTANCE_CHECK(COMPARE_DISTANCE),
+		 .SENSOR_IGNORE(SENSOR_IGNORE),
 		 .NEXT_FLAG(NEXT_FLAG),
 		 .MC1(MC1), 
 		 .MC2(MC2),
