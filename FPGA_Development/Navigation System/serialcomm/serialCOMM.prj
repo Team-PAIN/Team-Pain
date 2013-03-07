@@ -1,0 +1,2 @@
+verilog work "Sensor_Data_Display.v"
+verilog work "serialCOMM.v"

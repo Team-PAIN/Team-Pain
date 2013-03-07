@@ -40,4 +40,7 @@ module SerialIn(
 			bitCounter <= bitCounter+1;
 		end
 	end
+	
+	
+	
 endmodule

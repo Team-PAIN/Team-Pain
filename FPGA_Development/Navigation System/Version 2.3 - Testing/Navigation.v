@@ -22,12 +22,11 @@
 module Navigation(
 		input CLK,
 		inout US_FRONT, //Top Side Sensor
-		inout US_BACK,	//Bottom Side Sensor
 		inout US_SIDE_FRONT, //Left Side, Front Sensor
 		inout US_SIDE_BACK,//Left Side, Back Sensor
 		input [7:0] SW,
 		input [4:0] BTN,
-		input [7:0] COMMAND,
+		input [4:0] COMMAND,
 		input [7:0] PATH,
 		input [7:0] COMPARE_DISTANCE,
 		output NEXT_FLAG,
@@ -101,7 +100,6 @@ module Navigation(
     .SIG1(US_SIDE_BACK), 
     .SIG2(US_SIDE_FRONT), 
     .SIG3(US_FRONT), 
-    .SIG4(US_BACK), 
     .SCLK_50MHz(SCLK_50MHz), 
     .DEBOUCED_SCLK(DEBOUCED_SCLK), 
     .ANGLE(ANGLE), 

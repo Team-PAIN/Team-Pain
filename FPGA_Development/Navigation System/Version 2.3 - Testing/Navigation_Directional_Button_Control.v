@@ -28,7 +28,7 @@ module direction_control(
 		input [7:0] DISTANCE_SIDE_FRONT,
 		input [7:0] ANGLE,
 		input [1:0] ANGLE_DIRECTION,
-		input [7:0] COMMAND,
+		input [4:0] COMMAND,
 		input [7:0] PATH,
 		input [7:0] DISTANCE_CHECK,
 		output NEXT_FLAG,
@@ -45,7 +45,8 @@ module direction_control(
 	reg [7:0] STATE;
 	reg FLAG, STABLE,START;
 	
-
+	
+	//	Movement Parameters
 	parameter [4:0] NEUTRAL = 			5'b 00000;
 	parameter [4:0] FORWARD = 			5'b 00001;
 	parameter [4:0] REVERSE = 			5'b 00010;
@@ -56,6 +57,7 @@ module direction_control(
 	parameter [4:0] R_360 = 			5'b 10011;
 	parameter [4:0] L_360 = 			5'b 11001;
 	 
+	// Power Parameters
 	parameter [4:0] BOTH_88 = 	5'b 11111;
 	parameter [4:0] BOTH_75 = 	5'b 11011;
 	parameter [4:0] BOTH_62 = 	5'b 10111;
@@ -65,10 +67,14 @@ module direction_control(
 	parameter [4:0] BOTH_17 = 	5'b 00111;
 	parameter [4:0] BOTH_13 = 	5'b 00011;
 	
-	parameter [4:0] TURN_RIGHT = 5'b 01111;
-	parameter [4:0] TURN_LEFT = 5'b 01110;
-	parameter [4:0] STRAIGHT = 5'b 01100;
 	
+	//	Command Parameters
+	parameter [4:0] NO_COMMAND 	= 5'b 01100;
+	parameter [4:0] TURN_RIGHT 	= 5'b 01100;
+	parameter [4:0] TURN_LEFT 		= 5'b 00110;
+	parameter [4:0] STRAIGHT 		= 5'b 01110;
+	
+	//	Phase Parameters
 	parameter [1:0] RUN_INI = 2'b 00; //Initialization State
 	parameter [1:0] RUN_EXC = 2'b 01; //Execution State
 	parameter [1:0] RUN_COM = 2'b 10; //Completion State
@@ -154,8 +160,8 @@ module direction_control(
 				
 			case(COMMAND)                              
 				STRAIGHT:begin
+								NEXT_FLAG <= 0;
 								if(RUN_FLAG)begin
-									NEXT_FLAG <= 0;
 									if(DISTANCE_FRONT <= DISTANCE_CHECK)begin
 										DIR_STATE <= NEUTRAL;
 										NEXT_FLAG <= 1;
@@ -180,41 +186,39 @@ module direction_control(
 								end else begin
 									DIR_STATE <= NEUTRAL;
 								end
-									
 							end
 				TURN_RIGHT:	begin
+									NEXT_FLAG <= 0;
 									if(RUN_FLAG)begin
 										MC1[4:2] <= PWM_STATE[4:2];
 										MC2[4:2] <= PWM_STATE[4:2];
-										NEXT_FLAG <= 0;
-										if((DISTANCE_CHECK - DISTANCE_FRONT) > 10)begin
-											DIR_STATE <= R_360; //FORWARD_RIGHT
-										end else if(((DISTANCE_CHECK-DISTANCE_FRONT) <= 10)|(ANGLE_DIRECTION == 0))begin
+										if(((DISTANCE_CHECK-DISTANCE_FRONT) <= 10)|(ANGLE_DIRECTION == 0))begin
 											DIR_STATE <= NEUTRAL;
 											NEXT_FLAG <= 1;
 										end else begin
-											DIR_STATE <= NEUTRAL;
+											DIR_STATE <= R_360;
 										end 
 									end else begin
 										DIR_STATE <= NEUTRAL;
 									end
 								end
 				TURN_LEFT:	begin
+									NEXT_FLAG <= 0;
 									if(RUN_FLAG)begin
 										MC1[4:2] <= PWM_STATE[4:2];
 										MC2[4:2] <= PWM_STATE[4:2];
-										NEXT_FLAG <= 0;
-										if(((DISTANCE_CHECK-DISTANCE_FRONT) <= 10)|(ANGLE_DIRECTION == 0))begin
+										if(((DISTANCE_CHECK-DISTANCE_FRONT) <= 10)|(ALIGN_COMP == 0))begin
 											DIR_STATE <= NEUTRAL;
 											NEXT_FLAG <= 1;
-										end else if(DISTANCE_SIDE_FRONT <= 3)begin
-											DIR_STATE <= FORWARD;
 										end else begin
-											DIR_STATE <= FORWARD_LEFT;
+											DIR_STATE <= L_360;
 										end 					
 									end else begin
 										DIR_STATE <= NEUTRAL;
 									end
+								end
+				NO_COMMAND:	begin
+									DIR_STATE <= NEUTRAL;
 								end
 			endcase
 				

@@ -23,7 +23,6 @@ module US_Sensors(
 		inout SIG1, //side back
 		inout SIG2, //side front
 		inout SIG3, //front
-		inout SIG4, //back
 		input SCLK_50MHz,
 		input DEBOUCED_SCLK,
 		output [7:0] ANGLE,
@@ -86,23 +85,6 @@ module US_Sensors(
 			 .SCLK(DEBOUCED_SCLK), 
 			 .IN(distance3), 
 			 .OUT(DISTANCE3_DEBOUNCED)
-			 );
-	 
-	 //*** Ultra Sonic Sensor 4 ***//
-			//Send & Receive Signal
-			ping sensor4 (
-			 .clk(~SCLK_50MHz), 
-			 .reset(reset), 
-			 .sig(SIG4), 
-			 .dist(distance4), 
-			 .enable(enable4)
-			 );
-		
-			//Debounce Signal
-			debounce sensor4_debounce (
-			 .SCLK(DEBOUCED_SCLK), 
-			 .IN(distance4), 
-			 .OUT(DISTANCE4_DEBOUNCED)
 			 );
 	 
 	 //*** Orientation Calculation ***//
