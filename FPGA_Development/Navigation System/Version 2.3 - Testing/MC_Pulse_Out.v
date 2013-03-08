@@ -44,7 +44,7 @@ module pulseout(
 	assign NEUTRAL_CYCLES = 150000; //CLK_RATE/667, Neutral, 1.5 ms = 150000 cycles at 100 MHz
 	assign DIVIDENT = (50000/16); //0.5 ms divided into 16 different power settings = 3125 cycles at 100 MHz
 
-	assign comp1 = pulse1 + 110000; //(CLK_RATE/909); //Holdoff for pulse 2, pulse 1 + 1.1 ms
+	assign comp1 = pulse1 + 120000; //(CLK_RATE/909); //Holdoff for pulse 2, pulse 1 + 1.2 ms
 	assign comp2 = comp1 + pulse2; //End of pulse 2
 					
 	always @(posedge CLK) begin
