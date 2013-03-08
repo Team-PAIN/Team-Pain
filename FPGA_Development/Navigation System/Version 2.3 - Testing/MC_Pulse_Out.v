@@ -27,9 +27,10 @@ module pulseout(
     );
 
 	//Variable decleration
-	reg [20:0] count,refresh,pulse1,pulse2,comp1,comp2;
+	reg [21:0] count,refresh;
+	reg [18:0] pulse1,pulse2;
+	reg [20:0] comp1,comp2;
 	wire [18:0] NEUTRAL_CYCLES, DIVIDENT;
-	reg [4:0] MC1State, MC2State;
 	
 	initial begin
 		count = 0;
