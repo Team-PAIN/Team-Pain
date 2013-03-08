@@ -36,7 +36,7 @@ module pulseout(
 		MC2State = 0;
 		count = 0;
 		PWM = 0;
-		refresh = 1100000; //refresh = CLK_RATE/91 //Refresh of signal in Mode 2, 11 ms
+		refresh = 1200000; //refresh = CLK_RATE/91 //Refresh of signal in Mode 2, 12 ms
 	end
 
 	assign comp1 = pulse1 + 110000; //(CLK_RATE/909); //Holdoff for pulse 2, pulse 1 + 1.1 ms
