@@ -1,0 +1,20 @@
+ISim log file
+Running: C:\fa12sp13_SourceCode\team2\branches\FPGA_Development\Navigation System\Version1.1-Working\pulseout_isim_beh.exe -intstyle ise -gui -tclbatch isim.cmd -wdb C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version1.1-Working/pulseout_isim_beh.wdb 
+ISim P.28xd (signature 0xa0883be4)
+This is a Full version of ISim.
+WARNING: File "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version1.1-Working/MC_Pulse_Out.v" Line 32.  For instance pulseout/mc1mod/, width 21 of formal port Pulse is not equal to width 22 of actual signal pulse1.
+WARNING: File "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version1.1-Working/MC_Pulse_Out.v" Line 32.  For instance pulseout/mc2mod/, width 21 of formal port Pulse is not equal to width 22 of actual signal pulse2.
+Time resolution is 1 ps
+# onerror resume
+# wave add /
+# run 1000 ns
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+# restart
+# isim force add /pulseout/CLK 1 -radix bin -value 0 -radix bin -time 5 ns -repeat 10 ns
+# isim force add /pulseout/MC1 00100 -radix bin
+# isim force add /pulseout/MC2 00100 -radix bin
+# run all
+Simulator is doing circuit initialization process.
+Finished circuit initialization process.
+Stopped at time : 344558960 ns : File "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version1.1-Working/MC_Pulse_Out.v" Line 60

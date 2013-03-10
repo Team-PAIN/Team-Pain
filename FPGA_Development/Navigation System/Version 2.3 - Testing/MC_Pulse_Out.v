@@ -27,42 +27,33 @@ module pulseout(
     );
 
 	//Variable decleration
-	reg [20:0] count,refresh;
-	wire [20:0] comp1,comp2,pulse1,pulse2;
-	reg [4:0] MC1State, MC2State;
-
+	reg [21:0] count,refresh;
+	reg [18:0] pulse1,pulse2;
+	reg [20:0] comp1,comp2;
+	wire [18:0] NEUTRAL_CYCLES, DIVIDENT;
+	
 	initial begin
-		MC1State = 0;
-		MC2State = 0;
 		count = 0;
 		PWM = 0;
-		refresh = 1100000; //refresh = CLK_RATE/91 //Refresh of signal in Mode 2, 11 ms
+		refresh = 1200000; //refresh = CLK_RATE/91 //Refresh of signal in Mode 2, 12 ms
 	end
-
-	assign comp1 = pulse1 + 110000; //(CLK_RATE/909); //Holdoff for pulse 2, pulse 1 + 1.1 ms
-	assign comp2 = comp1 + pulse2; //End of pulse 2
 	
-	//Modulate the Transmitted Pulse to Achieve a Specified Power for Motor #1
-	PulseModulation1 mc1mod(
-			.CLK(CLK),
-			.ModInfo(MC1),
-			.State(MC1State),
-			.Pulse(pulse1)
-			);
+	parameter [1:0] FORWARD = 2'b 00;
+	parameter [1:0] NEUTRAL = 2'b 01;
+	parameter [1:0] REVERSE = 2'b 10;
+	
+	assign NEUTRAL_CYCLES = 150000; //CLK_RATE/667, Neutral, 1.5 ms = 150000 cycles at 100 MHz
+	assign DIVIDENT = (50000/16); //0.5 ms divided into 16 different power settings = 3125 cycles at 100 MHz
 
-	//Modulate the Transmitted Pulse to Achieve a Specified Power for Motor #2
-	PulseModulation2 mc2mod(
-				.CLK(CLK),
-				.ModInfo(MC2),
-				.State(MC2State),
-				.Pulse(pulse2)
-				);
-				
+	assign comp1 = pulse1 + 120000; //(CLK_RATE/909); //Holdoff for pulse 2, pulse 1 + 1.2 ms
+	assign comp2 = comp1 + pulse2; //End of pulse 2
+					
 	always @(posedge CLK) begin
 		count <= count + 1;
 		
-		if(count >= refresh)begin //11 ms Refresh Rate
+		if(count >= refresh)begin //12 ms Refresh Rate
 			count[20:0] <= 0;
+<<<<<<< HEAD
 
 			if(MC1State == 11) //State Reset for Motor #1
 				MC1State <= 0;
@@ -74,6 +65,27 @@ module pulseout(
 			else 
 				MC2State <= MC2State + 1;
 				
+=======
+			
+			//Power Modulation of Motor 1 Signal
+			if(MC1[1:0] == FORWARD) begin
+				pulse1 <= NEUTRAL_CYCLES + DIVIDENT + (MC1[4:2]*DIVIDENT);
+			end else (MC1[1:0] == REVERSE) begin
+				pulse1 <= NEUTRAL_CYCLES - DIVIDENT - (MC1[4:2]*DIVIDENT);
+			end else begin
+				pulse1 <= NEUTRAL_CYCLES;
+			end
+			
+			//Power Modulation of Motor 1 Signal
+			if(MC2[1:0] == FORWARD) begin
+				pulse2 <= NEUTRAL_CYCLES + DIVIDENT + (MC2[4:2]*DIVIDENT);
+			end else (MC2[1:0] == REVERSE) begin
+				pulse2 <= NEUTRAL_CYCLES - DIVIDENT - (MC2[4:2]*DIVIDENT);
+			end else begin
+				pulse2 <= NEUTRAL_CYCLES;
+			end
+
+>>>>>>> fcfddb6ebc65d7afd618923816b49cbd85468f07
 		end else if(count <= pulse1) //Signal to Motor #1
 			PWM <= 1;
 		else if((count>=comp1)&(count<=comp2)) //Signal to Motor #2

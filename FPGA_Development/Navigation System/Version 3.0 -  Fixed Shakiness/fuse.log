@@ -1,0 +1,21 @@
+Running: C:\Xilinx\14.2\ISE_DS\ISE\bin\nt64\unwrapped\fuse.exe -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -lib secureip -o C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version1.1-Working/pulseout_isim_beh.exe -prj C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version1.1-Working/pulseout_beh.prj work.pulseout work.glbl 
+ISim P.28xd (signature 0xa0883be4)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version1.1-Working/MC_Pulse_Modulation.v" into library work
+Analyzing Verilog file "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version1.1-Working/MC_Pulse_Out.v" into library work
+Analyzing Verilog file "C:/Xilinx/14.2/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+WARNING:HDLCompiler:189 - "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version1.1-Working/MC_Pulse_Out.v" Line 49: Size mismatch in connection of port <Pulse>. Formal port size is 21-bit while actual signal size is 22-bit.
+WARNING:HDLCompiler:189 - "C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version1.1-Working/MC_Pulse_Out.v" Line 57: Size mismatch in connection of port <Pulse>. Formal port size is 21-bit while actual signal size is 22-bit.
+Completed static elaboration
+Compiling module PulseModulation
+Compiling module pulseout
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 3 Verilog Units
+Built simulation executable C:/fa12sp13_SourceCode/team2/branches/FPGA_Development/Navigation System/Version1.1-Working/pulseout_isim_beh.exe
+Fuse Memory Usage: 27280 KB
+Fuse CPU Usage: 498 ms

@@ -1,0 +1,19 @@
+
+
+
+// Instantiate the module
+direction_control instance_name (
+    .CLK(CLK), 
+    .SW(SW), 
+    .BTN(BTN), 
+    .DISTANCE_FRONT(DISTANCE_FRONT), 
+    .DISTANCE_BACK(DISTANCE_BACK), 
+    .DISTANCE_SIDE_BACK(DISTANCE_SIDE_BACK), 
+    .DISTANCE_SIDE_FRONT(DISTANCE_SIDE_FRONT), 
+    .ANGLE(ANGLE), 
+    .ANGLE_DIRECTION(ANGLE_DIRECTION), 
+    .MC1(MC1), 
+    .MC2(MC2)
+    );
+
+
