@@ -4,13 +4,13 @@ Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total CPU time to Xst completion: 0.24 secs
  
 --> Parameter xsthdpdir set to xst
 
 
 Total REAL time to Xst completion: 0.00 secs
-Total CPU time to Xst completion: 0.13 secs
+Total CPU time to Xst completion: 0.24 secs
  
 --> Reading design: Arm.prj
 
@@ -105,9 +105,9 @@ Slice Utilization Ratio Delta      : 5
 =========================================================================
 *                          HDL Parsing                                  *
 =========================================================================
-Analyzing Verilog file "C:\fa12sp13\team2\branches\FPGA_Development\Arm System\pwm\Servo.v" into library work
+Analyzing Verilog file "C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Arm System\pwm\Servo.v" into library work
 Parsing module <Servo>.
-Analyzing Verilog file "C:\fa12sp13\team2\branches\FPGA_Development\Arm System\pwm\Arm.v" into library work
+Analyzing Verilog file "C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Arm System\pwm\Arm.v" into library work
 Parsing module <Arm>.
 
 =========================================================================
@@ -115,30 +115,30 @@ Parsing module <Arm>.
 =========================================================================
 
 Elaborating module <Arm>.
-WARNING:HDLCompiler:413 - "C:\fa12sp13\team2\branches\FPGA_Development\Arm System\pwm\Arm.v" Line 64: Result of 29-bit expression is truncated to fit in 28-bit target.
-WARNING:HDLCompiler:413 - "C:\fa12sp13\team2\branches\FPGA_Development\Arm System\pwm\Arm.v" Line 81: Result of 4-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:413 - "C:\fa12sp13\team2\branches\FPGA_Development\Arm System\pwm\Arm.v" Line 87: Result of 4-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:413 - "C:\fa12sp13\team2\branches\FPGA_Development\Arm System\pwm\Arm.v" Line 107: Result of 4-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:413 - "C:\fa12sp13\team2\branches\FPGA_Development\Arm System\pwm\Arm.v" Line 113: Result of 4-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:413 - "C:\fa12sp13\team2\branches\FPGA_Development\Arm System\pwm\Arm.v" Line 131: Result of 4-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:413 - "C:\fa12sp13\team2\branches\FPGA_Development\Arm System\pwm\Arm.v" Line 137: Result of 4-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:413 - "C:\fa12sp13\team2\branches\FPGA_Development\Arm System\pwm\Arm.v" Line 155: Result of 4-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:413 - "C:\fa12sp13\team2\branches\FPGA_Development\Arm System\pwm\Arm.v" Line 158: Result of 4-bit expression is truncated to fit in 3-bit target.
-WARNING:HDLCompiler:1127 - "C:\fa12sp13\team2\branches\FPGA_Development\Arm System\pwm\Arm.v" Line 60: Assignment to CLAW_FLAG0 ignored, since the identifier is never used
+WARNING:HDLCompiler:413 - "C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Arm System\pwm\Arm.v" Line 63: Result of 29-bit expression is truncated to fit in 28-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Arm System\pwm\Arm.v" Line 77: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Arm System\pwm\Arm.v" Line 83: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Arm System\pwm\Arm.v" Line 100: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Arm System\pwm\Arm.v" Line 106: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Arm System\pwm\Arm.v" Line 123: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Arm System\pwm\Arm.v" Line 129: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Arm System\pwm\Arm.v" Line 146: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Arm System\pwm\Arm.v" Line 149: Result of 4-bit expression is truncated to fit in 3-bit target.
+WARNING:HDLCompiler:1127 - "C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Arm System\pwm\Arm.v" Line 59: Assignment to CLAW_FLAG0 ignored, since the identifier is never used
 
 Elaborating module <Servo>.
-WARNING:HDLCompiler:413 - "C:\fa12sp13\team2\branches\FPGA_Development\Arm System\pwm\Servo.v" Line 42: Result of 21-bit expression is truncated to fit in 20-bit target.
-WARNING:HDLCompiler:413 - "C:\fa12sp13\team2\branches\FPGA_Development\Arm System\pwm\Servo.v" Line 44: Result of 32-bit expression is truncated to fit in 20-bit target.
-WARNING:HDLCompiler:189 - "C:\fa12sp13\team2\branches\FPGA_Development\Arm System\pwm\Arm.v" Line 181: Size mismatch in connection of port <COUNT>. Formal port size is 27-bit while actual signal size is 28-bit.
-WARNING:HDLCompiler:189 - "C:\fa12sp13\team2\branches\FPGA_Development\Arm System\pwm\Arm.v" Line 190: Size mismatch in connection of port <COUNT>. Formal port size is 27-bit while actual signal size is 28-bit.
-WARNING:HDLCompiler:189 - "C:\fa12sp13\team2\branches\FPGA_Development\Arm System\pwm\Arm.v" Line 199: Size mismatch in connection of port <COUNT>. Formal port size is 27-bit while actual signal size is 28-bit.
+WARNING:HDLCompiler:413 - "C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Arm System\pwm\Servo.v" Line 40: Result of 21-bit expression is truncated to fit in 20-bit target.
+WARNING:HDLCompiler:413 - "C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Arm System\pwm\Servo.v" Line 42: Result of 32-bit expression is truncated to fit in 20-bit target.
+WARNING:HDLCompiler:189 - "C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Arm System\pwm\Arm.v" Line 172: Size mismatch in connection of port <COUNT>. Formal port size is 27-bit while actual signal size is 28-bit.
+WARNING:HDLCompiler:189 - "C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Arm System\pwm\Arm.v" Line 181: Size mismatch in connection of port <COUNT>. Formal port size is 27-bit while actual signal size is 28-bit.
+WARNING:HDLCompiler:189 - "C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Arm System\pwm\Arm.v" Line 190: Size mismatch in connection of port <COUNT>. Formal port size is 27-bit while actual signal size is 28-bit.
 
 =========================================================================
 *                           HDL Synthesis                               *
 =========================================================================
 
 Synthesizing Unit <Arm>.
-    Related source file is "C:\fa12sp13\team2\branches\FPGA_Development\Arm System\pwm\Arm.v".
+    Related source file is "C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Arm System\pwm\Arm.v".
         CLAW_CLOSE = 199218
         CLAW_OPEN = 1
         UPPER_PICKUP = 31248
@@ -153,11 +153,11 @@ WARNING:Xst:647 - Input <SW> is never used. This port will be preserved and left
     Found 1-bit register for signal <LED0>.
     Found 3-bit register for signal <debounce>.
     Found 28-bit register for signal <COUNT>.
-    Found 28-bit adder for signal <COUNT[27]_GND_1_o_add_2_OUT> created at line 64.
-    Found 3-bit adder for signal <debounce[2]_GND_1_o_add_29_OUT> created at line 155.
-    Found 3-bit adder for signal <state[2]_GND_1_o_add_31_OUT> created at line 158.
-    Found 28-bit comparator greater for signal <n0003> created at line 61
-    Found 3-bit comparator greater for signal <debounce[2]_PWR_1_o_LessThan_29_o> created at line 151
+    Found 28-bit adder for signal <COUNT[27]_GND_1_o_add_2_OUT> created at line 63.
+    Found 3-bit adder for signal <debounce[2]_GND_1_o_add_29_OUT> created at line 146.
+    Found 3-bit adder for signal <state[2]_GND_1_o_add_31_OUT> created at line 149.
+    Found 28-bit comparator greater for signal <n0003> created at line 60
+    Found 3-bit comparator greater for signal <debounce[2]_PWR_1_o_LessThan_29_o> created at line 142
     Summary:
 	inferred   3 Adder/Subtractor(s).
 	inferred  95 D-type flip-flop(s).
@@ -166,16 +166,16 @@ WARNING:Xst:647 - Input <SW> is never used. This port will be preserved and left
 Unit <Arm> synthesized.
 
 Synthesizing Unit <Servo>.
-    Related source file is "C:\fa12sp13\team2\branches\FPGA_Development\Arm System\pwm\Servo.v".
+    Related source file is "C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Arm System\pwm\Servo.v".
     Found 1-bit register for signal <PWM>.
     Found 1-bit register for signal <FLAG>.
     Found 20-bit register for signal <value>.
-    Found 20-bit adder for signal <value[19]_GND_2_o_add_2_OUT> created at line 42.
-    Found 20-bit subtractor for signal <GND_2_o_GND_2_o_sub_5_OUT<19:0>> created at line 44.
-    Found 20-bit comparator greater for signal <value[19]_DESIRED[19]_LessThan_2_o> created at line 41
-    Found 20-bit comparator lessequal for signal <DESIRED[19]_value[19]_LessThan_4_o> created at line 43
-    Found 27-bit comparator lessequal for signal <n0007> created at line 52
-    Found 20-bit comparator equal for signal <value[19]_DESIRED[19]_equal_11_o> created at line 57
+    Found 20-bit adder for signal <value[19]_GND_2_o_add_2_OUT> created at line 40.
+    Found 20-bit subtractor for signal <GND_2_o_GND_2_o_sub_5_OUT<19:0>> created at line 42.
+    Found 20-bit comparator greater for signal <value[19]_DESIRED[19]_LessThan_2_o> created at line 39
+    Found 20-bit comparator lessequal for signal <DESIRED[19]_value[19]_LessThan_4_o> created at line 41
+    Found 27-bit comparator lessequal for signal <n0007> created at line 49
+    Found 20-bit comparator equal for signal <value[19]_DESIRED[19]_equal_11_o> created at line 54
     Summary:
 	inferred   1 Adder/Subtractor(s).
 	inferred  22 D-type flip-flop(s).
@@ -531,12 +531,12 @@ COUNT_8        |    5.190|         |         |         |
 =========================================================================
 
 
-Total REAL time to Xst completion: 7.00 secs
-Total CPU time to Xst completion: 6.95 secs
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 7.78 secs
  
 --> 
 
-Total memory usage is 255816 kilobytes
+Total memory usage is 255888 kilobytes
 
 Number of errors   :    0 (   0 filtered)
 Number of warnings :   51 (   0 filtered)

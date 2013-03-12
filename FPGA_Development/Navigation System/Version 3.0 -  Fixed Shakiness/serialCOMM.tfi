@@ -1,0 +1,14 @@
+
+
+
+// Instantiate the module
+serialCOMM instance_name (
+    .CLK(CLK), 
+    .RCLK(RCLK), 
+    .RDATA(RDATA), 
+    .RESET(RESET), 
+    .SIZE(SIZE), 
+    .COLOR(COLOR)
+    );
+
+

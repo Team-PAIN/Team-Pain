@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Navigation System\Version 3.0 -  Fixed Shakiness\System.ncd
+OUTFILE=C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Navigation System\Version 3.0 -  Fixed Shakiness\System.bit
+FAMILY=Spartan6
+PART=xc6slx16-3csg324
+WORKINGDIR=C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Navigation System\Version 3.0 -  Fixed Shakiness
+LICENSE=ISE
+USER_INFO=210659923_180558143_210541251_749

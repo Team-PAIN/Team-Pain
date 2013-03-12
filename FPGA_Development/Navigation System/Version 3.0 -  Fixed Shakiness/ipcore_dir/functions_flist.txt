@@ -1,0 +1,15 @@
+# Output products list for <functions>
+_xmsgs\pn_parser.xmsgs
+functions.asy
+functions.gise
+functions.ngc
+functions.sym
+functions.v
+functions.veo
+functions.xco
+functions.xise
+functions\doc\cordic_ds249.pdf
+functions\doc\cordic_v4_0_vinfo.html
+functions_flist.txt
+functions_readme.txt
+functions_xmdf.tcl

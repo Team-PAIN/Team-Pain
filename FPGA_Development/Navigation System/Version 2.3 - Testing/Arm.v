@@ -39,12 +39,12 @@ module Arm(
 	parameter CLAW_OPEN = 1; //CLAW open = 0 counts at 100 MHz
 	parameter UPPER_PICKUP = 31248; //Upper Pick up block at 31248 counts at 100 MHz
 	parameter UPPER_DROPOFF = 191394; //Upper Drop block at 191394 counts at 100 MHz
-	parameter LOWER_PICKUP = 183400; //Lower Pick up block at 183582 counts at 100 MHz*
+	parameter LOWER_PICKUP = 183582; //Lower Pick up block at 183582 counts at 100 MHz* //old sig 183400
 	parameter LOWER_DROPOFF = 113274; //Lower Drop block at 113274 counts at 100 MHz
 	
 	initial begin
 		COUNT = 0;
-		state = 0;
+		state = 5;
 		CLAW_DESIRED = CLAW_OPEN; 
 		JOINTLOW_DESIRED = UPPER_DROPOFF;
 		JOINTHIGH_DESIRED = LOWER_DROPOFF;
@@ -159,14 +159,17 @@ module Arm(
 					end
 				  end
 				4:begin
-					CLAW_DESIRED <= CLAW_OPEN;
-					JOINTHIGH_DESIRED <= UPPER_DROPOFF;
-					JOINTLOW_DESIRED <= LOWER_DROPOFF;
+						CLAW_DESIRED <= CLAW_OPEN;
+						JOINTHIGH_DESIRED <= UPPER_DROPOFF;
+						JOINTLOW_DESIRED <= LOWER_DROPOFF;
+						state <= 5;
+					end
+				5:begin	
 					if((old_flag == 0) & (new_flag == 1))
 						state <= 0;
 					else
 						state <= state;
-					end
+				  end
 			endcase
 			
 			old_flag <= new_flag;
@@ -200,7 +203,7 @@ module Arm(
 		 .FLAG(JOINTLOW_FLAG)
 		 );
 	// Instantiate the module
-debounce sw_debounce (
+	debounce sw_debounce (
     .SCLK(COUNT[10]), 
     .IN(SW[6]), 
     .OUT(new_flag)

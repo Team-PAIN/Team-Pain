@@ -1,7 +1,7 @@
 Release 14.2 par P.28xd (nt64)
 Copyright (c) 1995-2012 Xilinx, Inc.  All rights reserved.
 
-LB274-04::  Mon Dec 03 11:31:56 2012
+LB274-04::  Tue Feb 26 14:02:28 2013
 
 par -w -intstyle ise -ol high -mt off System_map.ncd System.ncd System.pcf 
 
@@ -31,25 +31,25 @@ Slice Logic Utilization:
     Number used as Latches:                      0
     Number used as Latch-thrus:                  0
     Number used as AND/OR logics:                0
-  Number of Slice LUTs:                        756 out of   9,112    8%
+  Number of Slice LUTs:                        757 out of   9,112    8%
     Number used as logic:                      746 out of   9,112    8%
       Number using O6 output only:             341
       Number using O5 output only:             128
       Number using O5 and O6:                  277
       Number used as ROM:                        0
     Number used as Memory:                       0 out of   2,176    0%
-    Number used exclusively as route-thrus:     10
-      Number with same-slice register load:      2
+    Number used exclusively as route-thrus:     11
+      Number with same-slice register load:      3
       Number with same-slice carry load:         8
       Number with other load:                    0
 
 Slice Logic Distribution:
-  Number of occupied Slices:                   287 out of   2,278   12%
+  Number of occupied Slices:                   308 out of   2,278   13%
   Nummber of MUXCYs used:                      516 out of   4,556   11%
-  Number of LUT Flip Flop pairs used:          818
-    Number with an unused Flip Flop:           434 out of     818   53%
-    Number with an unused LUT:                  62 out of     818    7%
-    Number of fully used LUT-FF pairs:         322 out of     818   39%
+  Number of LUT Flip Flop pairs used:          823
+    Number with an unused Flip Flop:           441 out of     823   53%
+    Number with an unused LUT:                  66 out of     823    8%
+    Number of fully used LUT-FF pairs:         316 out of     823   38%
     Number of slice register sites lost
       to control set restrictions:               0 out of  18,224    0%
 
@@ -99,13 +99,13 @@ WARNING:Par:288 - The signal SW<5>_IBUF has no load.  PAR will not attempt to ro
 Starting Router
 
 
-Phase  1  : 3596 unrouted;      REAL time: 4 secs 
+Phase  1  : 3614 unrouted;      REAL time: 4 secs 
 
-Phase  2  : 3022 unrouted;      REAL time: 5 secs 
+Phase  2  : 3024 unrouted;      REAL time: 5 secs 
 
-Phase  3  : 905 unrouted;      REAL time: 6 secs 
+Phase  3  : 1151 unrouted;      REAL time: 6 secs 
 
-Phase  4  : 905 unrouted; (Par is working to improve performance)     REAL time: 7 secs 
+Phase  4  : 1151 unrouted; (Par is working to improve performance)     REAL time: 7 secs 
 
 Updating file: System.ncd with current fully routed design.
 
@@ -132,7 +132,7 @@ Partition Implementation Status
 
 Generating "PAR" statistics.
 INFO:Par:459 - The Clock Report is not displayed in the non timing-driven mode.
-Timing Score: 47 (Setup: 47, Hold: 0)
+Timing Score: 0 (Setup: 0, Hold: 0)
 
 Asterisk (*) preceding a constraint indicates it was not met.
    This may be due to a setup or hold violation.
@@ -141,24 +141,24 @@ Asterisk (*) preceding a constraint indicates it was not met.
   Constraint                                |    Check    | Worst Case |  Best Case | Timing |   Timing   
                                             |             |    Slack   | Achievable | Errors |    Score   
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net CLK | SETUP       |         N/A|     3.667ns|     N/A|           0
-  _BUFGP                                    | HOLD        |     0.418ns|            |       0|           0
+  Autotimespec constraint for clock net CLK | SETUP       |         N/A|     3.780ns|     N/A|           0
+  _BUFGP                                    | HOLD        |     0.424ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net NAV | SETUP       |         N/A|     3.168ns|     N/A|           0
-  /count_16_BUFG                            | HOLD        |     0.416ns|            |       0|           0
+  Autotimespec constraint for clock net NAV | SETUP       |         N/A|     3.268ns|     N/A|           0
+  /count_16_BUFG                            | HOLD        |     0.532ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net NAV | SETUP       |         N/A|     7.498ns|     N/A|           0
-  /count_0_BUFG                             | HOLD        |     0.416ns|            |       0|           0
+  Autotimespec constraint for clock net NAV | SETUP       |         N/A|     9.501ns|     N/A|           0
+  /count_0_BUFG                             | HOLD        |     0.421ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net ARM | SETUP       |         N/A|     2.313ns|     N/A|          47
-  /COUNT<10>                                | HOLD        |     0.429ns|            |       0|           0
+  Autotimespec constraint for clock net ARM | SETUP       |         N/A|     1.789ns|     N/A|           0
+  /COUNT<10>                                | HOLD        |     0.449ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
-  Autotimespec constraint for clock net ARM | SETUP       |         N/A|     4.071ns|     N/A|           0
-  /COUNT_8_BUFG                             | HOLD        |     0.446ns|            |       0|           0
+  Autotimespec constraint for clock net ARM | SETUP       |         N/A|     4.303ns|     N/A|           0
+  /COUNT_8_BUFG                             | HOLD        |     0.451ns|            |       0|           0
 ----------------------------------------------------------------------------------------------------------
 
 
-1 constraint not met.
+All constraints were met.
 INFO:Timing:2761 - N/A entries in the Constraints List may indicate that the 
    constraint is not analyzed due to the following: No paths covered by this 
    constraint; Other constraints intersect with this constraint; or This 
@@ -175,7 +175,7 @@ WARNING:Par:283 - There are 1 loadless signals in this design. This design will 
 Total REAL time to PAR completion: 9 secs 
 Total CPU time to PAR completion: 9 secs 
 
-Peak Memory Usage:  330 MB
+Peak Memory Usage:  329 MB
 
 Placer: Placement generated during map.
 Routing: Completed - No errors found.

@@ -1,0 +1,368 @@
+#:C159   
+#Xilinx FPGA Editor Command Log File
+#Editor Version:
+#:V   NT M2.1 P.28xd
+#Current Working Directory:
+#:D   C:\Users\ALONSOY\Documents\GitHub\Team-Pain\FPGA_Development\Navigation System\Version 2.3 - Testing
+#Date/Time:
+#:T   Thu Mar 07 09:24:45 2013
+#------------------------------
+	#Reading System.ncd...
+	#Loading device for application Rf_Device from file '6slx16.nph' in environment C:\Xilinx\14.2\ISE_DS\ISE\.
+	#   "System" is an NCD, version 3.2, device xc6slx16, package csg324, speed -3
+	#Design creation date: 2013.03.05.20.02.10
+	#Building chip graphics...
+	#Loading speed info...
+	#1
+setattr main edit-mode no-logic-changes
+	#2
+post ila
+	#Building all ILA Capture Units ...
+	#3
+unpost ila
+	#4
+post ila
+	#5
+unpost ila
+	#6
+post ila
+	#7
+unpost ila
+	#8
+unselect -all
+	#9
+unselect -all
+	#10
+unselect -all
+	#11
+unselect -all
+	#12
+unselect -all
+	#13
+select rpm 'Shape_39'
+	#RPM Shape_39, type CARRY
+	#14
+unselect rpm 'Shape_39'
+	#15
+select -k comp 'ARM/claw/Mcompar__n0024_cy<3>'
+	#16
+unselect comp 'ARM/claw/Mcompar__n0024_cy<3>'
+	#17
+select -k comp 'INITIAL_X<1>'
+	#18
+unselect comp 'INITIAL_X<1>'
+	#19
+select -k comp 'LED<2>'
+	#20
+unselect comp 'LED<2>'
+	#21
+select -k comp 'NAV/US_DATA/sensor3_debounce/OLD_IN<0>'
+	#22
+unselect comp 'NAV/US_DATA/sensor3_debounce/OLD_IN<0>'
+	#23
+select -k comp 'NAV/US_DATA/sensor3_debounce/OLD_IN<7>'
+	#24
+unselect comp 'NAV/US_DATA/sensor3_debounce/OLD_IN<7>'
+	#25
+select -k comp 'NAV/US_DATA/sensor3_debounce/NEXT_STATE<0>'
+	#26
+unselect comp 'NAV/US_DATA/sensor3_debounce/NEXT_STATE<0>'
+	#27
+select -k comp 'NAV/US_DATA/sensor3/inRead<7>'
+	#28
+unselect comp 'NAV/US_DATA/sensor3/inRead<7>'
+	#29
+select -k comp 'NAV/US_DATA/sensor3/i<11>'
+	#30
+hilite -c yellow
+	#31
+unhilite -all
+	#32
+autoroute
+	#Completed route status: 0 of 0 nets are fully routed.
+	#33
+unplace
+	#Unplacing selected components and macros...
+	#Unplacing selected components and macros completed.
+	#34
+unplace
+	#Unplacing selected components and macros...
+	#WARNING:FPGAEditor:298 - Cannot unroute component  "NAV/US_DATA/sensor3/i<11>" -- it is not placed.
+	#Unplacing selected components and macros completed.
+	#35
+hilite -c yellow
+	#36
+unhilite -all
+	#37
+setattr main disable_draw on
+	#38
+setattr layer routes view on
+	#39
+setattr main disable_draw off
+	#Hint: change the visibility of more than one layer at a time by clicking on the apply button, clicking two or more layer buttons, and then clicking on the apply button again.
+	#40
+setattr main disable_draw on
+	#41
+setattr layer switch_boxes view on
+	#42
+setattr main disable_draw off
+	#43
+setattr main disable_draw on
+	#44
+setattr layer sites view off
+	#45
+setattr main disable_draw off
+	#46
+setattr main disable_draw on
+	#47
+setattr layer sites view on
+	#48
+setattr main disable_draw off
+	#49
+setattr main disable_draw on
+	#50
+setattr layer sites view off
+	#51
+setattr main disable_draw off
+	#52
+setattr main disable_draw on
+	#53
+setattr layer sites view on
+	#54
+setattr main disable_draw off
+	#55
+setattr main disable_draw on
+	#56
+setattr layer pips view on
+	#57
+setattr main disable_draw off
+	#58
+setattr main disable_draw on
+	#59
+setattr layer pips view off
+	#60
+setattr main disable_draw off
+	#61
+setattr main disable_draw on
+	#62
+setattr layer components view off
+	#63
+setattr main disable_draw off
+	#64
+setattr main disable_draw on
+	#65
+setattr layer components view on
+	#66
+setattr main disable_draw off
+	#67
+setattr main disable_draw on
+	#68
+setattr layer switch_boxes view off
+	#69
+setattr main disable_draw off
+	#70
+setattr main disable_draw on
+	#71
+setattr layer switch_boxes view on
+	#72
+setattr main disable_draw off
+	#73
+setattr main disable_draw on
+	#74
+setattr layer switch_boxes view off
+	#75
+setattr main disable_draw off
+	#76
+setattr main disable_draw on
+	#77
+setattr layer routes view off
+	#78
+setattr main disable_draw off
+	#79
+setattr main disable_draw on
+	#80
+setattr layer routes view on
+	#81
+setattr main disable_draw off
+	#82
+setattr main disable_draw on
+	#83
+setattr layer ratsnests view on
+	#84
+setattr main disable_draw off
+	#85
+setattr main disable_draw on
+	#86
+setattr layer routes view off
+	#87
+setattr main disable_draw off
+	#88
+setattr main disable_draw on
+	#89
+setattr layer ratsnests view off
+	#90
+setattr main disable_draw off
+	#91
+setattr main disable_draw on
+	#92
+setattr layer ratsnests view on
+	#93
+setattr main disable_draw off
+	#94
+setattr main disable_draw on
+	#95
+setattr layer ratsnests view off
+	#96
+setattr main disable_draw off
+	#97
+setattr main disable_draw on
+	#98
+setattr layer ratsnests view on
+	#99
+setattr main disable_draw off
+	#100
+setattr main disable_draw on
+	#101
+setattr layer ratsnests view off
+	#102
+setattr main disable_draw off
+	#103
+setattr main disable_draw on
+	#104
+setattr layer ratsnests view on
+	#105
+setattr main disable_draw off
+	#106
+setattr main disable_draw on
+	#107
+setattr layer ratsnests view off
+	#108
+setattr main disable_draw off
+	#109
+setattr main disable_draw on
+	#110
+setattr layer text view on
+	#111
+setattr main disable_draw off
+	#112
+setattr main disable_draw on
+	#113
+setattr layer text view off
+	#114
+setattr main disable_draw off
+	#115
+setattr main disable_draw on
+	#116
+setattr layer text view on
+	#117
+setattr main disable_draw off
+	#118
+setattr main disable_draw on
+	#119
+setattr layer text view off
+	#120
+setattr main disable_draw off
+	#121
+setattr main disable_draw on
+	#122
+setattr layer components view off
+	#123
+setattr main disable_draw off
+	#124
+setattr main disable_draw on
+	#125
+setattr layer components view on
+	#126
+setattr main disable_draw off
+	#127
+setattr main disable_draw on
+	#128
+setattr layer routes view on
+	#129
+setattr main disable_draw off
+	#130
+setattr main disable_draw on
+	#131
+setattr layer switch_boxes view on
+	#132
+setattr main disable_draw off
+	#133
+setattr main disable_draw on
+	#134
+setattr layer switch_boxes view off
+	#135
+setattr main disable_draw off
+	#136
+setattr main disable_draw on
+	#137
+setattr layer pips view on
+	#138
+setattr main disable_draw off
+	#139
+setattr main disable_draw on
+	#140
+setattr layer pips view off
+	#141
+setattr main disable_draw off
+	#142
+setattr main disable_draw on
+	#143
+setattr layer pinwires view on
+	#144
+setattr main disable_draw off
+	#145
+setattr main disable_draw on
+	#146
+setattr layer pinwires view off
+	#147
+setattr main disable_draw off
+	#148
+setattr main disable_draw on
+	#149
+setattr layer pinwires view on
+	#150
+setattr main disable_draw off
+	#151
+unselect -all
+	#152
+select net 'GLOBAL_LOGIC1'
+	#net "GLOBAL_LOGIC1"
+	#153
+unselect -all
+	#154
+select net 'ARM/COUNT<0>'
+	#net "ARM/COUNT<0>"
+	#155
+unselect -all
+	#156
+select net 'CLK_BUFGP'
+	#net "CLK_BUFGP"
+	#157
+unselect -all
+	#158
+select pin 'SLICE_X23Y32.DMUX'
+	#site.pin = SLICE_X23Y32.DMUX
+	#159
+unselect -all
+	#160
+unselect -all
+	#161
+select wire 'OUTPUT(12192,2864)'
+	#node = OUTPUT(12192,2864)
+	#162
+unselect -all
+	#163
+unselect -all
+	#164
+select wire 'LUTINPUT(12192,2736)'
+	#node = LUTINPUT(12192,2736)
+	#165
+unselect -all
+	#166
+select wire 'OUTPUT(12192,2776)'
+	#node = OUTPUT(12192,2776)
+	#167
+unselect -all
+	#168
+select wire 'LUTINPUT(12192,2720)'
+	#node = LUTINPUT(12192,2720)

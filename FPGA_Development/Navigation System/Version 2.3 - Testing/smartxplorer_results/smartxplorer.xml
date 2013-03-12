@@ -1,10 +1,10 @@
 
 <smartXplorerReport>
-    <command>"C:\Xilinx\14.2\ISE_DS\ISE\bin\nt64\smartxplorer.exe" -p xc6slx16-csg324-3 -b -wd smartxplorer_results Navigation.ngd -to "-v 3 -s 3 -n 3 -fastpaths -xml Navigation.twx -ucf System_Connection.ucf" -host_list hostlistfile.txt -max_runs 7
+    <command>"C:\Xilinx\14.2\ISE_DS\ISE\bin\nt64\smartxplorer.exe" -p xc6slx16-csg324-3 -b -wd smartxplorer_results System.ngd -to "-v 3 -s 3 -n 3 -fastpaths -xml System.twx -ucf System_Connection.ucf" -host_list hostlistfile.txt -max_runs 7
     </command>
     <programStatus>Done
     </programStatus>
-    <programPID>76820
+    <programPID>9384
     </programPID>
     
     <strategy name="MapRunTime">
@@ -20,17 +20,17 @@
         </runIndex>
         <status>Done
         </status>
-        <logFile>Navigation_sx.log
+        <logFile>System_sx.log
         </logFile>
         <timingScore>None
         </timingScore>
         <WorstCaseSlack>N/A
         </WorstCaseSlack>
-        <Luts>435 (4%)
+        <Luts>948 (10%)
 	</Luts>
-	<SliceRegisters>211 (1%)
+	<SliceRegisters>452 (2%)
 	</SliceRegisters>
-	<runTime>0h 1m 10s
+	<runTime>0h 1m 19s
         </runTime>
     </strategy>
     <strategy name="MapLogicOpt">
@@ -46,17 +46,17 @@
         </runIndex>
         <status>Done
         </status>
-        <logFile>Navigation_sx.log
+        <logFile>System_sx.log
         </logFile>
         <timingScore>None
         </timingScore>
         <WorstCaseSlack>N/A
         </WorstCaseSlack>
-        <Luts>440 (4%)
+        <Luts>945 (10%)
 	</Luts>
-	<SliceRegisters>211 (1%)
+	<SliceRegisters>452 (2%)
 	</SliceRegisters>
-	<runTime>0h 1m 21s
+	<runTime>0h 1m 30s
         </runTime>
     </strategy>
     <strategy name="MapGlobOptIOReg">
@@ -72,17 +72,17 @@
         </runIndex>
         <status>Done
         </status>
-        <logFile>Navigation_sx.log
+        <logFile>System_sx.log
         </logFile>
         <timingScore>None
         </timingScore>
         <WorstCaseSlack>N/A
         </WorstCaseSlack>
-        <Luts>386 (4%)
+        <Luts>846 (9%)
 	</Luts>
-	<SliceRegisters>187 (1%)
+	<SliceRegisters>444 (2%)
 	</SliceRegisters>
-	<runTime>0h 1m 47s
+	<runTime>0h 1m 41s
         </runTime>
     </strategy>
     <strategy name="MapRegDup">
@@ -98,17 +98,17 @@
         </runIndex>
         <status>Done
         </status>
-        <logFile>Navigation_sx.log
+        <logFile>System_sx.log
         </logFile>
         <timingScore>None
         </timingScore>
         <WorstCaseSlack>N/A
         </WorstCaseSlack>
-        <Luts>438 (4%)
+        <Luts>949 (10%)
 	</Luts>
-	<SliceRegisters>212 (1%)
+	<SliceRegisters>452 (2%)
 	</SliceRegisters>
-	<runTime>0h 0m 59s
+	<runTime>0h 1m 51s
         </runTime>
     </strategy>
     <strategy name="MapExtraEffortIOReg">
@@ -124,17 +124,17 @@
         </runIndex>
         <status>Done
         </status>
-        <logFile>Navigation_sx.log
+        <logFile>System_sx.log
         </logFile>
         <timingScore>None
         </timingScore>
         <WorstCaseSlack>N/A
         </WorstCaseSlack>
-        <Luts>436 (4%)
+        <Luts>949 (10%)
 	</Luts>
-	<SliceRegisters>193 (1%)
+	<SliceRegisters>436 (2%)
 	</SliceRegisters>
-	<runTime>0h 0m 31s
+	<runTime>0h 1m 21s
         </runTime>
     </strategy>
     <strategy name="MapLogOptRegDup">
@@ -150,17 +150,17 @@
         </runIndex>
         <status>Done
         </status>
-        <logFile>Navigation_sx.log
+        <logFile>System_sx.log
         </logFile>
         <timingScore>None
         </timingScore>
         <WorstCaseSlack>N/A
         </WorstCaseSlack>
-        <Luts>441 (4%)
+        <Luts>945 (10%)
 	</Luts>
-	<SliceRegisters>211 (1%)
+	<SliceRegisters>452 (2%)
 	</SliceRegisters>
-	<runTime>0h 0m 42s
+	<runTime>0h 0m 59s
         </runTime>
     </strategy>
     <strategy name="MapExtraEffort2">
@@ -176,17 +176,17 @@
         </runIndex>
         <status>Done
         </status>
-        <logFile>Navigation_sx.log
+        <logFile>System_sx.log
         </logFile>
         <timingScore>None
         </timingScore>
         <WorstCaseSlack>N/A
         </WorstCaseSlack>
-        <Luts>434 (4%)
+        <Luts>945 (10%)
 	</Luts>
-	<SliceRegisters>211 (1%)
+	<SliceRegisters>452 (2%)
 	</SliceRegisters>
-	<runTime>0h 0m 31s
+	<runTime>0h 1m 10s
         </runTime>
     </strategy>
     <bestStrategy>None
